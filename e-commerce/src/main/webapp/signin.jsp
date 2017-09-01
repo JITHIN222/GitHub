@@ -2,36 +2,63 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script src="bootstrap-4.0.0-alpha.6-dist/js/jquery.min.js"></script>
-<link href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
-<script src="bootstra.js"></script>
+<title>Sign In</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-<form class="form-inline">
-<div class="jumbotron">
-    <div class="form-group">
-        <label class="sr-only" for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label class="sr-only" for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
-    </div>
-    <div class="checkbox">
-        <label><input type="checkbox"> Remember me</label>
-    </div>
-<button type="submit" data-toggle="modal" class="btn btn-danger" data-target="#myModal">Submit</button>
+<body style="background-color:	#33C4FF;" >
+    <form >
+    <nav class="navbar navbar-inverse" >
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Basket</a></li>
+    </ul>
+  </div>
+</nav>
+ <div class="row">
+						  <div class="col-xs-2" >
 <div class="container">
+  <div class="jumbotron" style="background-color:#75B56A;">
+    <h3 style="color:#172514;"><button>Login</button> to continue</h3> 
+  </div></div></div>
 </div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
-    <div class="modal-body">
-        </div>
-        </div>
-        </div>
+ <div class="row">
+						  <div class="col-xs-2" >
+    <div class="container">
+    <div class="jumbotron">
+    <div class="row">
+						  <div class="col-xs-2" >
+						  Username
+						  </div></div>
+     <div class="row">
+						  <div class="col-xs-4" >
+						<div class="form-group">
+							<input type="text" value="" class="form-control email" placeholder="Email address"/>
+						</div>
+</div></div>
+ <div class="row">
+						  <div class="col-xs-2" >
+						  Password
+						  </div></div>
+ <div class="row">
+						  <div class="col-xs-4" >
+						<div class="form-group">
+							<input type="password" value="" class="form-control" placeholder="Password"/>
+						</div>
+						</div></div></div>
+<div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+   <div class="row">
+						  <div class="col-xs-2" >
+						<button class="btn btn-lg btn-signin btn-block" style="color: #2E86C1"  type="submit">Sign in</button>
+						</div></div>
+						<p> <a href="#" style="color:#E74C3C " >Need an account? <strong>Register here </strong></a><a  class="glyphicon glyphicon-arrow-right"></a><br/><a href="#" style="color:#E74C3C "><small>Forgot your password?</small></a></p>
+						
+    </div>
+    </div></div>
 </form>
 </body>
 </html>
