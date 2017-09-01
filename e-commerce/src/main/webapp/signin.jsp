@@ -6,24 +6,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="indexfooter.css" type="text/css">
 </head>
 <body style="background-color:	#33C4FF;" >
     <form >
     <nav class="navbar navbar-inverse" >
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Basket</a></li>
+      <li><a href="index.jsp">Home</a></li>
+      <li><a href="cart.jsp">Basket</a></li>
     </ul>
   </div>
 </nav>
- <div class="row">
-						  <div class="col-xs-2" >
-<div class="container">
-  <div class="jumbotron" style="background-color:#75B56A;">
-    <h3 style="color:#172514;"><button>Login</button> to continue</h3> 
-  </div></div></div>
-</div>
  <div class="row">
 						  <div class="col-xs-2" >
     <div class="container">

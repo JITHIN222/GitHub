@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="indexfooter.css" type="text/css">
 </head>
 <body>
 <form class="form-horizontal" role="form">
@@ -17,11 +18,6 @@
     </ul>
   </div>
 </nav>
-<div class="container">
-  <div class="jumbotron" style="background-color:#75B56A;">
-    <h3 style="color:#172514;"><button>Register</button> to continue</h3> 
-  </div>
-</div>
 <div class="container" style="max-width:600px;padding:40px 20px;background:#ebeff2">
 	   <div class="form-group">
 	      <label for="name" class ="control-label col-sm-3">First name</label>
@@ -51,6 +47,9 @@
 	     <button type="submit" class="btn btn-default">Register</button>
 	   </div>
 	   </div>
+	   <footer>
+        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
+    </footer>
 	</form>
 </body>
 </html>

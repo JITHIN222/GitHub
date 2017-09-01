@@ -8,28 +8,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="indexfooter.css" type="text/css">
 </head>
 <body>
 <div class="navbar navbar-inverse" >
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li><a href="#" class="text-warning">Home</a></li>
-      <li><a href="#" class="text-warning">Basket</a></li>
+      <li><a href="index.jsp" class="text-warning">Home</a></li>
+      <li><a href="cart.jsp" class="text-warning">Basket</a></li>
       <li><a href="index.jsp" class="glyphicon glyphicon-log-out text-warning">Logout</a></li>
     </ul>
   </div></div>
-  <div class="row">
- <div class="col-xs-2" >
-  <div class="container">
-  <div class="jumbotron" style="background-color:#75B56A;">
-    <h3 style="color:#172514;">Cart</br><button>Continue Shopping</button></h3> 
-  </div></div></div></div>
-  <div class="row">
- <div class="col-xs-2" >
-  <div class="container">
-  <div class="jumbotron" style="background-color: #C3BA5E;">
-  <h4>Currently you have 2 products</h4>
-  </div></div></div></div>
   <div class="row">
  <div class="col-xs-2" >
  <div class="container">
@@ -51,5 +40,8 @@
     </tbody>
   </table>
   <div></div></div></div></div></div>
+  <footer>
+        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
+    </footer>
 </body>
 </html>
