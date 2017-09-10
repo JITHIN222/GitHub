@@ -3,56 +3,121 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign In</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
+  <style>
+.container {
+  margin-top: 30px
+}
+form {
+  max-width: 350px;
+  width: 100%;
+  margin: 40px auto;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0.7);
+}
+.form-group {
+  padding: 20px 0;
+  position: relative;
+  margin-bottom: 0;
+}
+.form-control, .form-control:focus {
+  border: none;
+  box-shadow: none;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  border-radius: 0
+}
+.form-group label {
+  position: absolute;
+  width: 100%;
+  left:0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  top: 4px;
+  color:  background: #000000;;
+  
+}
+.form-Wrapper {
+    padding: 42px;
+}
+button.btn {
+  background: #40ff00;
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+ font-weight: bold;
+  width: 180px;
+  height: 45px;
+  margin: 30px auto;
+  display: block;
+}
+#navbar, #nav {
+     opacity: 0.5;
+}
+.right{
+text-align: right;
+    float: right;}
+.slideDown {
+    animation-duration: 1.5s;
+    animation-name: slideDown;
+    animation-timing-function: ease;
+    visibility: visible !important;
+}
+@keyframes slideDown {
+0% {
+    transform: translateY(-100%);
+}
+100% {
+    transform: translateY(0%);
+}
+}
+</style>
 </head>
-<body style="background-color:	#33C4FF;" >
-    <form >
-    <nav class="navbar navbar-inverse" >
+<body background="images/1.jpg">
+<nav class="navbar navbar-inverse" id="navbar">
   <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
     <ul class="nav navbar-nav">
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="cart.jsp">Basket</a></li>
-    </ul>
-  </div>
+      <li class="active"><a href="#" class="w3-bar-item w3-hover-red">Home</a></li>
+      <li><a href="#" class="w3-bar-item w3-hover-red">Page 1</a></li>
+      <li><a href="#" class="w3-bar-item w3-hover-red">Page 2</a></li>
+      <li><a href="#" class="w3-bar-item w3-hover-red">Page 3</a></li>
+    </ul></div>
+  </div></div></div>
 </nav>
- <div class="row">
-						  <div class="col-xs-2" >
-    <div class="container">
-    <div class="jumbotron">
-    <div class="row">
-						  <div class="col-xs-2" >
-						  Username
-						  </div></div>
-     <div class="row">
-						  <div class="col-xs-4" >
-						<div class="form-group">
-							<input type="text" value="" class="form-control email" placeholder="Email address"/>
-						</div>
-</div></div>
- <div class="row">
-						  <div class="col-xs-2" >
-						  Password
-						  </div></div>
- <div class="row">
-						  <div class="col-xs-4" >
-						<div class="form-group">
-							<input type="password" value="" class="form-control" placeholder="Password"/>
-						</div>
-						</div></div></div>
-<div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
+<div class='container' id="nav">
+  <div class='row'>
+    <div class='col-md-12'>
+    <form class="slideDown">
+      <div class="form-Wrapper">
+        <div class="form-group">             
+            <input type="email" class="form-control" id="inputEmail" > 
+          <label for="inputEmail">Email</label>
+        </div>
+        <div class="form-group">           
+            <input type="password" class="form-control" id="inputPassword">
+           <label for="inputPassword">Password</label>
+        </div>
+         <div class="checkbox">
+    <label><input type="checkbox" required> Remember me</label>
   </div>
-   <div class="row">
-						  <div class="col-xs-2" >
-						<button class="btn btn-lg btn-signin btn-block" style="color: #2E86C1"  type="submit">Sign in</button>
-						</div></div>
-						<p> <a href="#" style="color:#E74C3C " >Need an account? <strong>Register here </strong></a><a  class="glyphicon glyphicon-arrow-right"></a><br/><a href="#" style="color:#E74C3C "><small>Forgot your password?</small></a></p>
-						
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="right">
+   <a href="#forgot" data-toggle="modal"> Forgot Password? </a></br>
+                                       <a href="signup.jsp">create an account</a>
+                                       </div>
+      </div>
+    </form>
     </div>
-    </div></div>
-</form>
+  </div>
+</div>
 </body>
 </html>
