@@ -27,14 +27,17 @@ footer p {
 </head>
 <body>
 <form class="form-horizontal" role="form">
-  <nav class="navbar navbar-inverse" >
+ <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Basket</a></li>
-    </ul>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">Home</a></li>
+      </ul>
+    </div>
   </div>
-</nav>
 <div class="container" style="max-width:600px;padding:40px 20px;background:#ebeff2">
 	   <div class="form-group">
 	      <label for="name" class ="control-label col-sm-3">First name</label>
@@ -63,7 +66,7 @@ footer p {
 	   <div class="col-sm-offset-2 col-sm-8">
 	     <button type="submit" class="btn btn-default">Register</button>
 	   </div>
-	   </div>
+	   </div></nav>
 	   <footer>
         <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
     </footer>

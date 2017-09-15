@@ -34,7 +34,11 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-    
+    <dependency>
+     <groupId>com.niit</groupId>
+  <artifactId>e-commercebackend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>e-commerce</finalName>

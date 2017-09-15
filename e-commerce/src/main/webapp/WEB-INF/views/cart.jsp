@@ -30,14 +30,21 @@ footer p {
 </head>
 <body>
 <form>
-<div class="navbar navbar-inverse" >
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="">Home</a></li>
-      <li><a href="in">Login</a></li>
-        <li><a href="index.jsp" class="glyphicon glyphicon-log-out text-warning">Logout</a></li>
-    </ul>
-  </div></div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="in"><span class=" glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="up"><span class=" glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
  <div class="row">
  <div class="col-xs-2" >
  <div class="container">
@@ -69,7 +76,7 @@ footer p {
   <div>
 <input type="button" value="Add to Cart" >
 						</div>
-</div></div> </div></div>
+</div></div> </div></div></nav>
 <footer>
         <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
     </footer>

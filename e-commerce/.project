@@ -3,6 +3,7 @@
 	<name>e-commerce</name>
 	<comment></comment>
 	<projects>
+		<project>e-commercebackend</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

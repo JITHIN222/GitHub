@@ -37,9 +37,9 @@ footer p {
         <li class="active"><a href="/">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="in"><span class="w3-blue glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="up"><span class="w3-blue glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="car"><span class="w3-blue glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
   </div>

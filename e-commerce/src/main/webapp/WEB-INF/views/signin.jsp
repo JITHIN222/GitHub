@@ -97,15 +97,20 @@ text-align: right;
 </style>
 </head>
 <body style="background-color:powderblue;">
-<nav class="navbar navbar-fixed-top" id="navbar">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
-    <ul class="nav navbar-nav">
-      <li><a href="" class="w3-bar-item w3-hover-red">Home</a></li>
-    </ul></div>
-  </div></div></div>
-</nav>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="car"><span class=" glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
@@ -131,7 +136,7 @@ text-align: right;
     </form>
     </div>
   </div>
-</div>
+</div></nav>
 <footer>
         <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
     </footer>
