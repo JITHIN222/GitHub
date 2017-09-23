@@ -47,5 +47,11 @@ public class HelloworldController {
 		return "cart";
 		
 	}
+	@RequestMapping("/ad")
+	public String ad()
+	{
+		return "add";
+		
+	}
 	
 }

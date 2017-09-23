@@ -1,10 +1,2 @@
-com\niit\ecommercebackend\dao\LoginDao.class
-com\niit\ecommercebackend\dao\SupplierDaoImpl.class
-com\niit\ecommercebackend\models\Login.class
-com\niit\ecommercebackend\dao\SupplierDao.class
 com\niit\e_commercebackend\App.class
-com\niit\ecommercebackend\dao\LoginDaoImpl.class
-com\niit\ecommercebackend\dao\ProductDAOImpl.class
-com\niit\ecommercebackend\models\Product.class
-com\niit\ecommercebackend\models\Supplier.class
-com\niit\ecommercebackend\dao\ProductDAO.class
+com\niit\e_commercebackend\config\Hibernate_config.class

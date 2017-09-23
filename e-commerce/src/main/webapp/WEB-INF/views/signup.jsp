@@ -26,7 +26,7 @@ footer p {
 }</style>
 </head>
 <body>
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" action="reg">
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
