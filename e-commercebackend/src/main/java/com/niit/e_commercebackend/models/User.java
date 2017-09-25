@@ -23,7 +23,41 @@ public class User {
 	
 	 @Column(name = "NAME", nullable = false)
 	    private String name;
+
+	 @Column(name = "EMAIL", nullable = false)
+	    private String email;
+
+	 @Column(name = "PASSWORd", nullable = false)
+	    private String pwd;
+
+	 @Column(name = "CONFIRM PASSWORD", nullable = false)
+	    private String cpwd;
+
 	 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+	public String getCpwd() {
+		return cpwd;
+	}
+
+	public void setCpwd(String cpwd) {
+		this.cpwd = cpwd;
+	}
+
 	public int getId() {
 		return id;
 	}

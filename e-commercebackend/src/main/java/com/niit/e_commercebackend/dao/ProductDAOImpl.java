@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.e_commercebackend.models.Product;
 
+@SuppressWarnings("unused")
 @Repository
 public class ProductDAOImpl implements ProductDAO
 {
@@ -36,14 +37,5 @@ private SessionFactory sessionF;
 	session.close();
 	}
 
-	public List<Product> getAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Product getProductById() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

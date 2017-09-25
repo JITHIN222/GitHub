@@ -19,7 +19,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
+        <li><a href="">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -30,13 +30,29 @@
   </div></nav>
   <div class="container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#prod">Category</a></li>
-    <li><a data-toggle="tab" href="#cat">Product</a></li>  
+    <li class="active"><a data-toggle="tab" href="#prod">Product</a></li>
+    <li><a data-toggle="tab" href="#cat">Category</a></li>  
     <li><a data-toggle="tab" href="#sup">Supplier</a></li>
   </ul>
 
-  <div class="tab-content">
-    <div id="prod" class="tab-pane fade in active">
+<div class="tab-content">
+  <div id="prod" class="tab-pane fade in active">
+    <form action="">
+      <h3>Product</h3>
+      <label><b>Product Id</b></label>
+    <input type="number" name="uname" required></br>
+    <label><b>Product Name</b></label>
+    <input type="text"  name="price" required></br>
+    <label><b>Product Price</b></label>
+    <input type="text"  name="stock" required></br>
+    <label><b>Product Stock</b></label>
+    <input type="text"  name="short" required></br>
+    <label><b>Product Description</b></label>
+    <input type="text"  name="psw" required></br>
+    <button type="submit" class="btn btn-default" href="ad">Save</button>
+   </form> </div>   
+  
+    <div id="cat" class="tab-pane fade in active">
     <form action="addC">
       <h3>Caterogy</h3>
       <label><b>Category Id</b></label>
@@ -45,8 +61,19 @@
     <input type="text"  name="psw" required></br>
     <button type="submit" class="btn btn-default" href="ad">Save</button>
    </form> </div>
-    </div>
+   
+   
     
+    <div id="sup" class="tab-pane fade in active">
+    <form action="addS">
+      <h3>Supplier</h3>
+      <label><b>Supplier Id</b></label>
+    <input type="number" name="uname" required></br>
+    <label><b>Supplier Name</b></label>
+    <input type="text"  name="psw" required></br>
+    <button type="submit" class="btn btn-default" href="ad">Save</button>
+   </form> </div>
+    </div>
   </div>
 
 </body>

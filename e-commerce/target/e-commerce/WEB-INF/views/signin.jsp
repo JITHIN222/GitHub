@@ -10,26 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
   <style>
-  footer{
-   background-color: #424558;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35px;
-    text-align: center;
-    color: #CCC;
-}
-
-footer p {
-    padding: 10.5px;
-    margin: 0px;
-    line-height: 100%;
-}
 .container {
   margin-top: 30px
 }
-form {
+#f1 {
   max-width: 350px;
   width: 100%;
   margin: 40px auto;
@@ -37,19 +21,19 @@ form {
   position: relative;
   box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0.7);
 }
-.form-group {
+#f3 {
   padding: 20px 0;
   position: relative;
   margin-bottom: 0;
 }
-.form-control, .form-control:focus {
+#f4, #f4:focus {
   border: none;
   box-shadow: none;
   padding-left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   border-radius: 0
 }
-.form-group label {
+#f3 label {
   position: absolute;
   width: 100%;
   left:0;
@@ -60,10 +44,10 @@ form {
   color:  background: #000000;;
   
 }
-.form-Wrapper {
+#f2 {
     padding: 42px;
 }
-button.btn {
+#b1.btn {
   background: #40ff00;
   border: none;
   border-radius: 0;
@@ -110,35 +94,30 @@ text-align: right;
         <li><a href="car"><span class=" glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
-  </div>
+  </div></nav>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
-    <form class="slideDown">
-      <div class="form-Wrapper">
-        <div class="form-group">             
-            <input type="email" class="form-control" id="inputEmail" > 
+    <form class="slideDown" id="f1">
+      <div class="form-Wrapper" id="f2">
+        <div class="form-group" id="f3">            
+            <input type="email" class="form-control" id="f4" > 
           <label for="inputEmail">Email</label>
         </div>
-        <div class="form-group">           
-            <input type="password" class="form-control" id="inputPassword">
+        <div class="form-group" id="f3">           
+            <input type="password" class="form-control" id="f4">
            <label for="inputPassword">Password</label>
         </div>
          <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <div class="right">
-   <a href="#forgot" data-toggle="modal"> Forgot Password? </a></br>
-                                       <a href="signup.jsp">create an account</a>
-                                       </div>
+        <button type="submit" class="btn btn-primary btn-block" id="b1">Login</button>
+        <p align="center">Forgot password?</p>
       </div>
     </form>
     </div>
   </div>
-</div></nav>
-<footer>
-        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
-    </footer>
+</div>
+  <jsp:include page="Footer.jsp"/>
 </body>
 </html>

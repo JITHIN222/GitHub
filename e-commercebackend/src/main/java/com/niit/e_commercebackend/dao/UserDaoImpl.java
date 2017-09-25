@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.e_commercebackend.models.User;
 
-@Repository()
+@Repository
 public class UserDaoImpl implements UserDao {
  
 	@Autowired

@@ -9,49 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-footer{
-   background-color: #424558;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35px;
-    text-align: center;
-    color: #CCC;
-}
-
-footer p {
-    padding: 10.5px;
-    margin: 0px;
-    line-height: 100%;
-}
 </style>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="">Home</a></li>
-        <li><a href="ad">Admin</a></li>
-         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        <li><a href="#">Mobile</a></li>
-        <li><a href="#">Computer</a></li>
-        </ul>
-      </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div>
+<jsp:include page="Header.jsp"/>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -87,8 +47,6 @@ footer p {
       <span class="sr-only">Next</span>
     </a>
   </div></nav>
-    <footer>
-        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
-    </footer>
+  <jsp:include page="Footer.jsp"/>
 </body>
 </html>

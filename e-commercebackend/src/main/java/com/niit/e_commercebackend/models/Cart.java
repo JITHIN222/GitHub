@@ -2,7 +2,7 @@ package com.niit.e_commercebackend.models;
 
 
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +21,6 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 	
-	 @Column(name = "DTYPE", nullable = false)
-	    private String dtype;
 	 
 	public int getId() {
 		return id;
@@ -32,13 +30,6 @@ public class Cart {
 		this.id = id;
 	}
 
-	public String getDtype() {
-		return dtype;
-	}
-
-	public void setDtype(String dtype) {
-		this.dtype = dtype;
-	}
 
 }
 

@@ -27,8 +27,7 @@ public class Product implements Serializable {
     @Column(name = "Name", nullable = false)
     private String name;
     
-    @Column(name = "TITLE", nullable = false)
-    private String title;
+  
     
     @Column(name = "SHORT_DESCRIPTION", nullable = false)
     private String shortDesc;
@@ -69,14 +68,6 @@ public class Product implements Serializable {
 	
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
 	}
 
 	public String getShortDesc() {

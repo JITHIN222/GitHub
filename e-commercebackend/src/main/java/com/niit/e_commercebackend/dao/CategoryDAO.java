@@ -5,8 +5,7 @@ import java.util.List;
 import com.niit.e_commercebackend.models.Category;
 
 
+@SuppressWarnings("unused")
 public interface CategoryDAO {
 	public void saveCategory(Category c);
-	List<Category> getAllProducts();
-	Category getProductById();
 }

@@ -1,9 +1,9 @@
 package com.niit.e_commercebackend.dao;
 
-import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,24 +13,23 @@ import com.niit.e_commercebackend.models.Category;
 public class CategoryDaoImpl implements CategoryDAO{
 	
 	@Autowired
-	public CategoryDaoImpl (SessionFactory sessionF)
-	{
-		super();
+	private SessionFactory sessionF;
+
+
+	@Autowired
+	public CategoryDaoImpl(SessionFactory sessionF){
+		this.sessionF= sessionF;
 	}
+
+	public void saveCategory(Category c) {
+		Session session=sessionF.openSession();
+		Transaction t=session.getTransaction();
+		t.begin();
+		session.save(c);
+		t.commit();
+		session.close();
+	}
+
 	
-	public void saveProduct() {
-		
-		
-	}
-
-	public List<Category> getAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Category getProductById() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

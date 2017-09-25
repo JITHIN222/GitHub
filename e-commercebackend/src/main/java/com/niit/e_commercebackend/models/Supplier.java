@@ -29,8 +29,6 @@ public class Supplier implements Serializable {
 	@Column(name = "NAME", nullable = false)
     private String name;
 	
-	 @Column(name = "PHONE NO", nullable = false)
-	    private int phone_no;
 
 	   @OneToMany(targetEntity=Product.class, mappedBy="sid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	   private Set<Product> prod;
@@ -49,14 +47,6 @@ public class Supplier implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getPhone_no() {
-		return phone_no;
-	}
-
-	public void setPhone_no(int phone_no) {
-		this.phone_no = phone_no;
 	}
 
 	public Set<Product> getProd() {
