@@ -2,6 +2,8 @@ package com.niit.e_commercebackend.models;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +16,9 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Table(name="USER")
-public class User {
+public class User implements Serializable {
 
-
+	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -29,9 +31,6 @@ public class User {
 
 	 @Column(name = "PASSWORd", nullable = false)
 	    private String pwd;
-
-	 @Column(name = "CONFIRM PASSWORD", nullable = false)
-	    private String cpwd;
 
 	 
 	public String getEmail() {
@@ -48,14 +47,6 @@ public class User {
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-
-	public String getCpwd() {
-		return cpwd;
-	}
-
-	public void setCpwd(String cpwd) {
-		this.cpwd = cpwd;
 	}
 
 	public int getId() {

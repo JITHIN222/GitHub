@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.e_commercebackend.dao.CategoryDAO;
+import com.niit.e_commercebackend.dao.CategoryDaoImpl;
 import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
@@ -34,7 +36,7 @@ public class Hibernate_config
 	        
 	        sessionBuilder.addProperties(getHibernateProperties());
 	       
-	   
+	        
 	        sessionBuilder.addAnnotatedClass(Product.class); 
 	        sessionBuilder.addAnnotatedClass(User.class); 
 	        sessionBuilder.addAnnotatedClass(Cart.class); 
@@ -47,7 +49,7 @@ public class Hibernate_config
 	    public DataSource dataSource() {
 	        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	        dataSource.setDriverClassName("org.h2.Driver");
-	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/ecomdb");
+	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/jit");
 	        dataSource.setUsername("sa");
 	        dataSource.setPassword("");
 	        return dataSource;
@@ -61,6 +63,8 @@ public class Hibernate_config
 	        properties.put("hibernate.connection.autocommit", true);
 	        return properties;
 	    }
+	    
+	    
 	    @Bean
 		@Autowired
 	        public HibernateTransactionManager txManager(SessionFactory sessionFactory) {

@@ -1,2 +1,17 @@
+com\niit\e_commercebackend\models\Category.class
+com\niit\e_commercebackend\models\User.class
+com\niit\e_commercebackend\dao\ProductDAO.class
+com\niit\e_commercebackend\dao\UserDao.class
 com\niit\e_commercebackend\App.class
+com\niit\e_commercebackend\models\Cart.class
+com\niit\e_commercebackend\dao\ProductDAOImpl.class
+com\niit\e_commercebackend\dao\CategoryDaoImpl.class
+com\niit\e_commercebackend\models\Product.class
+com\niit\e_commercebackend\dao\CategoryDAO.class
+com\niit\e_commercebackend\models\Supplier.class
+com\niit\e_commercebackend\dao\SupplierDao.class
 com\niit\e_commercebackend\config\Hibernate_config.class
+com\niit\e_commercebackend\dao\CartDaoImpl.class
+com\niit\e_commercebackend\dao\UserDaoImpl.class
+com\niit\e_commercebackend\dao\SupplierDaoImpl.class
+com\niit\e_commercebackend\dao\CartDao.class

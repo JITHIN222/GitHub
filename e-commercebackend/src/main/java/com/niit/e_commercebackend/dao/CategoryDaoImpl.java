@@ -1,6 +1,9 @@
 package com.niit.e_commercebackend.dao;
 
 
+import java.util.ArrayList;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,12 +25,33 @@ public class CategoryDaoImpl implements CategoryDAO{
 	}
 
 	public void saveCategory(Category c) {
-		Session session=sessionF.openSession();
-		Transaction t=session.getTransaction();
+		System.out.println("name getting"+c.getName() +c.getId());
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
 		t.begin();
-		session.save(c);
+		s.save(c);
 		t.commit();
-		session.close();
+		s.close();
+	}
+	
+	public ArrayList<Category> getallCategories(){
+		System.out.println("impl reaching");
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Query q=s.createQuery("from Category");
+		ArrayList<Category> cat=(ArrayList<Category>)q.list();
+		System.out.println("retrieved");
+		for(Category c:cat)
+		{
+			System.out.println(c);
+		}
+		t.commit();
+		s.close();
+		
+			return cat;
+		
+		
 	}
 
 	

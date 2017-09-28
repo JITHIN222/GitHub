@@ -39,6 +39,13 @@
   <artifactId>e-commercebackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+    
   </dependencies>
   <build>
     <finalName>e-commerce</finalName>

@@ -20,16 +20,17 @@ import org.springframework.stereotype.Component;
 public class Category implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id    
     private int id;
     
     @Column(name = "NAME", nullable = false)
     private String name;
     
   
-   @OneToMany(targetEntity=Product.class, mappedBy="cid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-   private Set<Product> prod;
+    @OneToMany(targetEntity=Product.class, mappedBy="cid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<Product> prod;
    
 	public Set<Product> getProd() {
 	return prod;
@@ -43,8 +44,8 @@ public void setProd(Set<Product> prod) {
 		return id;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int id2) {
+		this.id = id2;
 	}
 
 	public String getName() {

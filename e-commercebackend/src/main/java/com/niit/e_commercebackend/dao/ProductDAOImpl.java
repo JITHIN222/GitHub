@@ -29,6 +29,7 @@ private SessionFactory sessionF;
 
 
 	public void saveProduct(Product p) {
+		System.out.println("in impl");
 	Session session=sessionF.openSession();
 	Transaction t=session.getTransaction();
 	t.begin();

@@ -31,17 +31,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   border-radius: 0
 }
-#f3 label {
-  position: absolute;
-  width: 100%;
-  left:0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  top: 4px;
-  color:  background: #000000;;
-  
-}
 #f2 {
     padding: 42px;
 }
@@ -75,55 +64,43 @@ text-align: right;
 100% {
     transform: translateY(0%);
 }
-}? 
+}
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="car"><span class=" glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div></nav>
+<jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
     <form class="slideDown" id="f1" action="reg">
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3">            
-            <input type="text" class="form-control" id="f4" name="fname" > 
           <label for="inputName">Full Name</label>
+            <input type="text" class="form-control" id="f4" name="fname" > 
         </div>
         <div class="form-group" id="f3">            
-            <input type="email" class="form-control" id="f4" name="email" > 
           <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="f4" name="email" > 
         </div>
-        <div class="form-group" id="f3">           
+        <div class="form-group" id="f3">    
+        <label for="inputPassword">Password</label>       
             <input type="password" class="form-control" id="f4" name="pwd">
-           <label for="inputPassword">Password</label>
         </div>
-        <div class="form-group" id="f3">           
+        <div class="form-group" id="f3">  
+        <label for="inputPassword">Confirm Password</label>         
             <input type="password" class="form-control" id="f4" name="cpwd">
-           <label for="inputPassword">Confirm Password</label>
+       
         </div>
          <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div>
         <button type="submit" class="btn btn-primary btn-block" id="b1">Register</button>
-        <p align="center">Already have an account?</p>
+        <p align="center" href="in">Already have an account?</p>
       </div>
     </form>
     </div>
   </div>
-</div>
+</div></nav>
 	<jsp:include page="Footer.jsp"/>
 </body>
 </html>

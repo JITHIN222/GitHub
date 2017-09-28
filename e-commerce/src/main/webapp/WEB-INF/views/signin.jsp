@@ -3,14 +3,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign In</title>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="indexfooter.css" type="text/css">
   <style>
-.container {
+  .container {
   margin-top: 30px
 }
 #f1 {
@@ -32,17 +30,6 @@
   padding-left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   border-radius: 0
-}
-#f3 label {
-  position: absolute;
-  width: 100%;
-  left:0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  top: 4px;
-  color:  background: #000000;;
-  
 }
 #f2 {
     padding: 42px;
@@ -77,42 +64,30 @@ text-align: right;
 100% {
     transform: translateY(0%);
 }
-}?
+}
 </style>
 </head>
 <body style="background-color:powderblue;">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="car"><span class=" glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div></nav>
+<jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
     <form class="slideDown" id="f1">
       <div class="form-Wrapper" id="f2">
-        <div class="form-group" id="f3">            
-            <input type="email" class="form-control" id="f4" > 
-          <label for="inputEmail">Email</label>
+        <div class="form-group" id="f3"> 
+        <label  for="inputEmail">Email</label>            
+            <input type="text" id="f4" class="form-control" >
         </div>
         <div class="form-group" id="f3">           
-            <input type="password" class="form-control" id="f4">
-           <label for="inputPassword">Password</label>
+        <label for="inputEmail">Password</label>
+            <input type="password" class="form-control" id="f4"  required>
         </div>
          <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div>
         <button type="submit" class="btn btn-primary btn-block" id="b1">Login</button>
-        <p align="center">Forgot password?</p>
+        <p align="center">Forgot password? <a>click here</a></p>
+        <p align="center">new user? <a href="up">create new account</a></p>
       </div>
     </form>
     </div>

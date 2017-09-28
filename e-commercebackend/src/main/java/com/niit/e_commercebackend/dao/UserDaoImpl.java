@@ -23,6 +23,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	public void saveProduct(User u) {
+		System.out.println(u.getEmail());
 		Session session=sessionF.openSession();
 		Transaction t=session.getTransaction();
 		t.begin();
