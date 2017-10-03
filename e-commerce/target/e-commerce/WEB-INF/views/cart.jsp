@@ -10,41 +10,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
   <style>
-      footer{
-   background-color: #424558;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35px;
-    text-align: center;
-    color: #CCC;
-}
 
-footer p {
-    padding: 10.5px;
-    margin: 0px;
-    line-height: 100%;
-}
   </style>
 </head>
 <body>
 <form>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="in"><span class=" glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="up"><span class=" glyphicon glyphicon-user"></span> Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
+<jsp:include page="Header.jsp"/>
  <div class="row">
  <div class="col-xs-2" >
  <div class="container">
@@ -76,10 +47,8 @@ footer p {
   <div>
 <input type="button" value="Add to Cart" >
 						</div>
-</div></div> </div></div></nav>
-<footer>
-        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
-    </footer>
+</div></div> </div></div>
+<jsp:include page="Footer.jsp"/>
 </form>
 </body>
 </html>

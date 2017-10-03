@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.e_commercebackend.models.Product;
+import com.niit.e_commercebackend.models.Supplier;
 
 @SuppressWarnings("unused")
 @Repository
@@ -36,6 +37,17 @@ private SessionFactory sessionF;
 	session.save(p);
 	t.commit();
 	session.close();
+	}
+
+	public Product getprbyid(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Product su = (Product) s.get(Product.class, id);
+System.out.println(su.getName()+su.getId());
+        t.commit();
+        s.close();
+		return su;
 	}
 
 

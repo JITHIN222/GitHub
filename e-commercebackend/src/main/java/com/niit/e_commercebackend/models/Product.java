@@ -27,8 +27,6 @@ public class Product implements Serializable {
     @Column(name = "NAME", nullable = false)
     private String name;
     
-  
-    
     @Column(name = "SHORT_DESCRIPTION", nullable = false)
     private String shortDesc;
     

@@ -11,14 +11,7 @@
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
 </head>
 <body>
-<div class="navbar navbar-inverse" >
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="index.jsp" class="text-warning">Home</a></li>
-      <li><a href="cart.jsp" class="text-warning">Basket</a></li>
-      <li><a href="index.jsp" class="glyphicon glyphicon-log-out text-warning">Logout</a></li>
-    </ul>
-  </div></div>
+<jsp:include page="Header.jsp"/>
   <div class="row">
  <div class="col-xs-2" >
  <div class="container">
@@ -40,8 +33,6 @@
     </tbody>
   </table>
   <div></div></div></div></div></div>
-  <footer>
-        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</p>
-    </footer>
+ <jsp:include page="Footer.jsp"/>
 </body>
 </html>

@@ -20,12 +20,10 @@ public class SupplierDaoImpl implements SupplierDao {
 	@Autowired
 	private SessionFactory sessionF;
 
-
 	@Autowired
 	public SupplierDaoImpl(SessionFactory sessionF){
 		this.sessionF= sessionF;
 	}
-
 	
 	public void saveSupplier(Supplier s) {
 		Session session=sessionF.openSession();
@@ -47,6 +45,17 @@ public class SupplierDaoImpl implements SupplierDao {
 		s.close();
 		
 			return cat;
+	}
+	
+	public Supplier getssbyid(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Supplier su = (Supplier) s.get(Supplier.class, id);
+System.out.println(su.getName()+su.getId());
+        t.commit();
+        s.close();
+		return su;
 	}
 
 }

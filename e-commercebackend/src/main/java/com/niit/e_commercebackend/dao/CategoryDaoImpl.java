@@ -49,9 +49,24 @@ public class CategoryDaoImpl implements CategoryDAO{
 		t.commit();
 		s.close();
 		
-			return cat;
+			return cat;		
+	}
+	
+	public void deletecat(){
 		
+	}
+	public Category getcabyid(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Category ca = (Category) s.get(Category.class, id);
+System.out.println(ca.getName()+ca.getId());
 		
+        t.commit();
+        
+        s.close();
+		
+		return ca;
 	}
 
 	

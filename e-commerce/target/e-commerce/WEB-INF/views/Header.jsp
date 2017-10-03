@@ -30,6 +30,6 @@
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     </ul>
-  </div>
+  </div></nav>
 </body>
 </html>

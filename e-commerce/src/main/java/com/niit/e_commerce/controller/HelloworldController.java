@@ -25,18 +25,6 @@ public class HelloworldController {
 	@Autowired
 	SupplierDao supplierDao;
 	
-	String message = "Welcome to Spring MVC!";
- 
-	@RequestMapping("/hello/{name}")
-	public ModelAndView showMessage(@PathVariable("name") String n) {
-		System.out.println("in controller");
- 
-		ModelAndView mv = new ModelAndView("helloworld");
-		mv.addObject("msg", "Success");
-		mv.addObject("name", n);
-		
-		return mv;
-	}
 	@RequestMapping("/")
 	public ModelAndView index()
 	{
@@ -44,44 +32,57 @@ public class HelloworldController {
 		ModelAndView mv = new ModelAndView("index");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		System.out.println("hai after retrieve");
-		for(Category c:cat)
-		{
-			System.out.println(c);
-		}
 		mv.addObject("cate",cat);
 		System.out.println("after adding object");
 	
 		return mv;
 	}
 	@RequestMapping("/in")
-	public String in()
+	public ModelAndView signin()
 	{
-		return "signin";
+		ModelAndView mv = new ModelAndView("signin");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cc);
+		return mv;
 		
 	}
 	@RequestMapping("/up")
-	public String up()
+	public ModelAndView signup()
 	{
-		return "signup";
+		ModelAndView mv = new ModelAndView("signup");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cc);
+		return mv;
 		
 	}
 	@RequestMapping("/car")
-	public String car()
+	public ModelAndView cart()
 	{
-		return "cart";
+		ModelAndView mv = new ModelAndView("cart");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cc);
+		return mv;
 		
 	}
+	
+	/*admin page loading*/
 	@RequestMapping("/ad")
 	public ModelAndView ad()
 	{
 		ModelAndView mv = new ModelAndView("add");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
-		System.out.println("product category");
-	
-		
+		/*System.out.println("product category");*/
 		mv.addObject("categ",cc);
 		mv.addObject("catego",ss);
+		mv.addObject("cate",cc);
+		return mv;
+		
+	}
+	@RequestMapping("/trial")
+	public ModelAndView car()
+	{
+		ModelAndView mv = new ModelAndView("NewFile");
 		return mv;
 		
 	}

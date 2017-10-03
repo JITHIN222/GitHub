@@ -16,6 +16,7 @@ import com.niit.e_commercebackend.models.Supplier;
 import com.niit.e_commercebackend.models.User;
 import com.niit.e_commercebackend.models.Product;
 
+@SuppressWarnings("unused")
 @Controller
 public class UserController {
 
@@ -36,65 +37,14 @@ public class UserController {
 	public ModelAndView register(@RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
 		System.out.println("in controller");
 		System.out.println(name);
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		User i=new User();
 		i.setName(name);
 		i.setEmail(email);
 		i.setPwd(pwd);
-	
 		UserDao.saveProduct(i);
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("cate",cat);
-		
 	
 		return mv;
-	}
-	@RequestMapping("/addC")
-	public ModelAndView addC(@RequestParam("name") String name) {
-		System.out.println("in controller"+name);
-		
-		Category i=new Category();
-		i.setName(name);
-		categoryDao.saveCategory(i);
-		
-		ModelAndView mv1 = new ModelAndView("index");
-		
-		
-	
-		return mv1;
-	}
-
-	@RequestMapping("/addS")
-	public ModelAndView addS(@RequestParam("name") String name) {
-		System.out.println("in controller");
-		System.out.println(name);
-		Supplier i=new Supplier();
-		i.setName(name);
-		supplierDao.saveSupplier(i);
-		
-		ModelAndView mv1 = new ModelAndView("index");
-		
-		
-	
-		return mv1;
-	}
-	
-	@RequestMapping("/addP")
-	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock, @RequestParam("short") String shortDesc  ) {
-		System.out.println("in controller");
-		System.out.println(name);
-		Product i=new Product();
-		i.setName(name);
-		i.setPrice(price);
-		i.setStock(stock);
-		i.setShortDesc(shortDesc);
-		productDao.saveProduct(i);
-		
-		ModelAndView mv1 = new ModelAndView("index");
-		
-		
-	
-		return mv1;
 	}
 }
 

@@ -88,14 +88,17 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">  
         <label for="inputPassword">Confirm Password</label>         
-            <input type="password" class="form-control" id="f4" name="cpwd">
-       
+            <input type="password" class="form-control" id="f4" name="cpwd">     
         </div>
-         <div class="checkbox">
+         <div class="form-group" id="f3">  
+        <label for="inputNumber">Mobile Number</label>         
+            <input type="password" class="form-control" id="f4" name="no">     
+        </div>
+     <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
-  </div>
+  </div> -->
         <button type="submit" class="btn btn-primary btn-block" id="b1">Register</button>
-        <p align="center" href="in">Already have an account?</p>
+        <p align="center"><a href="in">Already have an account?</a></p>
       </div>
     </form>
     </div>

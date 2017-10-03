@@ -13,36 +13,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color:black;">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div></nav>
+<jsp:include page="Header.jsp"/>
 <div class="container">
             <div class="panel with-nav-tabs" style="background-color: black;">
                 <div class="panel-heading">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
-                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
-                           
+                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>                        
                         </ul>
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="addP">
+                        <form action="addP" method="post">
      <div class="form-group">            
           <label for="inputName">Id</label>
             <input type="text" class="form-control" name="n" > 
@@ -53,7 +37,7 @@
         </div>
         <div class="form-group">
         <label for="inputName">Category</label>
-        <select>
+        <select name="cat">
   <option value="volvo">Select Category</option>
   <c:forEach var="designatee" items="${categ}">
 <option value="${designatee.id}">${designatee.name}</option>    
@@ -61,7 +45,7 @@
   
 </select>
         <label for="inputName">Supplier</label>
-        <select>
+        <select name="sid">
   <option value="volvo">Select Supplier</option>
   <c:forEach var="designatee" items="${catego}">
 <option value="${designatee.id}">${designatee.name}</option>    
@@ -111,6 +95,7 @@
    </form>
                         </div>
                       </div></div></div></div>
+                      <jsp:include page="Footer.jsp"/>
 
 </body>
 </html>
