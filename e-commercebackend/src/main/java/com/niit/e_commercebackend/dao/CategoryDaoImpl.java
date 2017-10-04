@@ -55,6 +55,7 @@ public class CategoryDaoImpl implements CategoryDAO{
 	public void deletecat(){
 		
 	}
+	
 	public Category getcabyid(int id){
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();

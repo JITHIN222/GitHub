@@ -2,6 +2,7 @@ package com.niit.e_commerce.controller;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,8 +25,8 @@ public class AdminController {
 	@Autowired
 	ProductDAO productDao;
 	
-	
-	/*adding category to db*/
+	/*<----category session--->
+	*//*adding category to db*/
 	@RequestMapping("/addC")
 	public ModelAndView addC(@RequestParam("name") String name) {
 		System.out.println("in controller"+name);
@@ -38,6 +39,25 @@ public class AdminController {
 		mv1.addObject("cate",cc);	
 		return mv1;
 	}
+	
+	@RequestMapping("/{categoryid}")
+	public ModelAndView ca(@PathVariable("categoryid") int ca) {
+		System.out.println("in contoller"+ca);
+		ArrayList<Product> p=new ArrayList<Product>();
+		p=productDao.getprbyid(ca);
+		
+		ModelAndView mv1 = new ModelAndView("ProductList");
+		mv1.addObject("pro",p);
+		
+		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",l);
+	
+		
+		return mv1;
+		
+	}
+	
+	
 
 /*	adding supplier to db*/
 	@RequestMapping("/addS")
@@ -64,7 +84,6 @@ public class AdminController {
 		i.setPrice(price);
 		i.setStock(stock);
 		i.setShortDesc(shortDesc);
-		productDao.saveProduct(i);
 		
 		Category cc=new Category();
 		cc=categoryDao.getcabyid(ca);
@@ -76,7 +95,9 @@ public class AdminController {
 		i.setSid(su);
 		productDao.saveProduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("index");
+		ModelAndView mv1 = new ModelAndView("add");
+		
+		/*display category dropdown in navbar*/
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cat);
 		return mv1;

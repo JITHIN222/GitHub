@@ -20,8 +20,7 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
-                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
-                           
+                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>                        
                         </ul>
                 </div>
                 <div class="panel-body">

@@ -1,13 +1,16 @@
 package com.niit.e_commercebackend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
 
@@ -39,15 +42,16 @@ private SessionFactory sessionF;
 	session.close();
 	}
 
-	public Product getprbyid(int id){
+	public ArrayList<Product> getprbyid(int id){
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
-		Product su = (Product) s.get(Product.class, id);
-System.out.println(su.getName()+su.getId());
+		Query q=s.createQuery("from Product where cid="+id);
+		ArrayList<Product> cat=(ArrayList<Product>)q.list();
+
         t.commit();
         s.close();
-		return su;
+		return cat;
 	}
 
 
