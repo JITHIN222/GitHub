@@ -9,5 +9,6 @@ import com.niit.e_commercebackend.models.Product;
 @SuppressWarnings("unused")
 public interface ProductDAO {
 	void saveProduct(Product p);
-	public ArrayList<Product> getprbyid(int id);
+	public ArrayList<Product> getprbycatid(int id);
+	public ArrayList<Product> getallProduct();
 }

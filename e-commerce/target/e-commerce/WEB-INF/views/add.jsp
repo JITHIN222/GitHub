@@ -20,23 +20,17 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
-                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>                        
+                            <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
+                            <li><a href="#tab4" data-toggle="tab">SubCategory</a></li>   
+                            <li><a href="#tab5" data-toggle="tab">Editor</a></li>                        
                         </ul>
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1"> 
                         <form action="addP" method="post">
-     <div class="form-group">            
-          <label for="inputName">Id</label>
-            <input type="text" class="form-control" name="n" > 
-        </div>
-        <div class="form-group" >            
-          <label for="inputEmail">Name</label>
-            <input type="text" class="form-control"  name="name" > 
-        </div>
-        <div class="form-group">
-        <label for="inputName">Category</label>
+                         <div class="form-group">
+        <label for="inputName" > Category</label>
         <select name="cat">
   <option value="volvo">Select Category</option>
   <c:forEach var="designatee" items="${categ}">
@@ -44,7 +38,7 @@
                     </c:forEach> 
   
 </select>
-        <label for="inputName">Supplier</label>
+        <label for="inputName" >Supplier</label>
         <select name="sid">
   <option value="volvo">Select Supplier</option>
   <c:forEach var="designatee" items="${catego}">
@@ -53,30 +47,31 @@
   
 </select>
 </div>
-        <div class="form-group">    
-        <label for="inputEmail">Price</label>       
-            <input type="number" class="form-control"  name="price">
+     <div class="form-group">            
+            <input type="text" class="form-control" name="n" placeholder="Enter Id"> 
         </div>
-        <div class="form-group">  
-        <label for="inputEmail">Stock</label>         
-            <input type="number" class="form-control"  name="stock">
+        <div class="form-group" >            
+            <input type="text" class="form-control"  name="name"  placeholder="Enter Name"> 
+        </div>
+        <div class="form-group">          
+            <input type="number" class="form-control"  name="price" placeholder="Enter Price">
+        </div>
+        <div class="form-group">        
+            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock">
        
         </div>
-         <div class="form-group">  
-        <label for="inputEmail">Description</label>         
-            <input type="text" class="form-control"  name="short">
+         <div class="form-group">          
+            <input type="text" class="form-control"  name="short" placeholder="Enter Description">
         </div>
           <button type="submit" class="btn btn-default" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
                              <form action="addC">
      <div class="form-group">            
-          <label for="inputName">Id</label>
-            <input type="number" class="form-control" name="n" > 
+            <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
         <div class="form-group" >            
-          <label for="inputEmail">Name</label>
-            <input type="text" class="form-control"  name="name" > 
+            <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
         </div>
           <button type="submit" class="btn btn-default" href="ad">Save</button>
    </form>
@@ -84,17 +79,42 @@
                         <div class="tab-pane fade" id="tab3">
                              <form action="addS">
      <div class="form-group">            
-          <label for="inputName">Id</label>
-            <input type="number" class="form-control" name="n" > 
+            <input type="number" class="form-control" name="n" placeholder="Enter Id"> 
         </div>
         <div class="form-group" >            
-          <label for="inputEmail">Name</label>
-            <input type="text" class="form-control"  name="name" > 
+            <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
         </div>
           <button type="submit" class="btn btn-default" href="ad">Save</button>
    </form>
                         </div>
+                        <div class="tab-pane fade" id="tab4">
+                             <form action="addSC">
+                             <div class="form-group">
+        <label for="inputName" > Category</label>
+        <select name="cat">
+  <option value="volvo">Select Category</option>
+  <c:forEach var="designatee" items="${categ}">
+<option value="${designatee.id}">${designatee.name}</option>    
+                    </c:forEach> 
+  
+</select>
+</div>
+     <div class="form-group">            
+            <input type="number" class="form-control" name="n" placeholder="Enter Id"> 
+        </div>
+        <div class="form-group" >            
+            <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
+        </div>
+          <button type="submit" class="btn btn-default" href="ad">Save</button>
+   </form>
+                        </div>
+                         <div class="tab-pane fade" id="tab5">
+                       <div><a href="listpro">List of Products</a></div>  
+                       <div><a href="listcat">List of Category</a></div>
+                       <div><a href="listsup">List of Supplier</a></div>     
+                        </div>
                       </div></div></div></div>
+                      
                       <jsp:include page="Footer.jsp"/>
 
 </body>

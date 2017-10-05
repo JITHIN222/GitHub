@@ -87,7 +87,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                            <p class="lead">
-                                ${designate.price}</p>
+                               $ ${designate.price}</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>

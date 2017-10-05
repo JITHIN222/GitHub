@@ -15,7 +15,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
-import com.niit.e_commercebackend.dao.CategoryDaoImpl;
+import com.niit.e_commercebackend.daoImpl.CategoryDaoImpl;
 import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;

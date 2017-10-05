@@ -44,7 +44,7 @@ public class AdminController {
 	public ModelAndView ca(@PathVariable("categoryid") int ca) {
 		System.out.println("in contoller"+ca);
 		ArrayList<Product> p=new ArrayList<Product>();
-		p=productDao.getprbyid(ca);
+		p=productDao.getprbycatid(ca);
 		
 		ModelAndView mv1 = new ModelAndView("ProductList");
 		mv1.addObject("pro",p);
@@ -56,6 +56,22 @@ public class AdminController {
 		return mv1;
 		
 	}
+	
+	/*adding subcategory to db*/
+/*	@RequestMapping("/addSC")
+	public ModelAndView addSC(@RequestParam("name") String name, @RequestParam("cat") String ca) {
+		System.out.println("in controller"+name);
+		
+		Category i=new Category();
+		i.setName(name);
+		Category c=new Category();
+		c=categoryDao.getcabyid(ca);
+		categoryDao.saveCategory(i);
+		ModelAndView mv1 = new ModelAndView("index");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cc);	
+		return mv1;
+	}*/
 	
 	
 
@@ -102,5 +118,40 @@ public class AdminController {
 		mv1.addObject("cate",cat);
 		return mv1;
 	}
+	
+	/*listing product,category & supplier*/
+	@RequestMapping("/listpro")
+	public ModelAndView listpro(){
+		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
+		ModelAndView mv = new ModelAndView("list");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		mv.addObject("listp",p);
+		return mv;
+		
+	}
+	
+	@RequestMapping("/listcat")
+	public ModelAndView listcat(){
+		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv = new ModelAndView("list");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		mv.addObject("listc",p);
+		return mv;
+		
+	}
+	
+	@RequestMapping("/listsup")
+	public ModelAndView listsup(){
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv = new ModelAndView("list");
+		ArrayList<Supplier> p=(ArrayList<Supplier>)supplierDao.getallSupplier();
+		mv.addObject("cate",cat);
+		mv.addObject("lists",p);
+		return mv;
+		
+	}
+	
 	
 }
