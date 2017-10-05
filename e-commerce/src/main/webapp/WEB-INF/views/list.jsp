@@ -17,7 +17,7 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:10%">Id</th>
+						    <th style="width:5%">Id</th>
 							<th style="width:20%">Product</th>
 	             			<th style="width:10%">Price</th>
 							<th style="width:10%">Action</th>
@@ -32,7 +32,7 @@
 							<td >$ ${designate.price}</td>
 							<td >
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+								<a href="${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					

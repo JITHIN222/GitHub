@@ -20,18 +20,18 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active" >  
-                       <img src="images\3.jpg" alt="page1" style="width:100%; height:600px;"> 
+                       <img src="resources/images/3.jpg" alt="page1" style="width:100%; height:600px;"> 
                        <div class="carousel-caption">
                         <h1 class="w3-animate-fading w3-padding-64 ">image 1!</h1>       
                 </div></div>
       <div class="item">
-        <img src="\resources\images\1.jpg" alt="page2" style="width:100%; height:600px;">
+        <img src="resources/images/2.jpg" alt="page2" style="width:100%; height:600px;">
         <div class="carousel-caption">
                         <h1 class="w3-animate-fading w3-padding-16">image 2 dgdfgsgsrgsgsrgzdhszgzsrgS!</h1>       
                 </div>
       </div>
       <div class="item">
-        <img src="images\2.jpg" alt="page3"  style="width:100%; height:600px;">
+        <img src="resources/images/1.jpg" alt="page3"  style="width:100%; height:600px;">
         <div class="carousel-caption">
                         <h1 class="w3-animate-bottom
                          w3-padding-64 text-success">image 3!</h1>       
@@ -46,7 +46,7 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div></nav>
+  </div>
   <jsp:include page="Footer.jsp"/>
 </body>
 </html>

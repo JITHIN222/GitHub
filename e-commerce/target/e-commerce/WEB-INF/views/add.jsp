@@ -15,7 +15,7 @@
 <body style="background-color:black;">
 <jsp:include page="Header.jsp"/>
 <div class="container">
-            <div class="panel with-nav-tabs" style="background-color: black;">
+            <div class="panel with-nav-tabs" >
                 <div class="panel-heading">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
@@ -63,7 +63,7 @@
          <div class="form-group">          
             <input type="text" class="form-control"  name="short" placeholder="Enter Description">
         </div>
-          <button type="submit" class="btn btn-default" href="ad">Save</button>
+          <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
                              <form action="addC">
@@ -73,7 +73,7 @@
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
         </div>
-          <button type="submit" class="btn btn-default" href="ad">Save</button>
+          <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
                         <div class="tab-pane fade" id="tab3">
@@ -84,7 +84,7 @@
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
         </div>
-          <button type="submit" class="btn btn-default" href="ad">Save</button>
+          <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
                         <div class="tab-pane fade" id="tab4">
@@ -105,14 +105,15 @@
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
         </div>
-          <button type="submit" class="btn btn-default" href="ad">Save</button>
+          <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
                          <div class="tab-pane fade" id="tab5">
-                       <div><a href="listpro">List of Products</a></div>  
-                       <div><a href="listcat">List of Category</a></div>
-                       <div><a href="listsup">List of Supplier</a></div>     
-                        </div>
+                         <ul>
+                       <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  
+                       <li><div><a href="listcat"><h5 style="color:black;">List of Category</h5></a></div></li>
+                       <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>    
+                        </ul></div>
                       </div></div></div></div>
                       
                       <jsp:include page="Footer.jsp"/>

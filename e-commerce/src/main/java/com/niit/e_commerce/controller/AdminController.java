@@ -119,6 +119,17 @@ public class AdminController {
 		return mv1;
 	}
 	
+	/*deleting the product*/
+	@RequestMapping("/{prid}")
+	public ModelAndView delpro(@PathVariable("prid") int ca){
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv= new ModelAndView("list");
+		mv.addObject("cate",cat);
+		productDao.deleteproduct(ca);
+		return mv;
+	}
+	
+	
 	/*listing product,category & supplier*/
 	@RequestMapping("/listpro")
 	public ModelAndView listpro(){

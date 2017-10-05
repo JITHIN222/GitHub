@@ -20,7 +20,7 @@
   box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0.7);
 }
 #f3 {
-  padding: 20px 0;
+  padding: 9px 0;
   position: relative;
   margin-bottom: 0;
 }
@@ -46,7 +46,7 @@
   display: block;
 }
 #navbar, #nav {
-     opacity: 0.5;
+     opacity: 0.8;
 }
 .right{
 text-align: right;
@@ -67,7 +67,7 @@ text-align: right;
 }
 </style>
 </head>
-<body style="background-color:powderblue;">
+<body background="resources/images/4.jpg">
 <jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>
@@ -75,16 +75,16 @@ text-align: right;
     <form class="slideDown" id="f1">
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3"> 
-        <label  for="inputEmail">Email</label>            
-            <input type="text" id="f4" class="form-control" >
+        <span style="font-weight:900">Email/Username</span>            
+            <input type="text" id="f4" class="form-control" required >
         </div>
         <div class="form-group" id="f3">           
-        <label for="inputEmail">Password</label>
+        <span style="font-weight:900">Password</span>
             <input type="password" class="form-control" id="f4"  required>
         </div>
-         <div class="checkbox">
+       <!--   <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
-  </div>
+  </div> -->
         <button type="submit" class="btn btn-primary btn-block" id="b1">Login</button>
         <p align="center">Forgot password? <a>click here</a></p>
         <p align="center">new user? <a href="up">create new account</a></p>

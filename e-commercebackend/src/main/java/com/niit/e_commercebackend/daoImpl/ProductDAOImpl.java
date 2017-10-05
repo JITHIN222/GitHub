@@ -68,6 +68,17 @@ private SessionFactory sessionF;
 		
 			return pr;		
 	}
-
+	
+	public Product deleteproduct(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Product p = (Product) s.get(Product.class, id);
+		s.delete(p);
+        t.commit();
+        s.close();
+        return p;
+		
+	}
 
 }
