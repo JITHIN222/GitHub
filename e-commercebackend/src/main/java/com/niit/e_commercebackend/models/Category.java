@@ -30,7 +30,7 @@ public class Category implements Serializable {
     private String name;
     
   
-    @OneToMany(targetEntity=Product.class, mappedBy="cid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @OneToMany(targetEntity=Product.class, mappedBy="cid", fetch=FetchType.EAGER)
     private Set<Product> prod;
    
 	public Set<Product> getProd() {

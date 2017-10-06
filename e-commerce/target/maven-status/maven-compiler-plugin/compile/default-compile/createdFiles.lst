@@ -1,2 +1,3 @@
 com\niit\e_commerce\controller\UserController.class
+com\niit\e_commerce\controller\AdminController.class
 com\niit\e_commerce\controller\HelloworldController.class

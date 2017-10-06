@@ -120,14 +120,39 @@ public class AdminController {
 	}
 	
 	/*deleting the product*/
-	@RequestMapping("/{prid}")
-	public ModelAndView delpro(@PathVariable("prid") int ca){
+	@RequestMapping("/deletep")
+	public ModelAndView delpro(@RequestParam("prid") int ca){
+		System.err.println("reaching"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("list");
+		ModelAndView mv= new ModelAndView("add");
 		mv.addObject("cate",cat);
 		productDao.deleteproduct(ca);
 		return mv;
 	}
+	
+	/*deleting the category*/
+	@RequestMapping("/deletec")
+	public ModelAndView delcat(@RequestParam("catid") int ca){
+		System.err.println("reaching"+ca);
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv= new ModelAndView("add");
+		mv.addObject("cate",cat);
+		categoryDao.deletecategory(ca);
+		return mv;
+	}
+	
+	/*deleting the supplier*/
+	@RequestMapping("/deletes")
+	public ModelAndView delsup(@RequestParam("supid") int ca){
+		System.err.println("reaching"+ca);
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv= new ModelAndView("add");
+		mv.addObject("cate",cat);
+		supplierDao.deletesupplier(ca);
+		return mv;
+	}
+	
+
 	
 	
 	/*listing product,category & supplier*/

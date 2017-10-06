@@ -30,7 +30,7 @@ public class Supplier implements Serializable {
     private String name;
 	
 
-	   @OneToMany(targetEntity=Product.class, mappedBy="sid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	   @OneToMany(targetEntity=Product.class, mappedBy="sid", fetch=FetchType.EAGER)
 	   private Set<Product> prod;
 	    
 	public int getId() {

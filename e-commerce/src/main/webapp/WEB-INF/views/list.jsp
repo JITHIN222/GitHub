@@ -32,7 +32,7 @@
 							<td >$ ${designate.price}</td>
 							<td >
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<a href="${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
+								<a href="deletep?prid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					
@@ -58,7 +58,7 @@
 							<td><h4>${designate.name}</h4></td>
 							<td >
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+								<a href="deletec?catid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					
@@ -84,7 +84,7 @@
 							<td><h4>${designate.name}</h4></td>
 							<td >
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+								<a href="deletes?supid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					

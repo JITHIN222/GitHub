@@ -69,7 +69,7 @@ private SessionFactory sessionF;
 			return pr;		
 	}
 	
-	public Product deleteproduct(int id){
+	public void deleteproduct(int id){
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
@@ -77,7 +77,7 @@ private SessionFactory sessionF;
 		s.delete(p);
         t.commit();
         s.close();
-        return p;
+        
 		
 	}
 

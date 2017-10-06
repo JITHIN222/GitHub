@@ -10,4 +10,5 @@ public interface CategoryDAO {
 	public void saveCategory(Category c);
 	public ArrayList<Category> getallCategories();
 	public Category getcabyid(int id);
+	public void deletecategory(int id);
 }

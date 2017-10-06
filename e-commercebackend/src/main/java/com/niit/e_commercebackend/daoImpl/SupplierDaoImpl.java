@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.e_commercebackend.dao.SupplierDao;
 import com.niit.e_commercebackend.models.Category;
+import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
 
 @SuppressWarnings("unused")
@@ -57,6 +58,18 @@ System.out.println(su.getName()+su.getId());
         t.commit();
         s.close();
 		return su;
+	}
+	
+	public void deletesupplier(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Supplier p = (Supplier) s.get(Supplier.class, id);
+		s.delete(p);
+        t.commit();
+        s.close();
+        
+		
 	}
 
 }

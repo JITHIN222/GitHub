@@ -11,5 +11,5 @@ public interface ProductDAO {
 	public void saveProduct(Product p);
 	public ArrayList<Product> getprbycatid(int id);
 	public ArrayList<Product> getallProduct();
-	public Product deleteproduct(int id); 
+	public void deleteproduct(int id); 
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
 import com.niit.e_commercebackend.models.Category;
+import com.niit.e_commercebackend.models.Product;
 
 @Repository
 public class CategoryDaoImpl implements CategoryDAO{
@@ -53,10 +54,6 @@ public class CategoryDaoImpl implements CategoryDAO{
 			return cat;		
 	}
 	
-	public void deletecat(){
-		
-	}
-	
 	public Category getcabyid(int id){
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
@@ -71,6 +68,17 @@ System.out.println(ca.getName()+ca.getId());
 		return ca;
 	}
 
+	public void deletecategory(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Category p = (Category) s.get(Category.class, id);
+		s.delete(p);
+        t.commit();
+        s.close();
+        
+		
+	}
 	
 	
 }
