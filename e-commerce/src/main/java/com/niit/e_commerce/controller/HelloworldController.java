@@ -72,7 +72,6 @@ public class HelloworldController {
 		ModelAndView mv = new ModelAndView("add");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
-		/*System.out.println("product category");*/
 		mv.addObject("categ",cc);
 		mv.addObject("catego",ss);
 		mv.addObject("cate",cc);

@@ -67,7 +67,7 @@ text-align: right;
 }
 </style>
 </head>
-<body background="resources/images/4.jpg">
+<body background="resources/images/lo.png">
 <jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>

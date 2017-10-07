@@ -37,11 +37,11 @@ public class Product implements Serializable {
     private int stock;
 
 	@ManyToOne
-    @JoinColumn(name="C_ID")
+    @JoinColumn(name="C_ID",updatable=true,insertable=true,nullable=false)
     Category cid;
     
     @ManyToOne
-    @JoinColumn(name="S_ID")
+    @JoinColumn(name="S_ID",updatable=true,insertable=true,nullable=false)
     Supplier sid;
     
 	public Category getCid() {

@@ -80,5 +80,28 @@ private SessionFactory sessionF;
         
 		
 	}
+	
+	public void updateproduct(Product id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.update(id);
+        t.commit();
+        s.close();
+	}
+	
+	public Product getprbyid(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Product ca = (Product) s.get(Product.class, id);
+System.out.println(ca.getName()+ca.getId());
+		
+        t.commit();
+        
+        s.close();
+		
+		return ca;
+	}
 
 }

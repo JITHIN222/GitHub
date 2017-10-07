@@ -29,8 +29,6 @@ public class AdminController {
 	*//*adding category to db*/
 	@RequestMapping("/addC")
 	public ModelAndView addC(@RequestParam("name") String name) {
-		System.out.println("in controller"+name);
-		
 		Category i=new Category();
 		i.setName(name);
 		categoryDao.saveCategory(i);
@@ -42,7 +40,6 @@ public class AdminController {
 	
 	@RequestMapping("/{categoryid}")
 	public ModelAndView ca(@PathVariable("categoryid") int ca) {
-		System.out.println("in contoller"+ca);
 		ArrayList<Product> p=new ArrayList<Product>();
 		p=productDao.getprbycatid(ca);
 		
@@ -78,8 +75,6 @@ public class AdminController {
 /*	adding supplier to db*/
 	@RequestMapping("/addS")
 	public ModelAndView addS(@RequestParam("name") String name) {
-		System.out.println("in controller");
-		System.out.println(name);
 		Supplier i=new Supplier();
 		i.setName(name);
 		supplierDao.saveSupplier(i);
@@ -90,50 +85,24 @@ public class AdminController {
 		return mv1;
 	}
 	
-	/*adding product to db*/
-	@RequestMapping("/addP")
-	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock, @RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
-		System.out.println("in controller");
-		System.out.println(name);
-		Product i=new Product();
-		i.setName(name);
-		i.setPrice(price);
-		i.setStock(stock);
-		i.setShortDesc(shortDesc);
-		
-		Category cc=new Category();
-		cc=categoryDao.getcabyid(ca);
-		
-		Supplier su=new Supplier();
-		su=supplierDao.getssbyid(ss);
-		
-		i.setCid(cc);
-		i.setSid(su);
-		productDao.saveProduct(i);
-		
-		ModelAndView mv1 = new ModelAndView("add");
-		
-		/*display category dropdown in navbar*/
+
+	/*deleting the category*/
+	@RequestMapping("/updatep")
+	public ModelAndView uppr(@RequestParam("prid") int ca){
+		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
-		return mv1;
-	}
-	
-	/*deleting the product*/
-	@RequestMapping("/deletep")
-	public ModelAndView delpro(@RequestParam("prid") int ca){
-		System.err.println("reaching"+ca);
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("add");
+		ModelAndView mv= new ModelAndView("update");
 		mv.addObject("cate",cat);
-		productDao.deleteproduct(ca);
+		Product p= new Product();
+		p=productDao.getprbyid(ca);
+		mv.addObject("pro",p);
+		categoryDao.deletecategory(ca);
 		return mv;
 	}
 	
 	/*deleting the category*/
 	@RequestMapping("/deletec")
 	public ModelAndView delcat(@RequestParam("catid") int ca){
-		System.err.println("reaching"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
 		mv.addObject("cate",cat);
@@ -144,15 +113,12 @@ public class AdminController {
 	/*deleting the supplier*/
 	@RequestMapping("/deletes")
 	public ModelAndView delsup(@RequestParam("supid") int ca){
-		System.err.println("reaching"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
 		mv.addObject("cate",cat);
 		supplierDao.deletesupplier(ca);
 		return mv;
 	}
-	
-
 	
 	
 	/*listing product,category & supplier*/

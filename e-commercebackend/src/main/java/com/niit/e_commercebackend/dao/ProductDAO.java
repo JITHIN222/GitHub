@@ -12,4 +12,6 @@ public interface ProductDAO {
 	public ArrayList<Product> getprbycatid(int id);
 	public ArrayList<Product> getallProduct();
 	public void deleteproduct(int id); 
+	public void updateproduct(Product id);
+	public Product getprbyid(int id);
 }
