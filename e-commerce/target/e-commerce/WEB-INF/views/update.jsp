@@ -14,7 +14,7 @@
 </head>
 <body style="background-color:black;">
 <jsp:include page="Header.jsp"/>
-<div class="container">
+                      <div class="container">
             <div class="panel with-nav-tabs" >
                 <div class="panel-heading">
                         <ul class="nav nav-tabs">
@@ -27,49 +27,47 @@
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
-                    <c:forEach var="designate" items="${pro}">
+                    
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="upP" method="post">
+                        <form action="addP" method="post">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
   <option value="volvo">Select Category</option>
-  <c:forEach var="designatee" items="${categ}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="c" items="${categ}">
+<option value="${c.id}">${c.name}</option>    
                     </c:forEach> 
   
 </select>
         <label for="inputName" >Supplier</label>
         <select name="sid">
   <option value="volvo">Select Supplier</option>
-  <c:forEach var="designatee" items="${catego}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="s" items="${sup}">
+<option value="${s.id}">${s.name}</option>    
                     </c:forEach> 
   
 </select>
 </div>
      <div class="form-group">            
-            <input type="text" class="form-control" name="n" placeholder="Enter Id"> 
+            <input type="text" class="form-control" name="n" value="${pr.id}"> 
         </div>
         <div class="form-group" >            
-            <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${designate.name}"> 
+            <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="name"> 
         </div>
         <div class="form-group">          
-            <input type="number" class="form-control"  name="price" placeholder="Enter Price" value="${designate.price}">
+            <input type="number" class="form-control"  name="price" placeholder="Enter Price" value="price">
         </div>
         <div class="form-group">        
-            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${designate.stock}">
+            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="stock">
        
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="${designate.shortDesc}">
+            <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="shortDesc">
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
-   </form> </div></c:forEach>
-   
-   
+   </form> </div>
                         <div class="tab-pane fade" id="tab2">
-                             <form action="upC">
+                             <form action="addC">
      <div class="form-group">            
             <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
@@ -79,11 +77,8 @@
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
-                        
-                        
-                        
                         <div class="tab-pane fade" id="tab3">
-                             <form action="upS">
+                             <form action="addS">
      <div class="form-group">            
             <input type="number" class="form-control" name="n" placeholder="Enter Id"> 
         </div>
@@ -93,8 +88,6 @@
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
-                        
-                        
                         <div class="tab-pane fade" id="tab4">
                              <form action="addSC">
                              <div class="form-group">
@@ -116,8 +109,6 @@
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
-                        
-                        
                          <div class="tab-pane fade" id="tab5">
                          <ul>
                        <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  
@@ -125,7 +116,6 @@
                        <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>    
                         </ul></div>
                       </div></div></div></div>
-                      
                       <jsp:include page="Footer.jsp"/>
 
 </body>

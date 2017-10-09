@@ -57,7 +57,7 @@
 						<td >${ designate.id}</td>
 							<td><h4>${designate.name}</h4></td>
 							<td >
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<a href="updatec?catid=${ designate.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
 								<a href="deletec?catid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
@@ -83,7 +83,7 @@
 						<td >${ designate.id}</td>
 							<td><h4>${designate.name}</h4></td>
 							<td >
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<a href="updates?supid=${ designate.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
 								<a href="deletes?supid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>

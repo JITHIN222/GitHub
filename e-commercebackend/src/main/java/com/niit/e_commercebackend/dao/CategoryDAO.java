@@ -11,4 +11,5 @@ public interface CategoryDAO {
 	public ArrayList<Category> getallCategories();
 	public Category getcabyid(int id);
 	public void deletecategory(int id);
+	public void updatecategory(Category i);
 }

@@ -54,6 +54,23 @@ public class ProductController {
 		return mv1;
 	}
 	
+	/*redirecting to product update page*/
+	@RequestMapping("/updatep")
+	public ModelAndView uppr(@RequestParam("prid") int ca){
+		System.err.println("reachinginnnn"+ca);
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv= new ModelAndView("Productupdate");
+		mv.addObject("cate",cat);  /*dropdown category at header*/
+		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
+		mv.addObject("sup",ss);     /*dropdown supplier inside product update*/
+		mv.addObject("categ",cat); /*dropdown category inside product update*/
+		Product p= new Product();
+		p=productDao.getprbyid(ca);
+		System.out.println(p);
+		mv.addObject("pr",p);   /*product details obtained using id*/
+		return mv;
+	}
+	
 	/*deleting the product*/
 	@RequestMapping("/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
@@ -65,7 +82,7 @@ public class ProductController {
 		return mv;
 	}
 	
-	/*adding product to db*/
+	/*updating product to db*/
 	@RequestMapping("/upP")
 	public ModelAndView upP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock, @RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		System.out.println("reaching innnnn"+name);

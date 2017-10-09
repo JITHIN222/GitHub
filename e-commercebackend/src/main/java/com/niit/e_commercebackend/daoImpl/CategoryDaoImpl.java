@@ -80,5 +80,14 @@ System.out.println(ca.getName()+ca.getId());
 		
 	}
 	
+	public void updatecategory(Category id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.update(id);
+        t.commit();
+        s.close();
+	}
+	
 	
 }

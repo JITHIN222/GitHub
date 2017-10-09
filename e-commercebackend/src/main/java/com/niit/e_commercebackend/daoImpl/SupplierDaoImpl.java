@@ -71,5 +71,14 @@ System.out.println(su.getName()+su.getId());
         
 		
 	}
+	
+	public void updatesupplier(Supplier id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.update(id);
+        t.commit();
+        s.close();
+	}
 
 }

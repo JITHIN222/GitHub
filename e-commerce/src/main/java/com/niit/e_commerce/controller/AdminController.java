@@ -86,17 +86,17 @@ public class AdminController {
 	}
 	
 
-	/*deleting the category*/
-	@RequestMapping("/updatep")
-	public ModelAndView uppr(@RequestParam("prid") int ca){
+	/*updating the category*/
+	@RequestMapping("/updatec")
+	public ModelAndView upca(@RequestParam("catid") int ca){
 		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("update");
+		ModelAndView mv= new ModelAndView("Categoryupdate");
 		mv.addObject("cate",cat);
-		Product p= new Product();
-		p=productDao.getprbyid(ca);
-		mv.addObject("pro",p);
-		categoryDao.deletecategory(ca);
+		Category c= new Category();
+		c=categoryDao.getcabyid(ca);
+		System.out.println(c);
+		mv.addObject("cat",c);
 		return mv;
 	}
 	
@@ -153,6 +153,35 @@ public class AdminController {
 		mv.addObject("lists",p);
 		return mv;
 		
+	}
+	
+	/*updating category to db*/
+	@RequestMapping("/upC")
+	public ModelAndView upC(@RequestParam("name") String name) {
+		System.out.println("reaching innnnn"+name);
+		Category i=new Category();
+		i.setName(name);
+		categoryDao.updatecategory(i);
+		
+		ModelAndView mv1 = new ModelAndView("add");
+		
+		/*display category dropdown in navbar*/
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cat);
+		return mv1;
+	}
+	
+	/*updating the supplier*/
+	@RequestMapping("/updates")
+	public ModelAndView upS(@RequestParam("supid") int ca){
+		System.err.println("reachinginnnn"+ca);
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		ModelAndView mv= new ModelAndView("Supplierupdate");
+		mv.addObject("cate",cat);
+		Supplier c= new Supplier();
+		c=supplierDao.getssbyid(ca);
+		mv.addObject("sup",c);
+		return mv;
 	}
 	
 	
