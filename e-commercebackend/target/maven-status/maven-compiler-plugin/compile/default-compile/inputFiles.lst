@@ -1,4 +1,5 @@
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\Subcategory.java
+C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\SubcategoryDAO.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\Category.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\App.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\CategoryDaoImpl.java
@@ -12,6 +13,7 @@ C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_comme
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\CartDao.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\UserDao.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\config\Hibernate_config.java
+C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\SubcategoryDaoImpl.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\User.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\ProductDAO.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\UserDaoImpl.java

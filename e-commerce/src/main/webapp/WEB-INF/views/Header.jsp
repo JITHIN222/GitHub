@@ -19,7 +19,6 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="cat">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach var="designatee" items="${cate}">
-
                        <li><a href="${designatee.id}">${designatee.name}</a></li>    
                     </c:forEach>  
         </ul>

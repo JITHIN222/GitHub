@@ -15,13 +15,14 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.e_commercebackend.dao.CategoryDAO;
-import com.niit.e_commercebackend.daoImpl.CategoryDaoImpl;
+
 import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
 import com.niit.e_commercebackend.models.User;
+import com.niit.e_commercebackend.models.Subcategory;
+
 
 @Configuration
 @ComponentScan("com.niit.e_commercebackend")
@@ -43,6 +44,7 @@ public class Hibernate_config
 	        sessionBuilder.addAnnotatedClass(Cart.class); 
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Category.class);
+	        sessionBuilder.addAnnotatedClass(Subcategory.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

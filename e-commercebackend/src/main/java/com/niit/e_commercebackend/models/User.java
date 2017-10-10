@@ -3,12 +3,15 @@ package com.niit.e_commercebackend.models;
 
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -31,8 +34,18 @@ public class User implements Serializable {
 
 	 @Column(name = "PASSWORd", nullable = false)
 	    private String pwd;
-
 	 
+	 @OneToMany(targetEntity=Cart.class, mappedBy="uid", fetch=FetchType.EAGER)
+	    private Set<Cart> cart;
+	 
+	public Set<Cart> getCart() {
+		return cart;
+	}
+
+	public void setCart(Set<Cart> cart) {
+		this.cart = cart;
+	}
+
 	public String getEmail() {
 		return email;
 	}

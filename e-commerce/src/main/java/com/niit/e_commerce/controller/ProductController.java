@@ -1,11 +1,15 @@
 package com.niit.e_commerce.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
@@ -29,7 +33,8 @@ public class ProductController {
 	
 	/*adding product to db*/
 	@RequestMapping("/addP")
-	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock, @RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
+	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
+			@RequestParam("img") MultipartFile file,@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		Product i=new Product();
 		i.setName(name);
 		i.setPrice(price);
@@ -42,8 +47,20 @@ public class ProductController {
 		Supplier su=new Supplier();
 		su=supplierDao.getssbyid(ss);
 		
+		
+		
 		i.setCid(cc);
 		i.setSid(su);
+		String img=file.getOriginalFilename();
+	    i.setImg(img);
+		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
+		 try {
+				byte imagebyte[] = file.getBytes();
+				BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filepath));
+				fos.write(imagebyte);
+				fos.close();
+				} catch (IOException e) {
+				e.printStackTrace();}
 		productDao.saveProduct(i);
 		
 		ModelAndView mv1 = new ModelAndView("add");
@@ -108,6 +125,18 @@ public class ProductController {
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cat);
 		return mv1;
+	}
+	
+	/*listing product*/
+	@RequestMapping("/listpro")
+	public ModelAndView listpro(){
+		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
+		ModelAndView mv = new ModelAndView("listpro");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		mv.addObject("listp",p);
+		return mv;
+		
 	}
 
 }

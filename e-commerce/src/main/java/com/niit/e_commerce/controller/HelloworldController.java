@@ -37,6 +37,7 @@ public class HelloworldController {
 	
 		return mv;
 	}
+	
 	@RequestMapping("/in")
 	public ModelAndView signin()
 	{
@@ -65,19 +66,7 @@ public class HelloworldController {
 		
 	}
 	
-	/*admin page loading*/
-	@RequestMapping("/ad")
-	public ModelAndView ad()
-	{
-		ModelAndView mv = new ModelAndView("add");
-		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
-		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
-		mv.addObject("categ",cc);
-		mv.addObject("catego",ss);
-		mv.addObject("cate",cc);
-		return mv;
-		
-	}
+	
 	@RequestMapping("/trial")
 	public ModelAndView car()
 	{

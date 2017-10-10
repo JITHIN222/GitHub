@@ -36,6 +36,17 @@ public class Product implements Serializable {
     @Column(name = "STOCK", nullable = false)
     private int stock;
 
+    @Column(name = "IMG", nullable = false)
+    private String img;
+    
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	@ManyToOne
     @JoinColumn(name="C_ID",updatable=true,insertable=true,nullable=false)
     Category cid;
@@ -44,6 +55,18 @@ public class Product implements Serializable {
     @JoinColumn(name="S_ID",updatable=true,insertable=true,nullable=false)
     Supplier sid;
     
+   /* @ManyToOne
+    @JoinColumn(name="SC_ID",updatable=true,insertable=true,nullable=false)
+    Subcategory scid;
+    
+	public Subcategory getScid() {
+		return scid;
+	}
+
+	public void setScid(Subcategory scid) {
+		this.scid = scid;
+	}*/
+
 	public Category getCid() {
 		return cid;
 	}

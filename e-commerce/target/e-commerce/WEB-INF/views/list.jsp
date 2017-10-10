@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <div class="container">
-<c:forEach var="designate" items="${listp}">
+
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -23,6 +23,9 @@
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
+					<c:if test="${num eq 1 }">
+					<c:forEach var="designate" items="${listp}">
+					<
 					<tbody>
 			
 						<tr>
@@ -37,12 +40,13 @@
 						</tr>
 					
 					</tbody>
-					
+					</c:forEach>
+					</c:if>
 				</table>
-				 </c:forEach>
+				 
 </div>
 <div class="container">
-<c:forEach var="designate" items="${listc}">
+
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -51,6 +55,7 @@
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
+					<c:forEach var="designate" items="${listc}">
 					<tbody>
 			
 						<tr>
@@ -62,13 +67,12 @@
 							</td>
 						</tr>
 					
-					</tbody>
+					</tbody></c:forEach>
 					
 				</table>
-				 </c:forEach>
+				
 </div>
 <div class="container">
-<c:forEach var="designate" items="${lists}">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -77,6 +81,7 @@
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
+					<c:forEach var="designate" items="${lists}">
 					<tbody>
 			
 						<tr>
@@ -89,9 +94,9 @@
 						</tr>
 					
 					</tbody>
-					
+					</c:forEach>
 				</table>
-				 </c:forEach>
+				 
 </div>
 <jsp:include page="Footer.jsp"/>
 </body>

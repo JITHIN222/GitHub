@@ -28,7 +28,7 @@
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="addP" method="post">
+                        <form action="addP" method="post" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
@@ -63,6 +63,9 @@
          <div class="form-group">          
             <input type="text" class="form-control"  name="short" placeholder="Enter Description">
         </div>
+<div class="form-group">                   
+           <input type="file" name="img" required/>
+        </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
@@ -89,21 +92,11 @@
                         </div>
                         <div class="tab-pane fade" id="tab4">
                              <form action="addSC">
-                             <div class="form-group">
-        <label for="inputName" > Category</label>
-        <select name="cat">
-  <option value="volvo">Select Category</option>
-  <c:forEach var="designatee" items="${categ}">
-<option value="${designatee.id}">${designatee.name}</option>    
-                    </c:forEach> 
-  
-</select>
-</div>
      <div class="form-group">            
-            <input type="number" class="form-control" name="n" placeholder="Enter Id"> 
+            <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
         <div class="form-group" >            
-            <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
+            <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>

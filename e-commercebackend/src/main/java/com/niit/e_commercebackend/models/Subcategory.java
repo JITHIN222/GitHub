@@ -10,13 +10,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 @Entity
 @Component
-@Table(name="CATEGORY")
+@Table(name="SUBCATEGORY")
 public class Subcategory implements Serializable {
 
 
@@ -30,23 +32,23 @@ public class Subcategory implements Serializable {
     private String name;
     
   
-    @OneToMany(targetEntity=Product.class, mappedBy="cid", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+   /* @OneToMany(targetEntity=Product.class, mappedBy="scid", fetch=FetchType.EAGER)
     private Set<Product> prod;
-   
-	public Set<Product> getProd() {
-	return prod;
-}
-	
-public void setProd(Set<Product> prod) {
-	this.prod = prod;
-}
 
+	public Set<Product> getProd() {
+		return prod;
+	}
+
+	public void setProd(Set<Product> prod) {
+		this.prod = prod;
+	}
+*/
 	public int getId() {
 		return id;
 	}
 	
-	public void setId(int id2) {
-		this.id = id2;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
