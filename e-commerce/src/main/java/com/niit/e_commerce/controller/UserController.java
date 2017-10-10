@@ -41,6 +41,7 @@ public class UserController {
 		i.setName(name);
 		i.setEmail(email);
 		i.setPwd(pwd);
+		i.setRole("ROLE_USER");
 		UserDao.saveProduct(i);
 		ModelAndView mv = new ModelAndView("index");
 	

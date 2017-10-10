@@ -72,15 +72,15 @@ text-align: right;
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
-    <form class="slideDown" id="f1">
+    <form class="slideDown" id="f1" action="j_spring_security_check">
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3"> 
         <span style="font-weight:900">Email/Username</span>            
-            <input type="text" id="f4" class="form-control" required >
+            <input type="text" id="f4" class="form-control" name="j_username" required >
         </div>
         <div class="form-group" id="f3">           
         <span style="font-weight:900">Password</span>
-            <input type="password" class="form-control" id="f4"  required>
+            <input type="password" class="form-control" id="f4" name="j_password"  required>
         </div>
        <!--   <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>

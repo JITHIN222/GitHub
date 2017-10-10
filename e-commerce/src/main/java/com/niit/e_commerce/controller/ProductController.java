@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,7 +35,9 @@ public class ProductController {
 	/*adding product to db*/
 	@RequestMapping("/addP")
 	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
-			@RequestParam("img") MultipartFile file,@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
+			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
+			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
+			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		Product i=new Product();
 		i.setName(name);
 		i.setPrice(price);
@@ -43,14 +46,11 @@ public class ProductController {
 		
 		Category cc=new Category();
 		cc=categoryDao.getcabyid(ca);
-		
 		Supplier su=new Supplier();
 		su=supplierDao.getssbyid(ss);
-		
-		
-		
 		i.setCid(cc);
 		i.setSid(su);
+		
 		String img=file.getOriginalFilename();
 	    i.setImg(img);
 		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
@@ -61,6 +61,40 @@ public class ProductController {
 				fos.close();
 				} catch (IOException e) {
 				e.printStackTrace();}
+		 
+		 String img1=file1.getOriginalFilename();
+		    i.setImg1(img1);
+			 String filepath1 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file1.getOriginalFilename();
+			 try {
+					byte imagebyte[] = file1.getBytes();
+					BufferedOutputStream fos1 = new BufferedOutputStream(new FileOutputStream(filepath1));
+					fos1.write(imagebyte);
+					fos1.close();
+					} catch (IOException e) {
+					e.printStackTrace();}
+			 
+			 String img2=file2.getOriginalFilename();
+			    i.setImg2(img2);
+				 String filepath2 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file2.getOriginalFilename();
+				 try {
+						byte imagebyte[] = file2.getBytes();
+						BufferedOutputStream fos2 = new BufferedOutputStream(new FileOutputStream(filepath2));
+						fos2.write(imagebyte);
+						fos2.close();
+						} catch (IOException e) {
+						e.printStackTrace();}
+				 
+				 String img3=file3.getOriginalFilename();
+				    i.setImg3(img3);
+					 String filepath3 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file3.getOriginalFilename();
+					 try {
+							byte imagebyte[] = file3.getBytes();
+							BufferedOutputStream fos3 = new BufferedOutputStream(new FileOutputStream(filepath3));
+							fos3.write(imagebyte);
+							fos3.close();
+							} catch (IOException e) {
+							e.printStackTrace();}
+					 
 		productDao.saveProduct(i);
 		
 		ModelAndView mv1 = new ModelAndView("add");
@@ -135,6 +169,19 @@ public class ProductController {
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cat);
 		mv.addObject("listp",p);
+		return mv;
+		
+	}
+	
+	/*listing product*/
+	@RequestMapping("/product")
+	public ModelAndView product(@RequestParam("id") int ca){
+		Product p=new Product();
+		p=productDao.getprbyid(ca);
+		ModelAndView mv = new ModelAndView("Product");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		mv.addObject("pr",p);
 		return mv;
 		
 	}

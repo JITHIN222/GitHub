@@ -37,11 +37,11 @@ public class SupplierController {
 	}
 	
 	
-	
+	/*listing all suppliers*/
 	@RequestMapping("/listsup")
 	public ModelAndView listsup(){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv = new ModelAndView("list");
+		ModelAndView mv = new ModelAndView("listsup");
 		ArrayList<Supplier> p=(ArrayList<Supplier>)supplierDao.getallSupplier();
 		mv.addObject("cate",cat);
 		mv.addObject("lists",p);

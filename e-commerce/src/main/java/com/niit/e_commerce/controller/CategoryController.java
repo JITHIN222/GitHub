@@ -99,7 +99,7 @@ public class CategoryController {
 	@RequestMapping("/listcat")
 	public ModelAndView listcat(){
 		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv = new ModelAndView("list");
+		ModelAndView mv = new ModelAndView("listcat");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cat);
 		mv.addObject("listc",p);

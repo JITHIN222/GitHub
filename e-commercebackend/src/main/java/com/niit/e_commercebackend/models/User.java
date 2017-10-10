@@ -35,7 +35,19 @@ public class User implements Serializable {
 	 @Column(name = "PASSWORd", nullable = false)
 	    private String pwd;
 	 
-	 @OneToMany(targetEntity=Cart.class, mappedBy="uid", fetch=FetchType.EAGER)
+	 @Column(name = "ROLE", nullable = false)
+	    private String role;
+	 
+	 
+	 public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@OneToMany(targetEntity=Cart.class, mappedBy="uid", fetch=FetchType.EAGER)
 	    private Set<Cart> cart;
 	 
 	public Set<Cart> getCart() {

@@ -66,6 +66,15 @@
 <div class="form-group">                   
            <input type="file" name="img" required/>
         </div>
+<div class="form-group">                   
+           <input type="file" name="img1" required/>
+        </div>
+<div class="form-group">                   
+           <input type="file" name="img2" required/>
+        </div>
+<div class="form-group">                   
+           <input type="file" name="img3" required/>
+        </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
