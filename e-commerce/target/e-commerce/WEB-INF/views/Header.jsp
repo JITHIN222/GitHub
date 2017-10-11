@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <nav class="navbar navbar-inverse" style="backgroundcolor:#424558">
+  <nav class="navbar navbar-inverse" style="background-color:#424558">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>

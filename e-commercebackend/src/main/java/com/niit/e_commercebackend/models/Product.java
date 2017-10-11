@@ -48,6 +48,40 @@ public class Product implements Serializable {
     @Column(name = "IMG3", nullable = false)
     private String img3;
     
+    @Column(name = "OFFER", nullable =false)
+    private int offer;
+    
+	@Column(name = "OFFERAMOUNT", nullable =false)
+    private int offerprice;
+	
+	@Column(name = "OFFERPER", nullable =false)
+    private int offerper;
+	
+	public int getOfferper() {
+		return offerper;
+	}
+
+	public void setOfferper(int offerper) {
+		this.offerper = offerper;
+	}
+
+	public int getOffer() {
+		return offer;
+	}
+
+	public void setOffer(int offer) {
+		this.offer = offer;
+	}
+
+	public int getOfferprice() {
+		return offerprice;
+	}
+
+	public void setOfferprice(int offerprice) {
+		this.offerprice = offerprice;
+	}
+
+    
 	public String getImg2() {
 		return img2;
 	}

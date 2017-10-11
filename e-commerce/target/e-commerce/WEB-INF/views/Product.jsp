@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -138,7 +139,7 @@
 
 .carousel-inner, .carousel-inner img {
   position: relative;
-  margin-left: 30px;
+  margin-left: 35px;
    margin-top: 1px;
   width: 70%;
   min-height: 100px;
@@ -148,7 +149,7 @@
     width: 380px;
 }
 #carousel-custom .carousel-indicators {
-    margin: 56px;
+    margin: 90px;
     overflow: auto;
     position: static;
     text-align: left;
@@ -222,10 +223,10 @@
 <img data-toggle="magnify" alt=""   src="resources/Productimage/${pr.img1}" />
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="8.4.png" />
+<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img2}" />
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="8.3.png" />
+<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img3}" />
 </div>
             </div>
              <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
@@ -236,16 +237,23 @@
     <ol class='carousel-indicators'>
         <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='resources/Productimage/${pr.img}' alt='' /></li>    
         <li data-target='#carousel-custom' data-slide-to='1' ><img src='resources/Productimage/${pr.img1}' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='2' ><img src='8.4.png' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='3' ><img src='8.3.png' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='2' ><img src='resources/Productimage/${pr.img2}' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='3' ><img src='resources/Productimage/${pr.img3}' alt='' /></li>
     
     </ol>
     </div></div>
  <div class="col-sm-6" >
                     <!-- product description-->
-                    <h3>${pr.name}</h3>         
+                    <h3>${pr.name}</h3>    
+                     <c:if test="${pr.offer eq 1}">     
                     <h6><small>PRICE</small></h6>
-                    <h3 style="margin-top:0px;">US$ ${pr.price}</h3> 
+                    <h3 style="margin-top:0px;"><strike>$${pr.price}</strike>         $${pr.offerprice}  ${pr.offerper}% off</h3> 
+                    </c:if>
+                     <c:if test="${pr.offer eq 0}">     
+                    <h6><small>PRICE</small></h6>
+                    <h3 style="margin-top:0px;">$${pr.price}</h3> 
+                    </c:if>
+                    
                     <p style="margin-top:0px;"><h3>Description:</h3></a>${pr.shortDesc}</p>              
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="#"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>

@@ -29,8 +29,6 @@ public class SubcategoryController {
 	SubcategoryDAO scategoryDao;
 	
 	
-	
-	
 	/*adding subcategory to db*/
 	@RequestMapping("/addSC")
 	public ModelAndView addSC(@RequestParam("name") String name) {
@@ -38,7 +36,7 @@ public class SubcategoryController {
 		Subcategory i=new Subcategory();
 		i.setName(name);
 		scategoryDao.saveSubcategory(i);
-		ModelAndView mv1 = new ModelAndView("index");
+		ModelAndView mv1 = new ModelAndView("add");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cc);	
 		return mv1;

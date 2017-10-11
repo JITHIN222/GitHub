@@ -14,4 +14,7 @@ public interface ProductDAO {
 	public void deleteproduct(int id); 
 	public void updateproduct(Product id);
 	public Product getprbyid(int id);
+	public ArrayList<Product> offerlist();
+	public void setoffers(int id,int offpr,int actp);
+	public void deleteoffer(int id);
 }

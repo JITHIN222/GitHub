@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
+import com.niit.e_commercebackend.dao.ProductDAO;
 import com.niit.e_commercebackend.dao.SupplierDao;
 import com.niit.e_commercebackend.models.Category;
+import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
  
 @SuppressWarnings("unused")
@@ -23,8 +25,12 @@ public class HelloworldController {
 	CategoryDAO categoryDao;
 	
 	@Autowired
+	ProductDAO productDao;
+	
+	@Autowired
 	SupplierDao supplierDao;
 	
+	/*Home Page*/
 	@RequestMapping("/")
 	public ModelAndView index()
 	{
@@ -38,6 +44,7 @@ public class HelloworldController {
 		return mv;
 	}
 	
+	/*login page*/
 	@RequestMapping("/in")
 	public ModelAndView signin()
 	{
@@ -47,6 +54,8 @@ public class HelloworldController {
 		return mv;
 		
 	}
+	
+	/*Signup page*/
 	@RequestMapping("/up")
 	public ModelAndView signup()
 	{
@@ -56,6 +65,8 @@ public class HelloworldController {
 		return mv;
 		
 	}
+	
+	/*cart page*/
 	@RequestMapping("/car")
 	public ModelAndView cart()
 	{
@@ -66,13 +77,60 @@ public class HelloworldController {
 		
 	}
 	
-	
-	@RequestMapping("/trial")
-	public ModelAndView car()
+	/*offer page*/
+	@RequestMapping("/offer")
+	public ModelAndView offer()
 	{
-		ModelAndView mv = new ModelAndView("NewFile");
-		return mv;
+		ModelAndView mv1 = new ModelAndView("offer");
+		ArrayList<Product> p=new ArrayList<Product>();
+		 p=(ArrayList<Product>)productDao.getallProduct();
+		 mv1.addObject("pr",p);	
+		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
+		 mv1.addObject("offpr",pf);
+ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
+mv1.addObject("cate",c);
+		return mv1;
+		
 		
 	}
+	
+	/*offer setting*/
+	@RequestMapping("/setoffer")
+	public ModelAndView offerprice(@RequestParam("prid") int pr,@RequestParam("offerprice") int offpr,@RequestParam("actp") int actp) 
+	{ 
+		ModelAndView mv1 = new ModelAndView("offer");
+		productDao.setoffers(pr,offpr,actp);
+		ArrayList<Product> p=new ArrayList<Product>();
+		 p=(ArrayList<Product>)productDao.getallProduct();
+		 mv1.addObject("prods",p);	
+		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
+		 mv1.addObject("offpr",pf);
+		ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",c);
+		
+		
+		return mv1;
+	
+	}
+	
+	/*delete offer*/
+	@RequestMapping("/offerdelete")
+	public ModelAndView offerdelete(@RequestParam("pr") int id) 
+	{
+		ModelAndView mv1 = new ModelAndView("offer");
+		productDao.deleteoffer(id);
+		ArrayList<Product> p=new ArrayList<Product>();
+		 p=(ArrayList<Product>)productDao.getallProduct();
+		 mv1.addObject("prods",p);	
+		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
+		 mv1.addObject("offpr",pf);
+		ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",c);
+		
+		
+		return mv1;
+	
+	}
+	
 	
 }

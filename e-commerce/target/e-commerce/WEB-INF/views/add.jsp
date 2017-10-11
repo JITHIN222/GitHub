@@ -114,7 +114,8 @@
                          <ul>
                        <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  
                        <li><div><a href="listcat"><h5 style="color:black;">List of Category</h5></a></div></li>
-                       <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>    
+                       <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>  
+                                            <li><div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div></li>    
                         </ul></div>
                       </div></div></div></div>
                       

@@ -20,6 +20,7 @@ public class SubcategoryDaoImpl implements SubcategoryDAO{
 	public SubcategoryDaoImpl(SessionFactory sessionF){
 		this.sessionF= sessionF;
 	}
+	
 	public void saveSubcategory(Subcategory c) {
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
