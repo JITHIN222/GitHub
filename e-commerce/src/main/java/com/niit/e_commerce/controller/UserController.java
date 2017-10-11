@@ -44,6 +44,8 @@ public class UserController {
 		i.setRole("ROLE_USER");
 		UserDao.saveProduct(i);
 		ModelAndView mv = new ModelAndView("index");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
 	
 		return mv;
 	}

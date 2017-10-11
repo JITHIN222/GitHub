@@ -21,7 +21,7 @@
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
                             <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
-                            <li><a href="#tab4" data-toggle="tab">SubCategory</a></li>   
+                            <!-- <li><a href="#tab4" data-toggle="tab">SubCategory</a></li>  -->  
                             <li><a href="#tab5" data-toggle="tab">Editor</a></li>                        
                         </ul>
                 </div>
@@ -73,8 +73,9 @@
            <input type="file" name="img2" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img3" required/>
+           <input type="file" name="img3" />
         </div>
+          <div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
@@ -99,7 +100,7 @@
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
-                        <div class="tab-pane fade" id="tab4">
+                       <!--  <div class="tab-pane fade" id="tab4">
                              <form action="addSC">
      <div class="form-group">            
             <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
@@ -109,13 +110,13 @@
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
-                        </div>
+                        </div> -->
                          <div class="tab-pane fade" id="tab5">
                          <ul>
                        <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  
                        <li><div><a href="listcat"><h5 style="color:black;">List of Category</h5></a></div></li>
                        <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>  
-                                            <li><div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div></li>    
+                                              
                         </ul></div>
                       </div></div></div></div>
                       

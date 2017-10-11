@@ -33,7 +33,7 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
       <li ><a href="ad">Admin</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="cat">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -45,7 +45,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     </ul>
   </div></nav>

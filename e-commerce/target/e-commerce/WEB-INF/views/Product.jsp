@@ -133,23 +133,30 @@
 } ( window.jQuery );
 </script>
 <style>
-#s{
-	text-align: center;
-}
-
-.carousel-inner, .carousel-inner img {
+.carousel-inner {
   position: relative;
-  margin-left: 35px;
-   margin-top: 1px;
-  width: 70%;
-  min-height: 100px;
+  width: 100%;
+  min-height: 300px;
   }
+ 
+ .carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: none !important;
+  background-repeat: repeat-x;
+}
+ .carousel-control.left {
+  left: 0;
+  right: auto;
+  background-image: none !important;
+  background-repeat: repeat-x;
+}
 #carousel-custom {
-    margin: 40px auto;
-    width: 380px;
+    margin: 20px auto;
+    width: 400px;
 }
 #carousel-custom .carousel-indicators {
-    margin: 90px;
+    margin: 10px 0 0;
     overflow: auto;
     position: static;
     text-align: left;
@@ -168,21 +175,36 @@
 }
 #carousel-custom .carousel-indicators li img {
     display: block;
-    border:1px solid black;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 #carousel-custom .carousel-indicators li.active img {
-    opacity: 1;
+    opacity: 0.9;
 }
 #carousel-custom .carousel-indicators li:hover img {
-    opacity: 0.75;
+    opacity: 0.9;
 }
 #carousel-custom .carousel-outer {
     position: relative;
 }
 .carousel-indicators li img {
-  height: 59px;
-  width: 38px;}
+  height: 66px;
+  width: 52px;}
+  
+  .merge-bottom-input {
+  width: 67px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.center {
+  text-align: center;
+}
+.merge-top-left-button {
+  border-top-left-radius: 0;
+}
+
+.merge-top-right-button {
+  border-top-right-radius: 0;
+}
   
 .magnify {
     position: relative;
@@ -217,16 +239,16 @@
  
         <div class="carousel-inner" id="s">
         <div class="item active">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img}"/>
+<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img}" style="width:90%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""   src="resources/Productimage/${pr.img1}" />
+<img data-toggle="magnify" alt=""   src="resources/Productimage/${pr.img1}"  style="width:90%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img2}" />
+<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img2}" style="width:90%; height:375px;" />
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img3}" />
+<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img3}" style="width:90%; height:375px;" />
 </div>
             </div>
              <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
@@ -244,17 +266,26 @@
     </div></div>
  <div class="col-sm-6" >
                     <!-- product description-->
-                    <h3>${pr.name}</h3>    
+                    </br>
+                    </br>
+                    <h4>${pr.name}</h4> 
                      <c:if test="${pr.offer eq 1}">     
-                    <h6><small>PRICE</small></h6>
-                    <h3 style="margin-top:0px;"><strike>$${pr.price}</strike>         $${pr.offerprice}  ${pr.offerper}% off</h3> 
+                    <h2 style="margin-top:0px;"><i class="fa fa-inr"></i><strike>${pr.price}</strike>         <i class="fa fa-inr"></i>${pr.offerprice}  ${pr.offerper}% off<small>Ends Soon!!!</small></h2> 
                     </c:if>
                      <c:if test="${pr.offer eq 0}">     
-                    <h6><small>PRICE</small></h6>
-                    <h3 style="margin-top:0px;">$${pr.price}</h3> 
+                    <h2 style="margin-top:0px;">Price:<i class="fa fa-inr">${pr.price}</i></h2> 
                     </c:if>
-                    
-                    <p style="margin-top:0px;"><h3>Description:</h3></a>${pr.shortDesc}</p>              
+                    <div class="row">
+    <div class="col-sm-2">
+      <label>Quantity:</label> <!-- purely semantic -->
+      <div class="form-control input-sm center merge-bottom-input" name="first">0</div>
+      <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+        <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button"><span class="glyphicon glyphicon-minus"></span></button>
+        <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+      </div><!-- end button group -->
+    </div> <!-- end column -->
+  </div><!-- end row --></br>
+                    <p style="margin-top:0px;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="#"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>

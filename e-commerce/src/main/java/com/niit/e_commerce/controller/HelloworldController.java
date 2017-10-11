@@ -34,10 +34,8 @@ public class HelloworldController {
 	@RequestMapping("/")
 	public ModelAndView index()
 	{
-		System.out.println("in controller");
 		ModelAndView mv = new ModelAndView("index");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		System.out.println("hai after retrieve");
 		mv.addObject("cate",cat);
 		System.out.println("after adding object");
 	

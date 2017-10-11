@@ -46,7 +46,7 @@
   display: block;
 }
 #navbar, #nav {
-     opacity: 0.8;
+     opacity: 0.6;
 }
 .right{
 text-align: right;
@@ -67,7 +67,7 @@ text-align: right;
 }
 </style>
 </head>
-<body background="resources/images/lo.png">
+<body background="resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>

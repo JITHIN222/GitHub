@@ -46,7 +46,7 @@
   display: block;
 }
 #navbar, #nav {
-     opacity: 0.8;
+     opacity: 0.6;
 }
 .right{
 text-align: right;
@@ -67,7 +67,7 @@ text-align: right;
 }
     </style>
 </head>
-<body background="resources/images/5.jpg">
+<body background="resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>
@@ -80,24 +80,24 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Email</span>
-            <input type="email" class="form-control" id="f4" name="email" > 
+            <input type="email" class="form-control" id="f4" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Enter valid email" required> 
         </div>
         <div class="form-group" id="f3">    
         <span style="font-weight:900">Password</span>      
-            <input type="password" class="form-control" id="f4" name="pwd">
+            <input type="password" class="form-control" id="f4" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         </div>
         <div class="form-group" id="f3">  
         <span style="font-weight:900">Confirm Password</span>        
-            <input type="password" class="form-control" id="f4" name="cpwd">     
+            <input type="password" class="form-control" id="f4" name="cpwd" required>     
         </div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
-            <input type="password" class="form-control" id="f4" name="no">     
+            <input type="number" class="form-control" id="f4" name="no" pattern="[789][0-9]{9}" title="enter valid mobile no" required>     
         </div>
      <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div> -->
-        <button type="submit" class="btn btn-primary btn-block" id="b1">Register</button>
+        <button type="submit" class="btn btn-primary btn-block" id="b1" onclick="abc()">Register</button>
         <p align="center"><a href="in">Already have an account?</a></p>
       </div>
     </form>

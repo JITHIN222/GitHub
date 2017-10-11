@@ -125,7 +125,6 @@ public class ProductController {
 	/*deleting the product*/
 	@RequestMapping("/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
-		System.err.println("reaching"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
 		mv.addObject("cate",cat);

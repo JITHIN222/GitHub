@@ -73,7 +73,7 @@
            <input type="file" name="img2" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img3" required/>
+           <input type="file" name="img3" />
         </div>
           <div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
