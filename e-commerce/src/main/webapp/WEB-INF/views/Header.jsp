@@ -34,20 +34,31 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="">Home</a></li>
-      <li ><a href="ad">Admin</a></li>
+       <c:if test="${pageContext.request.userPrincipal.name  == 'admin123@gmail.com'}">
+      <li ><a href="admin/ad">Admin</a></li>
+      </c:if>
+       <c:if test="${pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="cat">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach var="designatee" items="${cate}">
                        <li><a href="${designatee.id}">${designatee.name}</a></li>    
                     </c:forEach>  
         </ul>
-      </li>
+      </li></c:if>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+     <c:if test="${pageContext.request.userPrincipal.name == null }">
       <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </c:if>
+      <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
         <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-    </ul>
+    </c:if>
+    <c:if test="${pageContext.request.userPrincipal.name  != null}">
+					<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
+					<li><a href='<c:url value="/j_spring_security_logout" />'><span class="glyphicon glyphicon-log-out">Logout</a></li>
+				</c:if>
+      </ul>
   </div></nav>
 </body>
 </html>

@@ -57,6 +57,34 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <artifactId>commons-fileupload</artifactId>
     <version>1.3.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+<dependency>
+<groupId>org.springframework.security</groupId>
+<artifactId>spring-security-core</artifactId>
+<version>${spring.version}</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+<dependency>
+<groupId>org.springframework.security</groupId>
+<artifactId>spring-security-web</artifactId>
+<version>${spring.version}</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+<dependency>
+<groupId>org.springframework.security</groupId>
+<artifactId>spring-security-config</artifactId>
+<version>${spring.version}</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+<dependency>
+<groupId>org.springframework.security</groupId>
+<artifactId>spring-security-taglibs</artifactId>
+<version>${spring.version}</version>
+</dependency>
+
   </dependencies>
   <build>
     <finalName>e-commerce</finalName>

@@ -1,18 +1,18 @@
-<!-- <beans	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+<beans	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd 
 		http://www.springframework.org/schema/security 
 		http://www.springframework.org/schema/security/spring-security.xsd"
 		xmlns:security="http://www.springframework.org/schema/security"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
 
-	New Spring Security implementation
+	<!-- New Spring Security implementation -->
 	<security:http auto-config="true">
     <security:intercept-url pattern="/admin/**"
     access="hasRole('ROLE_ADMIN')" />
     <security:intercept-url pattern="/in"
      access="permitAll" />
-    <security:intercept-url pattern="/user/**"
-     access="hasRole('ROLE USER')" />
+  <!--   <security:intercept-url pattern="/user/**"
+     access="hasRole('ROLE USER')" /> -->
 		<security:form-login 
 		    login-processing-url="/j_spring_security_check"
 			password-parameter="j_password"
@@ -27,7 +27,7 @@
 			logout-success-url="/" />
             <security:access-denied-handler
                      error-page="/error" />
-		enable csrf protection
+		<!-- enable csrf protection -->
 		<security:csrf disabled="true" />
 	</security:http>
 
@@ -35,9 +35,8 @@
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="datasource"
-				users-by-username-query="SELECT email, password, 'true' as enabled FROM User WHERE email = ?"
-				authorities-by-username-query="SELECT email, role From User WHERE email = ?" />
+				users-by-username-query="SELECT EMAIL, PASSWORd, 'true' as enabled FROM USER WHERE EMAIL = ?"
+				authorities-by-username-query="SELECT EMAIL, ROLE From USER WHERE EMAIL = ?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 </beans>
- -->

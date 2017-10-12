@@ -51,8 +51,8 @@ border-collapse: separate;
 <td>Name:${p.name}</td>
 <td>Price:${p.price}</td>
 <td><input type="number" name="offerprice" value="${p.offerprice}"></td>
+<td><input id="submit" class="btn btn-success btn-md" name="submit" type="submit" value="Save" ></td>
 </tr>
-<tr><input id="submit" class="btn btn-success btn-md" name="submit" type="submit" value="Save" ></tr>
 </table>
 </form> 
          

@@ -27,7 +27,7 @@ public class AdminController {
 	
 	
 	/*admin page loading*/
-	@RequestMapping("/ad")
+	@RequestMapping("/admin/ad")
 	public ModelAndView ad()
 	{
 		ModelAndView mv = new ModelAndView("add");

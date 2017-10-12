@@ -27,7 +27,7 @@ public class SupplierController {
 	ProductDAO productDao;
 
 	/*deleting the supplier*/
-	@RequestMapping("/deletes")
+	@RequestMapping("/admin/deletes")
 	public ModelAndView delsup(@RequestParam("supid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
@@ -38,7 +38,7 @@ public class SupplierController {
 	
 	
 	/*listing all suppliers*/
-	@RequestMapping("/listsup")
+	@RequestMapping("/admin/listsup")
 	public ModelAndView listsup(){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv = new ModelAndView("listsup");
@@ -51,7 +51,7 @@ public class SupplierController {
 	
 	
 	/*updating the supplier*/
-	@RequestMapping("/updates")
+	@RequestMapping("/admin/updates")
 	public ModelAndView upS(@RequestParam("supid") int ca){
 		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
@@ -65,7 +65,7 @@ public class SupplierController {
 	
 
 	/*adding supplier to db*/
-	@RequestMapping("/addS")
+	@RequestMapping("/admin/addS")
 	public ModelAndView addS(@RequestParam("name") String name) {
 		Supplier i=new Supplier();
 		i.setName(name);

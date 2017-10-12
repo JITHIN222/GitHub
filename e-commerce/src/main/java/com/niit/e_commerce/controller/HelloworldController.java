@@ -53,6 +53,17 @@ public class HelloworldController {
 		
 	}
 	
+	/*error*/
+	@RequestMapping("/error")
+	public ModelAndView error()
+	{
+		ModelAndView mv = new ModelAndView("signin");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cc);
+		return mv;
+		
+	}
+	
 	/*Signup page*/
 	@RequestMapping("/up")
 	public ModelAndView signup()
@@ -76,7 +87,7 @@ public class HelloworldController {
 	}
 	
 	/*offer page*/
-	@RequestMapping("/offer")
+	@RequestMapping("/admin/offer")
 	public ModelAndView offer()
 	{
 		ModelAndView mv1 = new ModelAndView("offer");
@@ -93,7 +104,7 @@ mv1.addObject("cate",c);
 	}
 	
 	/*offer setting*/
-	@RequestMapping("/setoffer")
+	@RequestMapping("/admin/setoffer")
 	public ModelAndView offerprice(@RequestParam("prid") int pr,@RequestParam("offerprice") int offpr,@RequestParam("actp") int actp) 
 	{ 
 		ModelAndView mv1 = new ModelAndView("offer");
@@ -112,7 +123,7 @@ mv1.addObject("cate",c);
 	}
 	
 	/*delete offer*/
-	@RequestMapping("/offerdelete")
+	@RequestMapping("/admin/offerdelete")
 	public ModelAndView offerdelete(@RequestParam("pr") int id) 
 	{
 		ModelAndView mv1 = new ModelAndView("offer");

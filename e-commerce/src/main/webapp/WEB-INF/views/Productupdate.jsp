@@ -55,10 +55,22 @@
         </div>
         <div class="form-group">        
             <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${pr.stock }">
-       
         </div>
          <div class="form-group">          
             <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="${pr.shortDesc }">
+        </div>
+         </div>
+<div class="form-group">                   
+           <input type="file" name="img" value="${pr.img}"/>
+        </div>
+<div class="form-group">                   
+           <input type="file" name="img1" value="${pr.img1}" />
+        </div>
+<div class="form-group">                   
+           <input type="file" name="img2" value="${pr.img2}"/>
+        </div>
+<div class="form-group">                   
+           <input type="file" name="img3" value="${pr.img3}"/>
         </div>
           <button type="submit" class="btn btn-success" href="ad">Update</button>
    </form> </div>

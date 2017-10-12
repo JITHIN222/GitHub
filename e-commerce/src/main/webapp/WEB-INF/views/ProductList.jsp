@@ -29,14 +29,14 @@
                         ${p.name}</h4>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <h4 style="color:black">Price:<i class="fa fa-inr" style="color:red">${p.price}</i></h4>
+                            <h4 style="color:black">Price: $${p.price}</h4>
                         </div></div>
                         <div class="row">
                         <div class="col-sm-6">
-                        <a class="btn btn-primary btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-zoom-in"></span> Quick view</a>                        
+                        <a class="btn btn-primary btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-zoom-in"></span>View</a>                        
                            </div>
                         <div class="col-sm-6">
-                           <a class="btn btn-success btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a> 
+                           <a class="btn btn-success btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> 
                         </div></div>
                 </div>
             </div>

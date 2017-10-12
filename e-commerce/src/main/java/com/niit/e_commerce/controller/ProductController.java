@@ -33,7 +33,7 @@ public class ProductController {
 	ProductDAO productDao;
 	
 	/*adding product to db*/
-	@RequestMapping("/addP")
+	@RequestMapping("/admin/addP")
 	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
 			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
@@ -106,7 +106,7 @@ public class ProductController {
 	}
 	
 	/*redirecting to product update page*/
-	@RequestMapping("/updatep")
+	@RequestMapping("/admin/updatep")
 	public ModelAndView uppr(@RequestParam("prid") int ca){
 		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
@@ -123,7 +123,7 @@ public class ProductController {
 	}
 	
 	/*deleting the product*/
-	@RequestMapping("/deletep")
+	@RequestMapping("/admin/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
@@ -133,7 +133,7 @@ public class ProductController {
 	}
 	
 	/*updating product to db*/
-	@RequestMapping("/upP")
+	@RequestMapping("/admin/upP")
 	public ModelAndView upP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock, @RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		System.out.println("reaching innnnn"+name);
 		Product i=new Product();
@@ -161,7 +161,7 @@ public class ProductController {
 	}
 	
 	/*listing product*/
-	@RequestMapping("/listpro")
+	@RequestMapping("/admin/listpro")
 	public ModelAndView listpro(){
 		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
 		ModelAndView mv = new ModelAndView("listpro");

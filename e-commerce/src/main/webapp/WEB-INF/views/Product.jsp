@@ -265,15 +265,14 @@
     </ol>
     </div></div>
  <div class="col-sm-6" >
-                    <!-- product description-->
                     </br>
                     </br>
-                    <h4>${pr.name}</h4> 
+                    <h4>${pr.name}</h4> </br>
                      <c:if test="${pr.offer eq 1}">     
-                    <h2 style="margin-top:0px;"><i class="fa fa-inr"></i><strike>${pr.price}</strike>         <i class="fa fa-inr"></i>${pr.offerprice}  ${pr.offerper}% off<small>Ends Soon!!!</small></h2> 
+                    <h2 style="margin-top:0px;"><strike>Price: $${pr.price}</strike>         $${pr.offerprice}  ${pr.offerper}% off<small>Ends Soon!!!</small></h2> 
                     </c:if>
                      <c:if test="${pr.offer eq 0}">     
-                    <h2 style="margin-top:0px;">Price:<i class="fa fa-inr">${pr.price}</i></h2> 
+                    <h3 style="margin-top:0px;">Price: $${pr.price}</h3> 
                     </c:if>
                     <div class="row">
     <div class="col-sm-2">

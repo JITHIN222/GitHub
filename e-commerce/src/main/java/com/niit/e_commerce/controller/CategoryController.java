@@ -31,21 +31,17 @@ public class CategoryController {
 	public ModelAndView ca(@PathVariable("categoryid") int ca) {
 		ArrayList<Product> p=new ArrayList<Product>();
 		p=productDao.getprbycatid(ca);
-		
 		ModelAndView mv1 = new ModelAndView("ProductList");
 		mv1.addObject("pro",p);
-		
 		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",l);
-	
-		
 		return mv1;
 		
 	}
 
 	
 	/*adding category to db*/
-	@RequestMapping("/addC")
+	@RequestMapping("/admin/addC")
 	public ModelAndView addC(@RequestParam("name") String name) {
 		Category i=new Category();
 		i.setName(name);
@@ -57,7 +53,7 @@ public class CategoryController {
 	}
 	
 	/*update button */
-	@RequestMapping("/updatec")
+	@RequestMapping("/admin/updatec")
 	public ModelAndView upca(@RequestParam("catid") int ca){
 		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
@@ -71,7 +67,7 @@ public class CategoryController {
 	}
 	
 	/*updating category to db*/
-	@RequestMapping("/upC")
+	@RequestMapping("/admin/upC")
 	public ModelAndView upC(@RequestParam("name") String name) {
 		System.out.println("reaching innnnn"+name);
 		Category i=new Category();
@@ -87,7 +83,7 @@ public class CategoryController {
 	}
 	
 	/*deleting the category*/
-	@RequestMapping("/deletec")
+	@RequestMapping("/admin/deletec")
 	public ModelAndView delcat(@RequestParam("catid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("add");
@@ -96,7 +92,7 @@ public class CategoryController {
 		return mv;
 	}
 	
-	@RequestMapping("/listcat")
+	@RequestMapping("/admin/listcat")
 	public ModelAndView listcat(){
 		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv = new ModelAndView("listcat");
