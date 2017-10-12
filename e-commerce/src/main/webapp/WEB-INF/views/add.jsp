@@ -48,20 +48,20 @@
 </select>
 </div>
      <div class="form-group">            
-            <input type="text" class="form-control" name="n" placeholder="Enter Id"> 
+            <input type="number" class="form-control" name="n" placeholder="Enter Id" required> 
         </div>
         <div class="form-group" >            
-            <input type="text" class="form-control"  name="name"  placeholder="Enter Name"> 
+            <input type="text" class="form-control"  name="name"  placeholder="Enter Name" required> 
         </div>
         <div class="form-group">          
-            <input type="number" class="form-control"  name="price" placeholder="Enter Price">
+            <input type="number" class="form-control"  name="price" placeholder="Enter Price" required pattern="[0-9]+(\\.[0-9][0-9]?)?">
         </div>
         <div class="form-group">        
-            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock">
+            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" required>
        
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control"  name="short" placeholder="Enter Description">
+            <input type="text" class="form-control"  name="short" placeholder="Enter Description" required>
         </div>
 <div class="form-group">                   
            <input type="file" name="img" required/>

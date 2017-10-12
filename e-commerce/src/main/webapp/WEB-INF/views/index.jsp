@@ -246,7 +246,7 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                                 <div class="col-md-6">
 
                                     <div class="carousel-img">
-                                        <img src="resources/Productimage/124.png" alt="sofa" class="img img-responsive" />
+                                        <img src="resources/images/124.png" alt="sofa" class="img img-responsive" />
                                     </div>
                                 </div>
 

@@ -38,8 +38,20 @@ public class User implements Serializable {
 	 @Column(name = "ROLE", nullable = false)
 	    private String role;
 	 
+	 @Column(name = "MobileNo", nullable = false)
+	    private long mobno;
 	 
-	 public String getRole() {
+	 
+
+	public long getMobno() {
+		return mobno;
+	}
+
+	public void setMobno(long mobno) {
+		this.mobno = mobno;
+	}
+
+	public String getRole() {
 		return role;
 	}
 

@@ -34,7 +34,7 @@ public class UserController {
 	
 
 	@RequestMapping("/reg")
-	public ModelAndView register(@RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
+	public ModelAndView register(@RequestParam("no") long mobno, @RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
 		System.out.println("in controller");
 		System.out.println(name);
 		User i=new User();
@@ -42,6 +42,7 @@ public class UserController {
 		i.setEmail(email);
 		i.setPwd(pwd);
 		i.setRole("ROLE_USER");
+		i.setMobno(mobno);
 		UserDao.saveProduct(i);
 		ModelAndView mv = new ModelAndView("index");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();

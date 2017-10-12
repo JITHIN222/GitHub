@@ -9,7 +9,7 @@
 	<security:http auto-config="true">
     <security:intercept-url pattern="/admin/**"
     access="hasRole('ROLE_ADMIN')" />
-    <security:intercept-url pattern="/login"
+    <security:intercept-url pattern="/in"
      access="permitAll" />
     <security:intercept-url pattern="/user/**"
      access="hasRole('ROLE USER')" />
@@ -35,7 +35,7 @@
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="datasource"
-				users-by-username-query="SELECT email, pd, 'true' as enabled FROM User WHERE email = ?"
+				users-by-username-query="SELECT email, password, 'true' as enabled FROM User WHERE email = ?"
 				authorities-by-username-query="SELECT email, role From User WHERE email = ?" />
 		</security:authentication-provider>
 	</security:authentication-manager>

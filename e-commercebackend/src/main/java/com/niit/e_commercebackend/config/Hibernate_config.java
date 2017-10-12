@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.ObjectDeletedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,13 +14,12 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
 import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
 import com.niit.e_commercebackend.models.User;
-import com.niit.e_commercebackend.models.Subcategory;
+
 
 
 @Configuration
@@ -44,7 +42,6 @@ public class Hibernate_config
 	        sessionBuilder.addAnnotatedClass(Cart.class); 
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Category.class);
-	        sessionBuilder.addAnnotatedClass(Subcategory.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

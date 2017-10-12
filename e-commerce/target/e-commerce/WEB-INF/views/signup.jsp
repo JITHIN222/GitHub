@@ -72,7 +72,7 @@ text-align: right;
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
-    <form class="slideDown" id="f1" action="reg">
+    <form class="slideDown" id="f1" action="reg" method="get">
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Full Name</span> 
@@ -80,7 +80,7 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Email</span>
-            <input type="email" class="form-control" id="f4" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Enter valid email" required> 
+            <input type="email" class="form-control" id="f4" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="sachin1995@gmail.com" required> 
         </div>
         <div class="form-group" id="f3">    
         <span style="font-weight:900">Password</span>      
@@ -88,16 +88,16 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">  
         <span style="font-weight:900">Confirm Password</span>        
-            <input type="password" class="form-control" id="f4" name="cpwd" required>     
+            <input type="password" class="form-control" id="f4"  required>     
         </div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
-            <input type="number" class="form-control" id="f4" name="no" pattern="[789][0-9]{9}" title="enter valid mobile no" required>     
+            <input type="long" class="form-control" id="f4" name="no" pattern=".{10}" required>     
         </div>
      <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div> -->
-        <button type="submit" class="btn btn-primary btn-block" id="b1" onclick="abc()">Register</button>
+        <button type="submit" class="btn btn-primary btn-block" id="b1" >Register</button>
         <p align="center"><a href="in">Already have an account?</a></p>
       </div>
     </form>
