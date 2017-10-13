@@ -3,6 +3,7 @@ package com.niit.e_commerce.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.e_commercebackend.dao.CartDao;
 import com.niit.e_commercebackend.dao.CategoryDAO;
 import com.niit.e_commercebackend.dao.ProductDAO;
 import com.niit.e_commercebackend.dao.SupplierDao;
+import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
 import com.niit.e_commercebackend.models.Supplier;
@@ -25,21 +28,23 @@ public class HelloworldController {
 	CategoryDAO categoryDao;
 	
 	@Autowired
+	CartDao cartDao;
+	
+	@Autowired
 	ProductDAO productDao;
 	
 	@Autowired
 	SupplierDao supplierDao;
-	
+
 	/*Home Page*/
 	@RequestMapping("/")
 	public ModelAndView index()
 	{
-		ModelAndView mv = new ModelAndView("index");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
-		System.out.println("after adding object");
 	
-		return mv;
+		ModelAndView mv1 = new ModelAndView("index");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cat);
+	    return mv1;
 	}
 	
 	/*login page*/
@@ -74,17 +79,7 @@ public class HelloworldController {
 		return mv;
 		
 	}
-	
-	/*cart page*/
-	@RequestMapping("/car")
-	public ModelAndView cart()
-	{
-		ModelAndView mv = new ModelAndView("cart");
-		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cc);
-		return mv;
-		
-	}
+
 	
 	/*offer page*/
 	@RequestMapping("/admin/offer")

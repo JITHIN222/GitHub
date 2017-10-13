@@ -105,7 +105,7 @@ System.out.println(ca.getName()+ca.getId());
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();		
-		org.hibernate.Query q= s.createQuery("from Product where offer="+1);
+		Query q= s.createQuery("from Product where offer="+1);
 		ArrayList<Product> l=(ArrayList<Product>) q.list();
         t.commit();        
         s.close();

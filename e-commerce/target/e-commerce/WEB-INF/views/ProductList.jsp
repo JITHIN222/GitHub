@@ -36,7 +36,7 @@
                         <a class="btn btn-primary btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-zoom-in"></span>View</a>                        
                            </div>
                         <div class="col-sm-6">
-                           <a class="btn btn-success btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> 
+                           <a class="btn btn-success btn-product" href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> 
                         </div></div>
                 </div>
             </div>

@@ -1,14 +1,17 @@
 package com.niit.e_commercebackend.models;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -56,6 +59,9 @@ public class Product implements Serializable {
 	
 	@Column(name = "OFFERPER", nullable =false)
     private int offerper;
+	
+	@OneToMany(targetEntity=Cart.class, mappedBy="pid", fetch=FetchType.EAGER)
+    private Set<Cart> cart;
 	
 	public int getOfferper() {
 		return offerper;
@@ -121,18 +127,6 @@ public class Product implements Serializable {
     @ManyToOne
     @JoinColumn(name="S_ID",updatable=true,insertable=true,nullable=false)
     Supplier sid;
-    
-   /* @ManyToOne
-    @JoinColumn(name="SC_ID",updatable=true,insertable=true,nullable=false)
-    Subcategory scid;
-    
-	public Subcategory getScid() {
-		return scid;
-	}
-
-	public void setScid(Subcategory scid) {
-		this.scid = scid;
-	}*/
 
 	public Category getCid() {
 		return cid;

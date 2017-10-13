@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,7 +46,6 @@
 <body>
 <form>
 <jsp:include page="Header.jsp"/>
- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
@@ -58,25 +58,27 @@
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach var="c" items="${ca}">
 						<tr>
+								
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin">Product 1</h4>
-										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+										<h4 class="nomargin">${c.pid.name}</h4>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">$1.99</td>
+							<td data-th="Price">${c.price}</td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
+							<td data-th="Subtotal" class="text-center">${c.price}</td>
 							<td class="actions" data-th="">
 								<button class="btn btn-danger btn-sm">Delete</button>								
 							</td>
-						</tr>
+							
+						</tr></c:forEach>
 					</tbody>
 					<tfoot>
 						<tr class="visible-xs">

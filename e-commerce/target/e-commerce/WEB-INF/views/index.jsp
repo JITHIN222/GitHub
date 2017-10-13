@@ -266,6 +266,9 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
             </div>
         </div>
     </section>
+    <div>
+    
+    </div>
   <jsp:include page="Footer.jsp"/>
 </body>
 </html>

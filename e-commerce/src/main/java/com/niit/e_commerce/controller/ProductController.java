@@ -46,8 +46,10 @@ public class ProductController {
 		
 		Category cc=new Category();
 		cc=categoryDao.getcabyid(ca);
+		
 		Supplier su=new Supplier();
 		su=supplierDao.getssbyid(ss);
+		
 		i.setCid(cc);
 		i.setSid(su);
 		

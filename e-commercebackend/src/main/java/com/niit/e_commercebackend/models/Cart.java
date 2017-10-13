@@ -24,17 +24,11 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 	
-	@Column(name = "ORDERID", nullable = false)
-	private int orderid; 
-	
 	@Column(name = "QUANTITY", nullable = false)
 	private int quantity;
 	
 	@Column(name = "PRICE", nullable = false)
 	private int price;
-	
-	@Column(name = "PRODUCT_ID", nullable = false)
-	private int productid;
 	
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
@@ -43,23 +37,15 @@ public class Cart {
 	private String status;
 	
 	@ManyToOne
-    @JoinColumn(name="EMAIL",updatable=true,insertable=true,nullable=false)
-    User uid;
-	
-	public User getUid() {
-		return uid;
+    @JoinColumn(name="PRODUCT_ID",updatable=true,insertable=true,nullable=false)
+    Product pid;
+
+	public Product getPid() {
+		return pid;
 	}
 
-	public void setUid(User uid) {
-		this.uid = uid;
-	}
-
-	public int getOrderid() {
-		return orderid;
-	}
-
-	public void setOrderid(int orderid) {
-		this.orderid = orderid;
+	public void setPid(Product pid) {
+		this.pid = pid;
 	}
 
 	public int getQuantity() {
@@ -78,13 +64,7 @@ public class Cart {
 		this.price = price;
 	}
 
-	public int getProductid() {
-		return productid;
-	}
 
-	public void setProductid(int productid) {
-		this.productid = productid;
-	}
 
 	public String getUsername() {
 		return username;

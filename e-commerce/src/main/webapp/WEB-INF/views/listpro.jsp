@@ -19,23 +19,22 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:5%">Id</th>
+						    <th style="width:5%">Image</th>
 							<th style="width:20%">Product</th>
 	             			<th style="width:10%">Price</th>
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
-					<c:forEach var="designate" items="${listp}">
+					<c:forEach var="p" items="${listp}">
 					<tbody>
 			
 						<tr>
-						<td >${ designate.id}</td>
-							<td><h4>${designate.name}</h4>
-										<p>${ designate.shortDesc}</p></td>
-							<td >$ ${designate.price}</td>
+						<td ><img class="img-thumbnail" src="resources/Productimage/${p.img}" alt="" style="width:50%; height:50px;"></td>
+							<td><h4>${p.name}</h4></td>
+							<td >$ ${p.price}</td>
 							<td >
-								<a href="updatep?prid=${ designate.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-								<a href="deletep?prid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
+								<a href="updatep?prid=${ p.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
+								<a href="deletep?prid=${ p.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					
