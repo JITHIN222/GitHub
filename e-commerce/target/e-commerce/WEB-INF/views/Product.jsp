@@ -267,24 +267,18 @@
  <div class="col-sm-6" >
                     </br>
                     </br>
-                    <h4>${pr.name}</h4> </br>
-                     <c:if test="${pr.offer eq 1}">     
-                    <h2 style="margin-top:0px;"><strike>Price: $${pr.price}</strike>         $${pr.offerprice}  ${pr.offerper}% off<small>Ends Soon!!!</small></h2> 
+                    <h3 style="color:black;">${pr.name}</h3> </br>
+                     <c:if test="${pr.offer eq 1}">
+                     <h2><small style="color:green;">Extra $${pr.price - pr.offerprice} discount</small></h2>     
+                    <h2 style="margin-top:0px; color:black;" >Price:$${pr.offerprice} <small><strike> $${pr.price}</strike> <a style="color:green;">${pr.offerper}% off Hurry up!!!</a></small></h2> 
                     </c:if>
                      <c:if test="${pr.offer eq 0}">     
-                    <h3 style="margin-top:0px;">Price: $${pr.price}</h3> 
+                    <h3 style="margin-top:0px; color:black;">Price: $${pr.price}</h3> 
                     </c:if>
                     <div class="row">
-    <div class="col-sm-2">
-      <label>Quantity:</label> <!-- purely semantic -->
-      <div class="form-control input-sm center merge-bottom-input" name="first">0</div>
-      <div class="btn-group btn-block" role="group" aria-label="plus-minus">
-        <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button"><span class="glyphicon glyphicon-minus"></span></button>
-        <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
-      </div><!-- end button group -->
-    </div> <!-- end column -->
+   
   </div><!-- end row --></br>
-                    <p style="margin-top:0px;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
+                    <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="cart?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>

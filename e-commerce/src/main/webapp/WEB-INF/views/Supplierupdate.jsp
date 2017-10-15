@@ -25,14 +25,14 @@
                     <div class="tab-content">
                     
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="upC" method="post">
+                        <form action="upS" method="post">
      <div class="form-group">            
             <input type="text" class="form-control" name="n" value="${sup.id}"> 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name"  value="${sup.name}"> 
         </div>
-          <button type="submit" class="btn btn-success" href="ad">Update</button>
+          <button type="submit" class="btn btn-success" >Update</button>
    </form> </div>
                     
                       </div></div></div></div>

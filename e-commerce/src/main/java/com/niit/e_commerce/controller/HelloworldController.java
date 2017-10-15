@@ -44,6 +44,8 @@ public class HelloworldController {
 		ModelAndView mv1 = new ModelAndView("index");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cat);
+		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
+		mv1.addObject("off",p);
 	    return mv1;
 	}
 	

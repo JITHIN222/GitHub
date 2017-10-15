@@ -25,7 +25,7 @@
                     <div class="tab-content">
                     
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="addP" method="post">
+                        <form action="upP" method="post" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
@@ -59,7 +59,6 @@
          <div class="form-group">          
             <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="${pr.shortDesc }">
         </div>
-         </div>
 <div class="form-group">                   
            <input type="file" name="img" value="${pr.img}"/>
         </div>
@@ -72,10 +71,10 @@
 <div class="form-group">                   
            <input type="file" name="img3" value="${pr.img3}"/>
         </div>
-          <button type="submit" class="btn btn-success" href="ad">Update</button>
+          <button type="submit" class="btn btn-success" >Update</button>
    </form> </div>
                     
-                      </div></div></div></div>
+                      </div></div></div>
                       <jsp:include page="Footer.jsp"/>
 
 </body>

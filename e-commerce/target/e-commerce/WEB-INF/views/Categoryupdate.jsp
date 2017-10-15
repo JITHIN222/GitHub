@@ -32,7 +32,7 @@
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${cat.name}"> 
         </div>
-          <button type="submit" class="btn btn-success" href="ad">Update</button>
+          <button type="submit" class="btn btn-success">Update</button>
    </form> </div>
                     
                       </div></div></div></div>

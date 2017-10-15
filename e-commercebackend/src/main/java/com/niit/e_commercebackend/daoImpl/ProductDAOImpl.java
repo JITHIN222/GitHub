@@ -33,7 +33,8 @@ private SessionFactory sessionF;
 	}
 
 
-	public void saveProduct(Product p) {
+	public void saveProduct(Product p) 
+	{
 	Session session=sessionF.openSession();
 	Transaction t=session.getTransaction();
 	t.begin();
@@ -42,7 +43,8 @@ private SessionFactory sessionF;
 	session.close();
 	}
 
-	public ArrayList<Product> getprbycatid(int id){
+	public ArrayList<Product> getprbycatid(int id)
+	{
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
@@ -92,8 +94,6 @@ private SessionFactory sessionF;
 		Transaction t=s.getTransaction();
 		t.begin();
 		Product ca = (Product) s.get(Product.class, id);
-System.out.println(ca.getName()+ca.getId());
-		
         t.commit();
         
         s.close();
@@ -118,7 +118,6 @@ System.out.println(ca.getName()+ca.getId());
 		Transaction t=s.getTransaction();
 		t.begin();
 		int per=100-(100*offpr/actp);
-		System.err.println(per);
 		 Query o = s.createQuery("update Product  set offer="+1+"where id="+id);
 		 Query o1 = s.createQuery("update Product  set offerprice="+offpr+"where id="+id);
 		 Query o2 = s.createQuery("update Product  set offerper="+per+"where id="+id); 
@@ -130,7 +129,8 @@ System.out.println(ca.getName()+ca.getId());
 		
 	}
 	
-	public void deleteoffer(int id) {
+	public void deleteoffer(int id) 
+	{
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
@@ -141,5 +141,18 @@ System.out.println(ca.getName()+ca.getId());
         t.commit();
         s.close();
 	}
+
+	/*public ArrayList<Product> getprbyoffer(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Query q=s.createQuery("from Product where offer="+1+"where id="+id);
+		ArrayList<Product> cat=(ArrayList<Product>)q.list();
+        t.commit();
+        
+        s.close();
+		
+		return cat;
+	}*/
 
 }

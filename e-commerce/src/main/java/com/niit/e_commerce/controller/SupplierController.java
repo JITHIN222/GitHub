@@ -77,4 +77,20 @@ public class SupplierController {
 		return mv1;
 	}
 	
+	@RequestMapping("/admin/upS")
+	public ModelAndView upS(@RequestParam("n") int id, @RequestParam("name") String name) {
+		System.out.println("reaching innnnn"+name);
+		Supplier i=new Supplier();
+		i.setId(id);
+		i.setName(name);
+		supplierDao.updatesupplier(i);
+		
+		ModelAndView mv1 = new ModelAndView("add");
+		
+		/*display category dropdown in navbar*/
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cat);
+		return mv1;
+	}
+	
 }

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <title>Home</title>
@@ -269,6 +272,28 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
     <div>
     
     </div>
+    </br>
+    <h1><strong>Hot Deals</strong></h1>
+    <div class="container">
+    <div class="row">
+<c:forEach items="${off}" var="p"  varStatus="loop">
+<c:if test="${p.offer eq 1}">
+<div class="col-sm-2">
+    <img src="resources/Productimage/${p.img}" class="img-responsive">
+    <table><tr><p align="center">${p.name}</p></tr>
+    <tr><p align="center"><strike><small>$${p.price}</small></strike><font color="red"><strong> $${p.offerprice}</strong></font></p></tr>
+    <div class="row">
+    <div class="col-sm-6">
+    <a class="btn btn-success btn-product" href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    </div>
+    <div class="col-sm-6">
+    <a class="btn btn-danger btn-product" href="cart"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
+    </div></div>
+    </table>
+</div>
+</c:if>
+</c:forEach></div></div>
+
   <jsp:include page="Footer.jsp"/>
 </body>
 </html>

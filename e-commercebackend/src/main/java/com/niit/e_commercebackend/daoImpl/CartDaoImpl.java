@@ -38,7 +38,7 @@ public class CartDaoImpl implements CartDao {
 		
 	}
 
-	public ArrayList<Cart> getcartbyuserid(String Username) {
+	public ArrayList<Cart> getcartbyusernmae(String Username) {
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
@@ -50,8 +50,51 @@ public class CartDaoImpl implements CartDao {
 		return cat;
 	}
 
-	public Cart getProductById() {
-		// TODO Auto-generated method stub
-		return null;
+	public Product getprbyid(int id) {
+		
+		Session s=sessionF.openSession();
+	Transaction t=s.getTransaction();
+	t.begin();
+	Product l = (Product) s.get(Product.class,id);
+	
+    t.commit();
+    s.close();
+   
+	
+	return l;
+}
+	
+	public Cart getcartbyid(int id) {
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Cart l = (Cart) s.get(Cart.class, id);
+		
+				
+		
+	    t.commit();
+	    
+	    s.close();
+	    return l;
+		
 	}
+	
+	public void updatequantity(int cartid, int i) {
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		 Query qry1 = s.createQuery("update Cart  set quantity="+i+"where id="+cartid);
+		  
+		 
+				       
+		
+				          qry1.executeUpdate();
+				         				
+		
+	    t.commit();
+	    
+	    s.close();
+		
+	}
+	
 }

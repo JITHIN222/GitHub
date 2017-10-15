@@ -68,9 +68,10 @@ public class CategoryController {
 	
 	/*updating category to db*/
 	@RequestMapping("/admin/upC")
-	public ModelAndView upC(@RequestParam("name") String name) {
+	public ModelAndView upC(@RequestParam("n") int id, @RequestParam("name") String name) {
 		System.out.println("reaching innnnn"+name);
 		Category i=new Category();
+		i.setId(id);
 		i.setName(name);
 		categoryDao.updatecategory(i);
 		

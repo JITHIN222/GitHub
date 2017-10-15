@@ -52,8 +52,9 @@
 						<tr>
 							<th style="width:50%">Product</th>
 							<th style="width:10%">Price</th>
+							<th></th>
 							<th style="width:8%">Quantity</th>
-							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:22%" class="text-center"></th>
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
@@ -69,11 +70,11 @@
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">${c.price}</td>
+							<td data-th="Price">$${c.price}</td>
+							<td></td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
+								<input type="number" class="form-control text-center" value="${c.quantity}">
 							</td>
-							<td data-th="Subtotal" class="text-center">${c.price}</td>
 							<td class="actions" data-th="">
 								<button class="btn btn-danger btn-sm">Delete</button>								
 							</td>
@@ -81,13 +82,11 @@
 						</tr></c:forEach>
 					</tbody>
 					<tfoot>
-						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 1.99</strong></td>
-						</tr>
+						
 						<tr>
 							<td><a href="#" class="btn btn-warning"><i class=" glyphicon glyphicon-shopping-cart"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+							<td class="hidden-xs text-center"><strong>Total $${t}</strong></td>
 							<td><a href="#" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
 						</tr>
 					</tfoot>

@@ -33,10 +33,10 @@
                         </div></div>
                         <div class="row">
                         <div class="col-sm-6">
-                        <a class="btn btn-primary btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-zoom-in"></span>View</a>                        
+                        <a class="btn btn-primary btn-product" href="product?id=${p.id}"><span class="glyphicon glyphicon-zoom-in"></span> Quick View</a>                        
                            </div>
                         <div class="col-sm-6">
-                           <a class="btn btn-success btn-product" href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> 
+                           <a class="btn btn-success btn-product" href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a> 
                         </div></div>
                 </div>
             </div>
