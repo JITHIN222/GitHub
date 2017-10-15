@@ -12,8 +12,8 @@ public interface CartDao {
 	
 	public ArrayList<Cart> getcartbyusernmae(String Username);
 	public Product getprbyid(int id);
-
 	public Cart getcartbyid(int id);
-
 	public void updatequantity(int cartid, int quantity);
+	public void deletecart(int id);
+	public void updatecart(Cart id);
 }

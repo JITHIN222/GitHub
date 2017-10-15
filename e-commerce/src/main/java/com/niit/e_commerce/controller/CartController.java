@@ -33,13 +33,12 @@ public class CartController {
 	@Autowired
 	ProductDAO productDao;
 	
-	/*adding category to db*/
+	/*adding cart to db*/
 	@RequestMapping("/cart")
 	public ModelAndView addcart(@RequestParam("id") int id)
 	{ 
 		
-		 org.springframework.security.core.Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	     String name = auth.getName();
+	     String name = SecurityContextHolder.getContext().getAuthentication().getName();
 	     Cart cart=new Cart();
 		
 int count=0,cartid=0;
@@ -55,7 +54,7 @@ int count=0,cartid=0;
 			cartid=c.getId();
 		}
 	}
-	if(count==1)
+	if(count==1) //actually quantity update if want same product more than one
 	{
 		
 		Cart c=cartDao.getcartbyid(cartid);
@@ -63,7 +62,7 @@ int count=0,cartid=0;
 		quantity=quantity+1;
 		cartDao.updatequantity(cartid,quantity);
 	}
-	else
+	else //else condition for adding one quantity for one product
 	{
 		cart.setUsername(name);
 cart.setQuantity(1);
@@ -101,7 +100,7 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		
 		 
 		
-		mv1.addObject("catego",l);
+		mv1.addObject("cate",l);
 	
 	
 		return mv1;
@@ -135,6 +134,65 @@ public ModelAndView car(){
 			return mv1;
 	
 	
+}
+
+/*redirecting to Cartupdate page*/
+@RequestMapping("/cartup")
+	public ModelAndView cartupdate(@RequestParam("prid") int cartid) {
+		
+		ModelAndView mv1 = new ModelAndView("Cartupdate");
+		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",l);
+		Cart c= new Cart();
+		c=cartDao.getcartbyid(cartid);
+		mv1.addObject("ca",c);
+		return mv1;
+}
+
+
+@RequestMapping("/updatecart")
+public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity") int quantity) {
+	ModelAndView mv1 = new ModelAndView("cart");
+	ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+	mv1.addObject("cate",l);
+	Cart c= new Cart();
+	String Username=SecurityContextHolder.getContext().getAuthentication().getName();
+	c.setUsername(Username);
+	c.setQuantity(quantity);
+	Product pr=new Product();
+	pr=cartDao.getprbyid(cartid);
+	c.setPid(pr);
+	c.setPrice(pr.getPrice());
+	c.setStatus("NP");
+	cartDao.updatecart(c);
+	return mv1;
+}
+
+
+/*delete cart*/
+@RequestMapping("/cartdel")
+	public ModelAndView cartdelete(@RequestParam("prid") int cartid) {
+		
+		cartDao.deletecart(cartid);
+		ModelAndView mv1 = new ModelAndView("cart");
+		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",l);
+		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
+		
+		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
+		
+		mv1.addObject("ca",ll);
+		
+		int total=0;
+		for(Cart cart:ll)
+		{
+		int sum=cart.getPrice()*cart.getQuantity();
+		total=total+sum;	
+		}
+		
+		mv1.addObject("t",total);
+		
+		return mv1;
 }
 
 }

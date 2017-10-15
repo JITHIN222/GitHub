@@ -237,7 +237,7 @@ public class ProductController {
 		
 	}
 	
-	/*listing product*/
+	/*single product*/
 	@RequestMapping("/product")
 	public ModelAndView product(@RequestParam("id") int ca){
 		Product p=new Product();

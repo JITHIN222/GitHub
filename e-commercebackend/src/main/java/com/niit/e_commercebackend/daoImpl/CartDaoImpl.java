@@ -97,4 +97,23 @@ public class CartDaoImpl implements CartDao {
 		
 	}
 	
+	public void deletecart(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Cart p = (Cart) s.get(Cart.class, id);
+		s.delete(p);
+        t.commit();
+        s.close();
+	}
+	
+	public void updatecart(Cart id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.update(id);
+        t.commit();
+        s.close();
+	}
+	
 }

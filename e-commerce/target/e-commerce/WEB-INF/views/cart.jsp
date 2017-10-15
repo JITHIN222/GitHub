@@ -44,18 +44,16 @@
   </style>
 </head>
 <body>
-<form>
 <jsp:include page="Header.jsp"/>
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-							<th style="width:50%">Product</th>
+							<th style="width:15%">Product</th>
 							<th style="width:10%">Price</th>
-							<th></th>
-							<th style="width:8%">Quantity</th>
-							<th style="width:22%" class="text-center"></th>
-							<th style="width:10%"></th>
+							<th style="width:2%">Quantity</th>
+							<th style="width:2%"></th>
+							<th style="width:2%"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -71,12 +69,12 @@
 								</div>
 							</td>
 							<td data-th="Price">$${c.price}</td>
-							<td></td>
-							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="${c.quantity}">
+							<td data-th="Quantity" align="center">${c.quantity}</td>
+							<td>
+							<a href="cartup?prid=${c.id}"><i class="fa fa-refresh"></i></a>
 							</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-danger btn-sm">Delete</button>								
+							<td>
+								<a href="cartdel?prid=${c.id}"><i class="fa fa-close"></i></a>								
 							</td>
 							
 						</tr></c:forEach>
@@ -86,13 +84,12 @@
 						<tr>
 							<td><a href="#" class="btn btn-warning"><i class=" glyphicon glyphicon-shopping-cart"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $${t}</strong></td>
+							<td class="hidden-xs text-center"><strong>Total:$${t}</strong></td>
 							<td><a href="#" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
 						</tr>
 					</tfoot>
 				</table>
 </div>
 <jsp:include page="Footer.jsp"/>
-</form>
 </body>
 </html>
