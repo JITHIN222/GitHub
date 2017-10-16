@@ -21,7 +21,7 @@ public class CartDaoImpl implements CartDao {
 	private SessionFactory sessionF;
 
 	@Autowired
-    public void ProductDAOImpl(SessionFactory sessionF) {
+    public CartDaoImpl(SessionFactory sessionF) {
 
 		this.sessionF = sessionF;
 	}

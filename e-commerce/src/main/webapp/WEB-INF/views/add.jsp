@@ -61,7 +61,7 @@
        
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control"  name="short" placeholder="Enter Description" required>
+            <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" required>
         </div>
 <div class="form-group">                   
            <input type="file" name="img" required/>

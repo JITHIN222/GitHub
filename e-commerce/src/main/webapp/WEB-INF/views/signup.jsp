@@ -7,6 +7,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script>
+  var check = function() {
+	  if (document.getElementById('f5').value ==
+	    document.getElementById('f6').value) {
+	    document.getElementById('message').style.color = 'green';
+	    document.getElementById('message').innerHTML = 'matching';
+	  } else {
+	    document.getElementById('message').style.color = 'red';
+	    document.getElementById('message').innerHTML = 'not matching';
+	  }
+	}
+  </script>
   <style >
    .container {
   margin-top: 30px
@@ -24,13 +37,14 @@
   position: relative;
   margin-bottom: 0;
 }
-#f4, #f4:focus {
+#f4, #f5, #f6, #f4:focus, #f5:focus, #f6:focus {
   border: none;
   box-shadow: none;
   padding-left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   border-radius: 0
 }
+
 #f2 {
     padding: 42px;
 }
@@ -76,7 +90,7 @@ text-align: right;
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Full Name</span> 
-            <input type="text" class="form-control" id="f4" name="fname" > 
+            <input type="text" class="form-control" id="f4" name="fname" required > 
         </div>
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Email</span>
@@ -84,11 +98,11 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">    
         <span style="font-weight:900">Password</span>      
-            <input type="password" class="form-control" id="f4" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <input type="password" class="form-control" id="f5" name="pwd" onkeyup="check();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         </div>
         <div class="form-group" id="f3">  
         <span style="font-weight:900">Confirm Password</span>        
-            <input type="password" class="form-control" id="f4"  required>     
+            <input type="password" class="form-control" id="f6" onkeyup="check();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>     
         </div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
@@ -97,7 +111,7 @@ text-align: right;
      <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>
   </div> -->
-        <button type="submit" class="btn btn-primary btn-block" id="b1" >Register</button>
+        <button type="submit" class="btn btn-primary btn-block" id="b1"  >Register</button>
         <p align="center"><a href="in">Already have an account?</a></p>
       </div>
     </form>

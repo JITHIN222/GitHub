@@ -57,7 +57,7 @@
             <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${pr.stock }">
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="${pr.shortDesc }">
+            <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }">
         </div>
 <div class="form-group">                   
            <input type="file" name="img" value="${pr.img}"/>

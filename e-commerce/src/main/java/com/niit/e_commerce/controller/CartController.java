@@ -89,11 +89,19 @@ cart.setQuantity(1);
 		
 		
 		
-		ModelAndView mv1 = new ModelAndView("Product");
-		Product ll=new Product();
-		ll=productDao.getprbyid(id);
+		ModelAndView mv1 = new ModelAndView("cart");
+		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(name);
 		
-		mv1.addObject("pr",ll);
+		
+		mv1.addObject("ca",ll);
+		int total=0;
+		for(Cart ca1:ll)
+		{
+		int sum=ca1.getPrice()*ca1.getQuantity();
+		total=total+sum;	
+		}
+		
+		mv1.addObject("t",total);
 		
 		
 ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
@@ -138,7 +146,7 @@ public ModelAndView car(){
 
 /*redirecting to Cartupdate page*/
 @RequestMapping("/cartup")
-	public ModelAndView cartupdate(@RequestParam("prid") int cartid) {
+	public ModelAndView cartupdate(@RequestParam("cartid") int cartid) {
 		
 		ModelAndView mv1 = new ModelAndView("Cartupdate");
 		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
@@ -149,7 +157,7 @@ public ModelAndView car(){
 		return mv1;
 }
 
-
+/*cart update done & redirecting to cart page*/
 @RequestMapping("/updatecart")
 public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity") int quantity) {
 	ModelAndView mv1 = new ModelAndView("cart");
@@ -163,15 +171,27 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 	pr=cartDao.getprbyid(cartid);
 	c.setPid(pr);
 	c.setPrice(pr.getPrice());
-	c.setStatus("NP");
+	c.getStatus();
 	cartDao.updatecart(c);
+	ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
+	
+	
+	mv1.addObject("ca",ll);
+	int total=0;
+	for(Cart cart:ll)
+	{
+	int sum=cart.getPrice()*cart.getQuantity();
+	total=total+sum;	
+	}
+	
+	mv1.addObject("t",total);
 	return mv1;
 }
 
 
 /*delete cart*/
 @RequestMapping("/cartdel")
-	public ModelAndView cartdelete(@RequestParam("prid") int cartid) {
+	public ModelAndView cartdelete(@RequestParam("cartid") int cartid) {
 		
 		cartDao.deletecart(cartid);
 		ModelAndView mv1 = new ModelAndView("cart");
@@ -193,6 +213,12 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 		mv1.addObject("t",total);
 		
 		return mv1;
+}
+
+@RequestMapping("/buy")
+public ModelAndView buy(){
+	ModelAndView mv1 = new ModelAndView("order");
+	return mv1;
 }
 
 }
