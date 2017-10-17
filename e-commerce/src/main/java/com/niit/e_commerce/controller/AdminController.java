@@ -40,6 +40,29 @@ public class AdminController {
 		
 	}
 	
+	@RequestMapping("/ad")
+	public ModelAndView admin()
+	{
+		ModelAndView mv = new ModelAndView("redirect:/admin/ad");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
+		mv.addObject("categ",cc);
+		mv.addObject("catego",ss);
+		mv.addObject("cate",cc);
+		return mv;
+		
+	}
+	@RequestMapping("/admin")
+	public ModelAndView index()
+	{
+	
+		ModelAndView mv1 = new ModelAndView("index");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cat);
+		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
+		mv1.addObject("off",p);
+	    return mv1;
+	}
 	
 	
 }

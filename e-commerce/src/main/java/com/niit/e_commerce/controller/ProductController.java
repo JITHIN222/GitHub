@@ -125,7 +125,7 @@ public class ProductController {
 	@RequestMapping("/admin/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("add");
+		ModelAndView mv= new ModelAndView("redirect:/admin/ad");
 		mv.addObject("cate",cat);
 		productDao.deleteproduct(ca);
 		return mv;
@@ -154,7 +154,7 @@ public class ProductController {
 		i.setCid(cc);
 		i.setSid(su);
 		
-		if(file==null)
+		if(file==null && file1==null && file2==null && file3==null)
 		{
 			Product p=new Product();
 			p=productDao.getprbyid(id);

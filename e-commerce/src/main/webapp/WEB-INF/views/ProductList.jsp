@@ -23,7 +23,7 @@
 <a href="${p.id}">
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                <img class="group list-group-image" src="resources/Productimage/${p.img}" alt="" style="width:70%; height:200px;"/>
+                <img class="group list-group-image" src="resources/Productimage/${p.img}" alt="" style="width:50%; height:180px;"/>
                 <div class="caption">
                     <h4 style="color:black" align="center">
                         ${p.name}</h4>

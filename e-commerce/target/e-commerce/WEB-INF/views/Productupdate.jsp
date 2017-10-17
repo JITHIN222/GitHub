@@ -25,7 +25,7 @@
                     <div class="tab-content">
                     
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="upP" method="post" enctype="multipart/form-data">
+                        <form action="upP" method="get" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
@@ -57,7 +57,7 @@
             <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${pr.stock }">
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control"  name="short" placeholder="Enter Description" value="${pr.shortDesc }">
+            <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }">
         </div>
 <div class="form-group">                   
            <input type="file" name="img" value="${pr.img}"/>

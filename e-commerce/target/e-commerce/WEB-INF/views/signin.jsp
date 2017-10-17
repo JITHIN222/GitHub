@@ -77,7 +77,7 @@ text-align: right;
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3"> 
         <span style="font-weight:900">Email/Username</span>            
-            <input type="text" id="f4" class="form-control" name="j_username" required >
+            <input type="text" id="f4" class="form-control" name="j_username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required >
         </div>
         <div class="form-group" id="f3">           
         <span style="font-weight:900">Password</span>

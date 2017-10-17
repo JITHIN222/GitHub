@@ -163,16 +163,11 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 	ModelAndView mv1 = new ModelAndView("cart");
 	ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	mv1.addObject("cate",l);
-	Cart c= new Cart();
+    Cart c= new Cart();
 	String Username=SecurityContextHolder.getContext().getAuthentication().getName();
 	c.setUsername(Username);
 	c.setQuantity(quantity);
-	Product pr=new Product();
-	pr=cartDao.getprbyid(cartid);
-	c.setPid(pr);
-	c.setPrice(pr.getPrice());
-	c.getStatus();
-	cartDao.updatecart(c);
+	cartDao.updatequantity(cartid,quantity);
 	ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
 	
 	
@@ -187,6 +182,7 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 	mv1.addObject("t",total);
 	return mv1;
 }
+
 
 
 /*delete cart*/

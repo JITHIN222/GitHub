@@ -283,7 +283,7 @@
 						<a class="btn icon-btn btn-warning" href="cart?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>
 					<div class="btn-group buy">
-						<a class="btn icon-btn btn-danger" href="#"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+						<a class="btn icon-btn btn-danger" href="buy"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
 					</div>
                                                           
                 </div>                              

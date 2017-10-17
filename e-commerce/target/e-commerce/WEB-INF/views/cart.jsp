@@ -50,8 +50,8 @@
     				<thead>
 						<tr>
 							<th style="width:15%">Product</th>
-							<th style="width:10%">Price</th>
-							<th style="width:2%">Quantity</th>
+							<th style="width:2%">Price</th>
+							<th style="width:1%">Quantity</th>
 							<th style="width:2%"></th>
 							<th style="width:2%"></th>
 						</tr>
@@ -71,10 +71,10 @@
 							<td data-th="Price">$${c.price}</td>
 							<td data-th="Quantity" align="center">${c.quantity}</td>
 							<td>
-							<a href="cartup?prid=${c.id}"><i class="fa fa-refresh"></i></a>
+							<a href="cartup?cartid=${c.id}"><i class="fa fa-refresh"></i></a>
 							</td>
 							<td>
-								<a href="cartdel?prid=${c.id}"><i class="fa fa-close"></i></a>								
+								<a href="cartdel?cartid=${c.id}"><i class="fa fa-close"></i></a>								
 							</td>
 							
 						</tr></c:forEach>
@@ -85,7 +85,7 @@
 							<td><a href="#" class="btn btn-warning"><i class=" glyphicon glyphicon-shopping-cart"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>Total:$${t}</strong></td>
-							<td><a href="#" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
+							<td><a href="buy" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
 						</tr>
 					</tfoot>
 				</table>

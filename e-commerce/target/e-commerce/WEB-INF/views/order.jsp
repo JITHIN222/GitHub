@@ -11,7 +11,13 @@
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
 }
-
+body{
+  padding:0;
+  margin:0;
+  background: url(https://subtlepatterns.com/patterns/scribble_light.png) #FFF;
+  font-size:62.5%;
+  font-family: 'Open Sans', sans-serif;
+}
 img{
   max-width: 100%;
 }
@@ -564,7 +570,6 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 </style>
 </head>
 <body>
-<jsp:include page="Header.jsp"/>
 <div id="wrap">
 	<div id="accordian">
 		<div class="step" id="step1">
@@ -681,10 +686,89 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 			</form>
 			<a class="continue" href="#">Continue</a>
 		</div>
-		
- 		<div class="step" id="step5">
+		<div class="step" id="step4">
 			<div class="number">
 				<span>4</span>
+			</div>
+			<div class="title">
+				<h1>Payment Information</h1>
+			</div>
+			<div class="modify">
+				<i class="fa fa-plus-circle"></i>
+			</div>
+		</div>
+		<div class="content" id="payment">
+			<div class="left credit_card">
+			<form class="go-right">
+				<div>
+				<input type="text" name="card_number" value="" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Number"/><label for="card_number">Card Number</label>
+				</div>
+				<div>
+				  <div class="expiry">	
+				      <div class="month_select">
+				        <select name="exp_month" value="" id="exp_month" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+							<option value = "1">01 (Jan)</option>
+                   			<option value = "2">02 (Feb)</option>
+                   			<option value = "3">03 (Mar)</option>
+                   			<option value = "4">04 (Apr)</option>
+                   			<option value = "5">05 (May)</option>
+                   			<option value = "6">06 (Jun)</option>
+                   			<option value = "7">07 (Jul)</option>
+                   			<option value = "8">08 (Aug)</option>
+                   			<option value = "9">09 (Sep)</option>
+                   			<option value = "10">10 (Oct)</option>
+                   			<option value = "11">11 (Nov)</option>
+                   			<option value = "12">12 (Dec)</option>
+                        </select>
+                      </div>
+                      <span class="divider">-</span>
+                      <div class="year_select">
+				        <select name="exp_year" value="" id="exp_year" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+							<option value = "1">14 </option>
+                   			<option value = "2">15 (Feb)</option>
+                   			<option value = "3">16 (Mar)</option>
+                   			<option value = "4">17 (Apr)</option>
+                   			<option value = "5">18 (May)</option>
+                   			<option value = "6">19 (Jun)</option>
+                   			<option value = "7">20 (Jul)</option>
+                   			<option value = "8">22 (Aug)</option>
+                   			<option value = "9">23 (Sep)</option>
+                   			<option value = "10">24 (Oct)</option>
+                   			<option value = "11">25 (Nov)</option>
+                   			<option value = "12">26 (Dec)</option>
+                        </select>
+            	      </div>
+            	    </div>
+                 <label class="exp_date" for="Exp_Date">Exp Date</label>
+            	  </div>
+            	<div class="sec_num">
+              <div>
+				        <input type="text" name="ccv" value="" id="ccv" placeholder="123" data-trigger="change" data-validation-minlength="3" data-type="name" data-required="true" data-error-message="Enter Your Card Security Code"/>
+                <label for="ccv">Security Code</label>
+				      </div>
+				      </div>
+			      </form>
+			</div>
+			<div class="right">
+				<div class="accepted">
+					<span><img src="https://i.imgur.com/Z5HVIOt.png"></span>
+					<span><img src="https://i.imgur.com/Le0Vvgx.png"></span>
+					<span><img src="https://i.imgur.com/D2eQTim.png"></span>
+					<span><img src="https://i.imgur.com/Pu4e7AT.png"></span>
+					<span><img src="https://i.imgur.com/ewMjaHv.png"></span>
+					<span><img src="https://i.imgur.com/3LmmFFV.png"></span>
+				</div>
+				<div class="secured">
+					<img class="lock" src="https://i.imgur.com/hHuibOR.png">
+					<p class="security info">What, well you mean like a date? Doc? Am I to understand you're still hanging around with Doctor Emmett Brown, McFly? Tardy slip for you, Miss Parker. And one for you McFly I believe that makes four in a row. Now let me give you a nickle's worth of advice, young man. This so called Doctor Brown is dangerous, he's a real nuttcase.</p>
+				</div>
+			</div>
+			<a class="continue" href="#">Continue</a>
+
+ 		</div>
+ 		<div class="step" id="step5">
+			<div class="number">
+				<span>5</span>
 			</div>
 			<div class="title">
 				<h1>Finalize Order</h1>
@@ -733,6 +817,13 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 						<span class="phone">(123)867-5309</span>
 					</div>
 				</div>
+				<div class="payment">
+					<span class="title">Payment:</span>
+					<div class="payment_reviewed">
+						<span class="method">Visa</span>
+						<span class="number_hidden">xxxx-xxxx-xxxx-1111</span>
+					</div>
+				</div>
 				<div id="complete">
 				<a class="big_button" id="complete" href="#">Complete Order</a>
 				<span class="sub">By selecting this button you agree to the purchase and subsequent payment for this order.</span> 
@@ -740,6 +831,6 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 
 
 </div>
-<jsp:include page="Footer.jsp"/>
+
 </body>
 </html>

@@ -33,12 +33,12 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="">Home</a></li>
+      <li><a href="./">Home</a></li>
        <c:if test="${pageContext.request.userPrincipal.name  == 'admin123@gmail.com'}">
-      <li ><a href="admin/ad">Admin</a></li>
+      <li ><a href="ad">Admin</a></li>
       </c:if>
        <c:if test="${pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="cat">Categories <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach var="designatee" items="${cate}">
                        <li><a href="${designatee.id}">${designatee.name}</a></li>    

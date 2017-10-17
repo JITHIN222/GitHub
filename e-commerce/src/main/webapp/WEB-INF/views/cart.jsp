@@ -49,9 +49,9 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-							<th style="width:15%">Product</th>
-							<th style="width:10%">Price</th>
-							<th style="width:2%">Quantity</th>
+							<th style="width:30%">Product</th>
+							<th style="width:2%">Price</th>
+							<th style="width:1%">Quantity</th>
 							<th style="width:2%"></th>
 							<th style="width:2%"></th>
 						</tr>
@@ -69,12 +69,13 @@
 								</div>
 							</td>
 							<td data-th="Price">$${c.price}</td>
+							<td></td>
 							<td data-th="Quantity" align="center">${c.quantity}</td>
 							<td>
-							<a href="cartup?cartid=${c.id}"><i class="fa fa-refresh"></i></a>
+							<a href="cartup?cartid=${c.id}"><i class="fa fa-refresh" style="color:sky blue"></i></a>
 							</td>
 							<td>
-								<a href="cartdel?cartid=${c.id}"><i class="fa fa-close"></i></a>								
+								<a href="cartdel?cartid=${c.id}"><i class="fa fa-close" style="color:red"></i></a>								
 							</td>
 							
 						</tr></c:forEach>

@@ -51,8 +51,7 @@
 						<tr>
 							<th style="width:8%">Product</th>
 							<th style="width:2%">Price</th>
-							<th style="width:1%">id</th>
-							<th style="width:1%"></th>
+							<th></th>
 							<th style="width:2%">Quantity</th>
 						</tr>
 					</thead>
@@ -69,8 +68,7 @@
 							</td>
 							<td data-th="Price">$${ca.price}</td>
 							<form method="get" action="updatecart">
-							<td><input type="number" class="form-control text-center" value="${ca.id}" name="id"></td>
-							<td></td>
+							<td><input type="hidden" class="form-control text-center" value="${ca.id}" name="id"></td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="${ca.quantity}" name="quantity">				
 								<input id="submit" class="btn btn-success btn-md" name="submit" type="submit" value="Update" style="width:100%">			    

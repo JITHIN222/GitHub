@@ -25,7 +25,7 @@
                     <div class="tab-content">
                     
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="upP" method="post" enctype="multipart/form-data">
+                        <form action="upP" method="get" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
