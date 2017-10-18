@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product Page</title>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -280,7 +280,7 @@
   </div><!-- end row --></br>
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
                         <div class="btn-group cart">
-						<a class="btn icon-btn btn-warning" href="cart?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+						<a class="btn icon-btn btn-warning" href="user/car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>
 					<div class="btn-group buy">
 						<a class="btn icon-btn btn-danger" href="buy"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>

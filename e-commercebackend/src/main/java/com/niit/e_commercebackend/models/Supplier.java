@@ -29,6 +29,29 @@ public class Supplier implements Serializable {
 	@Column(name = "NAME", nullable = false)
     private String name;
 	
+	@Column(name = "EMAIL", nullable = false)
+    private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public long getMob() {
+		return mob;
+	}
+
+	public void setMob(long mob) {
+		this.mob = mob;
+	}
+
+
+	@Column(name = "MOBILE_NO", nullable = false)
+    private long mob;
 
 	   @OneToMany(targetEntity=Product.class, mappedBy="sid", fetch=FetchType.EAGER)
 	   private Set<Product> prod;

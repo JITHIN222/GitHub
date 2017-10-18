@@ -30,7 +30,7 @@ public class SupplierController {
 	@RequestMapping("/admin/deletes")
 	public ModelAndView delsup(@RequestParam("supid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("add");
+		ModelAndView mv= new ModelAndView("redirect:/admin/listsup");
 		mv.addObject("cate",cat);
 		supplierDao.deletesupplier(ca);
 		return mv;
@@ -53,7 +53,6 @@ public class SupplierController {
 	/*updating the supplier*/
 	@RequestMapping("/admin/updates")
 	public ModelAndView upS(@RequestParam("supid") int ca){
-		System.err.println("reachinginnnn"+ca);
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("Supplierupdate");
 		mv.addObject("cate",cat);
@@ -66,26 +65,29 @@ public class SupplierController {
 
 	/*adding supplier to db*/
 	@RequestMapping("/admin/addS")
-	public ModelAndView addS(@RequestParam("name") String name) {
+	public ModelAndView addS(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("mob") long mob) {
 		Supplier i=new Supplier();
 		i.setName(name);
+		i.setEmail(email);
+		i.setMob(mob);
 		supplierDao.saveSupplier(i);
 		
-		ModelAndView mv1 = new ModelAndView("index");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cc);
 		return mv1;
 	}
 	
 	@RequestMapping("/admin/upS")
-	public ModelAndView upS(@RequestParam("n") int id, @RequestParam("name") String name) {
-		System.out.println("reaching innnnn"+name);
+	public ModelAndView upS(@RequestParam("n") int id, @RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("mob") long mob ) {
 		Supplier i=new Supplier();
 		i.setId(id);
 		i.setName(name);
+		i.setEmail(email);
+		i.setMob(mob);
 		supplierDao.updatesupplier(i);
 		
-		ModelAndView mv1 = new ModelAndView("add");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup");
 		
 		/*display category dropdown in navbar*/
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();

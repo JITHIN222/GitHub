@@ -34,7 +34,7 @@ public class CartController {
 	ProductDAO productDao;
 	
 	/*adding cart to db*/
-	@RequestMapping("/cart")
+	@RequestMapping("/user/car")
 	public ModelAndView addcart(@RequestParam("id") int id)
 	{ 
 		
@@ -80,8 +80,6 @@ cart.setQuantity(1);
 		}
 		
 		cart.setPid(p);
-		cart.setStatus("NP");
-		
 		cartDao.saveCart(cart);
 			
 		
@@ -89,7 +87,7 @@ cart.setQuantity(1);
 		
 		
 		
-		ModelAndView mv1 = new ModelAndView("cart");
+		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(name);
 		
 		
@@ -115,8 +113,8 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	}
 
 /*cart page header*/
-@RequestMapping("/car")
-public ModelAndView car(){
+@RequestMapping("/user/cart")
+public ModelAndView cart(){
 	
 	ModelAndView mv1 = new ModelAndView("cart");
 	
@@ -145,7 +143,7 @@ public ModelAndView car(){
 }
 
 /*redirecting to Cartupdate page*/
-@RequestMapping("/cartup")
+@RequestMapping("/user/cartup")
 	public ModelAndView cartupdate(@RequestParam("cartid") int cartid) {
 		
 		ModelAndView mv1 = new ModelAndView("Cartupdate");
@@ -158,9 +156,9 @@ public ModelAndView car(){
 }
 
 /*cart update done & redirecting to cart page*/
-@RequestMapping("/updatecart")
+@RequestMapping("/user/updatecart")
 public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity") int quantity) {
-	ModelAndView mv1 = new ModelAndView("cart");
+	ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 	ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	mv1.addObject("cate",l);
     Cart c= new Cart();
@@ -186,11 +184,11 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 
 
 /*delete cart*/
-@RequestMapping("/cartdel")
+@RequestMapping("/user/cartdel")
 	public ModelAndView cartdelete(@RequestParam("cartid") int cartid) {
 		
 		cartDao.deletecart(cartid);
-		ModelAndView mv1 = new ModelAndView("cart");
+		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",l);
 		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
@@ -211,7 +209,7 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 		return mv1;
 }
 
-@RequestMapping("/buy")
+@RequestMapping("/user/buy")
 public ModelAndView buy(){
 	ModelAndView mv1 = new ModelAndView("order");
 	return mv1;

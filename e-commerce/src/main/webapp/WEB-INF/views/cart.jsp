@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add to Cart</title>
+<title>Cart</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -51,7 +51,8 @@
 						<tr>
 							<th style="width:30%">Product</th>
 							<th style="width:2%">Price</th>
-							<th style="width:1%">Quantity</th>
+							<th style="width:0.5%;">Quantity</th>
+							<th style="width:2%">Subtotal</th>
 							<th style="width:2%"></th>
 							<th style="width:2%"></th>
 						</tr>
@@ -62,15 +63,15 @@
 								
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
 										<h4 class="nomargin">${c.pid.name}</h4>
 									</div>
 								</div>
 							</td>
 							<td data-th="Price">$${c.price}</td>
-							<td></td>
-							<td data-th="Quantity" align="center">${c.quantity}</td>
+							<td align="center">${c.quantity}</td>
+							<td>$${c.price * c.quantity }</td>
 							<td>
 							<a href="cartup?cartid=${c.id}"><i class="fa fa-refresh" style="color:sky blue"></i></a>
 							</td>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product List</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,13 +23,18 @@
 <a href="${p.id}">
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                <img class="group list-group-image" src="resources/Productimage/${p.img}" alt="" style="width:70%; height:200px;"/>
+                <img class="group list-group-image" src="${pageContext.request.contextPath}/resources/Productimage/${p.img}" alt="" style="width:50%; height:180px;"/>
                 <div class="caption">
                     <h4 style="color:black" align="center">
                         ${p.name}</h4>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <h4 style="color:black">Price: $${p.price}</h4>
+                        <c:if test="${p.offer eq 1}">     
+                    <h3 style="margin-top:0px; color:black;">Price:$${p.offerprice}${p.offerper}% off <small><strike> $${p.price}</strike></small></h3> 
+                    </c:if>
+                        <c:if test="${p.offer eq 0}">     
+                    <h3 style="margin-top:0px; color:black;">Price: $${p.price}</h3> 
+                    </c:if>
                         </div></div>
                         <div class="row">
                         <div class="col-sm-6">

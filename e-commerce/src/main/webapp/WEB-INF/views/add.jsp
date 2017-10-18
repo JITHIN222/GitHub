@@ -21,7 +21,7 @@
                             <li class="active"><a href="#tab1" data-toggle="tab">Product</a></li>
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
                             <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
-                            <!-- <li><a href="#tab4" data-toggle="tab">SubCategory</a></li>  -->  
+                            <li><a href="#tab4" data-toggle="tab">Offer</a></li>
                             <li><a href="#tab5" data-toggle="tab">Editor</a></li>                        
                         </ul>
                 </div>
@@ -48,7 +48,7 @@
 </select>
 </div>
      <div class="form-group">            
-            <input type="number" class="form-control" name="n" placeholder="Enter Id" required> 
+            <input type="hidden" class="form-control" name="n" placeholder="Enter Id" required> 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name"  placeholder="Enter Name" required> 
@@ -75,13 +75,12 @@
 <div class="form-group">                   
            <input type="file" name="img3" required/>
         </div>
-          <div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
                              <form action="addC">
      <div class="form-group">            
-            <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
+            <input type="hidden" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
@@ -92,25 +91,23 @@
                         <div class="tab-pane fade" id="tab3">
                              <form action="addS">
      <div class="form-group">            
-            <input type="number" class="form-control" name="n" placeholder="Enter Id"> 
+            <input type="hidden" class="form-control" name="n" placeholder="Enter Id"> 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name"> 
         </div>
+         <div class="form-group" >            
+            <input type="text" class="form-control"  name="email" placeholder="Enter email"> 
+        </div>
+         <div class="form-group" >            
+            <input type="long" class="form-control"  name="mob" placeholder="Enter Mobile No"> 
+        </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>
                         </div>
-                       <!--  <div class="tab-pane fade" id="tab4">
-                             <form action="addSC">
-     <div class="form-group">            
-            <input type="number" class="form-control" name="n" placeholder="Enter Id" > 
-        </div>
-        <div class="form-group" >            
-            <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
-        </div>
-          <button type="submit" class="btn btn-success" href="ad">Save</button>
-   </form>
-                        </div> -->
+                        <div class="tab-pane fade" id="tab4">
+                           <div><a href="offer"><h5 style="color:black;">Add Offer</h5></a></div>
+                        </div>
                          <div class="tab-pane fade" id="tab5">
                          <ul>
                        <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  

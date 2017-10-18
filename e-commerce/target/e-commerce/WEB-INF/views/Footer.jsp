@@ -46,17 +46,17 @@
   background: white;
   color: #D4AF37;
 }
-#ft{
+.footer{
    background-color: #424558;
-    bottom: 0;
-    left: 0;
-    right: 0;
+   position: absolute;
+   margin-bottom: 0px;
+ margin-top:1%;
     height: 350px;
     text-align: center;
     color: #CCC;
 }
 
-#ft p {
+.footer p {
     padding: 10.5px;
     margin: 0px;
     line-height: 100%;
@@ -66,7 +66,7 @@ padding: 10.5px;
 }
 </style>
 <body>
-<div id="ft">
+<div class="footer">
  <div class="row">
       <div class="col-sm-4">
     <h3>Logo</h3>

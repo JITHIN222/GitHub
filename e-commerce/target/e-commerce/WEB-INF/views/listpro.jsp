@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>list</title>
+<title>Product List</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -29,7 +29,7 @@
 					<tbody>
 			
 						<tr>
-						<td ><img class="img-thumbnail" src="resources/Productimage/${p.img}" alt="" style="width:50%; height:50px;"></td>
+						<td ><img class="img-thumbnail" src="${pageContext.request.contextPath}/resources/Productimage/${p.img}" alt="" style="width:50%; height:50px;"></td>
 							<td><h4>${p.name}</h4></td>
 							<td >$ ${p.price}</td>
 							<td >

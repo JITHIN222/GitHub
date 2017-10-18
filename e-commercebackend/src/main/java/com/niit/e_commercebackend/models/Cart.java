@@ -1,8 +1,4 @@
 package com.niit.e_commercebackend.models;
-
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,9 +28,6 @@ public class Cart {
 	
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
-	
-	@Column(name = "STATUS", nullable = false)
-	private String status;
 	
 	@ManyToOne
     @JoinColumn(name="PRODUCT_ID",updatable=true,insertable=true,nullable=false)
@@ -74,13 +67,6 @@ public class Cart {
 		this.username = username;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 
 	public int getId() {
 		return id;

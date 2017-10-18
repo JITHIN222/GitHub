@@ -32,9 +32,9 @@ public class CategoryController {
 		ArrayList<Product> p=new ArrayList<Product>();
 		p=productDao.getprbycatid(ca);
 		ModelAndView mv1 = new ModelAndView("ProductList");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv1.addObject("cate",cat);
 		mv1.addObject("pro",p);
-		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",l);
 		return mv1;
 		
 	}
@@ -46,22 +46,16 @@ public class CategoryController {
 		Category i=new Category();
 		i.setName(name);
 		categoryDao.saveCategory(i);
-		ModelAndView mv1 = new ModelAndView("index");
-		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cc);	
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat");	
 		return mv1;
 	}
 	
 	/*update button */
 	@RequestMapping("/admin/updatec")
 	public ModelAndView upca(@RequestParam("catid") int ca){
-		System.err.println("reachinginnnn"+ca);
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("Categoryupdate");
-		mv.addObject("cate",cat);
 		Category c= new Category();
 		c=categoryDao.getcabyid(ca);
-		System.out.println(c);
 		mv.addObject("cat",c);
 		return mv;
 	}
@@ -69,17 +63,12 @@ public class CategoryController {
 	/*updating category to db*/
 	@RequestMapping("/admin/upC")
 	public ModelAndView upC(@RequestParam("n") int id, @RequestParam("name") String name) {
-		System.out.println("reaching innnnn"+name);
 		Category i=new Category();
 		i.setId(id);
 		i.setName(name);
 		categoryDao.updatecategory(i);
 		
-		ModelAndView mv1 = new ModelAndView("add");
-		
-		/*display category dropdown in navbar*/
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat");
 		return mv1;
 	}
 	
@@ -87,7 +76,7 @@ public class CategoryController {
 	@RequestMapping("/admin/deletec")
 	public ModelAndView delcat(@RequestParam("catid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("add");
+		ModelAndView mv= new ModelAndView("redirect:/admin/listcat");
 		mv.addObject("cate",cat);
 		categoryDao.deletecategory(ca);
 		return mv;

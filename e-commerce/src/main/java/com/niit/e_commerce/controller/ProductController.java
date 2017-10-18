@@ -98,7 +98,7 @@ public class ProductController {
 					 
 		productDao.saveProduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("add");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");
 		
 		/*display category dropdown in navbar*/
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
@@ -125,20 +125,19 @@ public class ProductController {
 	@RequestMapping("/admin/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		ModelAndView mv= new ModelAndView("redirect:/admin/ad");
+		ModelAndView mv= new ModelAndView("redirect:/admin/listpro");
 		mv.addObject("cate",cat);
+		
 		productDao.deleteproduct(ca);
 		return mv;
 	}
 	
 	/*updating product to db*/
 	@RequestMapping("/admin/upP")
-	public ModelAndView upP(@RequestParam("n") int id,@RequestParam("name") String name, @RequestParam("price") int price, 
-			@RequestParam("stock") int stock, @RequestParam("short") String shortDesc, 
+	public ModelAndView update(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
-			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3,
-			@RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
-		System.out.println("reaching innnnn"+name);
+			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
+			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		Product i=new Product();
 		i.setName(name);
 		i.setPrice(price);
@@ -147,76 +146,63 @@ public class ProductController {
 		
 		Category cc=new Category();
 		cc=categoryDao.getcabyid(ca);
+		i.setCid(cc);
 		
 		Supplier su=new Supplier();
 		su=supplierDao.getssbyid(ss);
-		
-		i.setCid(cc);
 		i.setSid(su);
-		
-		if(file==null && file1==null && file2==null && file3==null)
-		{
-			Product p=new Product();
-			p=productDao.getprbyid(id);
-			String img=p.getImg();
-			i.setImg(img);
-			String img1=p.getImg1();
-			i.setImg1(img1);
-			String img2=p.getImg2();
-			i.setImg2(img2);
-			String img3=p.getImg3();
-			i.setImg3(img3);
-			
-		}
-		else
-		{
-			String img=file.getOriginalFilename();
-		    i.setImg(img);
-			 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
+	
+		String img=file.getOriginalFilename();
+	    i.setImg(img);
+	    
+		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
+		 try {
+				byte imagebyte[] = file.getBytes();
+				BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filepath));
+				fos.write(imagebyte);
+				fos.close();
+				} catch (IOException e) {
+				e.printStackTrace();}
+		 
+		 String img1=file1.getOriginalFilename();
+		    i.setImg1(img1);
+		    
+			 String filepath1 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file1.getOriginalFilename();
 			 try {
-					byte imagebyte[] = file.getBytes();
-					BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filepath));
-					fos.write(imagebyte);
-					fos.close();
+					byte imagebyte[] = file1.getBytes();
+					BufferedOutputStream fos1 = new BufferedOutputStream(new FileOutputStream(filepath1));
+					fos1.write(imagebyte);
+					fos1.close();
 					} catch (IOException e) {
 					e.printStackTrace();}
 			 
-			 String img1=file1.getOriginalFilename();
-			    i.setImg1(img1);
-				 String filepath1 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file1.getOriginalFilename();
+			 String img2=file2.getOriginalFilename();
+			    i.setImg2(img2);
+			    
+				 String filepath2 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file2.getOriginalFilename();
 				 try {
-						byte imagebyte[] = file1.getBytes();
-						BufferedOutputStream fos1 = new BufferedOutputStream(new FileOutputStream(filepath1));
-						fos1.write(imagebyte);
-						fos1.close();
+						byte imagebyte[] = file2.getBytes();
+						BufferedOutputStream fos2 = new BufferedOutputStream(new FileOutputStream(filepath2));
+						fos2.write(imagebyte);
+						fos2.close();
 						} catch (IOException e) {
-						e.printStackTrace();}
+					e.printStackTrace();}	
 				 
-				 String img2=file2.getOriginalFilename();
-				    i.setImg2(img2);
-					 String filepath2 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file2.getOriginalFilename();
+				 String img3=file3.getOriginalFilename();
+				    i.setImg3(img3);
+				    
+					 String filepath3 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file3.getOriginalFilename();
 					 try {
-							byte imagebyte[] = file2.getBytes();
-							BufferedOutputStream fos2 = new BufferedOutputStream(new FileOutputStream(filepath2));
-							fos2.write(imagebyte);
-							fos2.close();
+							byte imagebyte[] = file3.getBytes();
+							BufferedOutputStream fos3 = new BufferedOutputStream(new FileOutputStream(filepath3));
+							fos3.write(imagebyte);
+							fos3.close();
 							} catch (IOException e) {
 							e.printStackTrace();}
 					 
-					 String img3=file3.getOriginalFilename();
-					    i.setImg3(img3);
-						 String filepath3 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file3.getOriginalFilename();
-						 try {
-								byte imagebyte[] = file3.getBytes();
-								BufferedOutputStream fos3 = new BufferedOutputStream(new FileOutputStream(filepath3));
-								fos3.write(imagebyte);
-								fos3.close();
-								} catch (IOException e) {
-								e.printStackTrace();}
-		}
 		productDao.updateproduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("add");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");
 		
 		/*display category dropdown in navbar*/
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();

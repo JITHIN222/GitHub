@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add to Cart</title>
+<title>Cart Update</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -60,14 +60,14 @@
 								
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="resources/Productimage/${ca.pid.img}" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/Productimage/${ca.pid.img}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
 										<h4 class="nomargin">${ca.pid.name}</h4>
 									</div>
 								</div>
 							</td>
 							<td data-th="Price">$${ca.price}</td>
-							<form method="get" action="updatecart">
+							<form method="post" action="updatecart">
 							<td><input type="hidden" class="form-control text-center" value="${ca.id}" name="id"></td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="${ca.quantity}" name="quantity">							    

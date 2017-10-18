@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>update</title>
+<title>Category update</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
                         <div class="tab-pane fade in active" id="tab1"> 
                         <form action="upC" method="post">
      <div class="form-group">            
-            <input type="text" class="form-control" name="n" value="${cat.id}"> 
+            <input type="hidden" class="form-control" name="n" value="${cat.id}"> 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${cat.name}"> 

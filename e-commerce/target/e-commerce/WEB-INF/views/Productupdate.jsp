@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>update</title>
+<title>Product update</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,9 +22,6 @@
                         </ul>
                 </div>
                 <div class="panel-body">
-                    <div class="tab-content">
-                    
-                        <div class="tab-pane fade in active" id="tab1"> 
                         <form action="upP" method="get" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
@@ -60,19 +57,19 @@
             <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }">
         </div>
 <div class="form-group">                   
-           <input type="file" name="img" value="${pr.img}"/>
+           <input type="file" name="img" value="${pr.img}" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img1" value="${pr.img1}" />
+           <input type="file" name="img1" value="${pr.img1}" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img2" value="${pr.img2}"/>
+           <input type="file" name="img2" value="${pr.img2}" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img3" value="${pr.img3}"/>
+           <input type="file" name="img3" value="${pr.img3}" required/>
         </div>
           <button type="submit" class="btn btn-success" >Update</button>
-   </form> </div>
+   </form>
                     
                       </div></div></div>
                       <jsp:include page="Footer.jsp"/>

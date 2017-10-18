@@ -30,10 +30,9 @@
   <nav class="navbar navbar-inverse" style="background-color:#424558">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="./">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="./">Home</a></li>
        <c:if test="${pageContext.request.userPrincipal.name  == 'admin123@gmail.com'}">
       <li ><a href="ad">Admin</a></li>
       </c:if>
@@ -52,7 +51,7 @@
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
-        <li><a href="car"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name  != null}">
 					<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
