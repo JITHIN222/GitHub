@@ -44,11 +44,7 @@ public class AdminController {
 	public ModelAndView admin()
 	{
 		ModelAndView mv = new ModelAndView("redirect:/admin/ad");
-		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
-		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
-		mv.addObject("categ",cc);
-		mv.addObject("catego",ss);
-		mv.addObject("cate",cc);
+		
 		return mv;
 		
 	}

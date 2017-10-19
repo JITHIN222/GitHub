@@ -239,16 +239,16 @@
  
         <div class="carousel-inner" id="s">
         <div class="item active">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img}" style="width:90%; height:375px;"/>
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img}" style="width:90%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""   src="resources/Productimage/${pr.img1}"  style="width:90%; height:375px;"/>
+<img data-toggle="magnify" alt=""   src="${pageContext.request.contextPath}/resources/Productimage/${pr.img1}"  style="width:90%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img2}" style="width:90%; height:375px;" />
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img2}" style="width:90%; height:375px;" />
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="resources/Productimage/${pr.img3}" style="width:90%; height:375px;" />
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img3}" style="width:90%; height:375px;" />
 </div>
             </div>
              <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
@@ -258,9 +258,9 @@
     </div>
     <ol class='carousel-indicators'>
         <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='resources/Productimage/${pr.img}' alt='' /></li>    
-        <li data-target='#carousel-custom' data-slide-to='1' ><img src='resources/Productimage/${pr.img1}' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='2' ><img src='resources/Productimage/${pr.img2}' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='3' ><img src='resources/Productimage/${pr.img3}' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='1' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img1}' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='2' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img2}' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='3' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img3}' alt='' /></li>
     
     </ol>
     </div></div>
@@ -279,12 +279,19 @@
    
   </div><!-- end row --></br>
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
+                        <c:if test="${pageContext.request.userPrincipal.name  != null}">
                         <div class="btn-group cart">
-						<a class="btn icon-btn btn-warning" href="user/car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+						<a class="btn icon-btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>
 					<div class="btn-group buy">
 						<a class="btn icon-btn btn-danger" href="buy"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
 					</div>
+					</c:if>
+					<c:if test="${pageContext.request.userPrincipal.name  == null}">
+					<div class="btn-group cart">
+						<a class="btn icon-btn btn-warning" href="in"><span class="glyphicon btn-glyphicon glyphicon-log-in img-circle text-warning"></span>Please Sign in</a>
+					</div></c:if>
+					
                                                           
                 </div>                              
         </div></div>

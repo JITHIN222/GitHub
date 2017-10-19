@@ -22,55 +22,61 @@
                         </ul>
                 </div>
                 <div class="panel-body">
-                        <form action="upP" method="get" enctype="multipart/form-data">
+                 
+                  <form action="upP" method="post" enctype="multipart/form-data">
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
   <option value="volvo">${pr.cid.name}</option>
-  <c:forEach var="c" items="${categ}">
-<option value="${c.id}">${c.name}</option>    
+  
+  <c:forEach var="designatee" items="${categ}">
+  
+<option value="${designatee.id}">${designatee.name}</option>    
                     </c:forEach> 
   
 </select>
         <label for="inputName" >Supplier</label>
         <select name="sid">
-  <option value="volvo">${pr.sid.name}</option>
-  <c:forEach var="s" items="${sup}">
-<option value="${s.id}">${s.name}</option>    
+  
+   <option value="volvo">${pr.sid.name}</option>
+  <c:forEach var="designatee" items="${sup}">
+  
+<option value="${designatee.id}">${designatee.name}</option>    
                     </c:forEach> 
   
 </select>
 </div>
      <div class="form-group">            
-            <input type="text" class="form-control" name="n" value="${pr.id}"> 
+            <input type="hidden" class="form-control" name="id" placeholder="Enter Id" value="${pr.id}" required> 
         </div>
         <div class="form-group" >            
-            <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${pr.name}"> 
+            <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${pr.name}" required> 
         </div>
         <div class="form-group">          
-            <input type="number" class="form-control"  name="price" placeholder="Enter Price" value="${pr.price }">
+            <input type="number" class="form-control"  name="price" placeholder="Enter Price" value="${pr.price }" required pattern="[0-9]+(\\.[0-9][0-9]?)?">
         </div>
         <div class="form-group">        
-            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${pr.stock }">
+            <input type="number" class="form-control"  name="stock" placeholder="Enter Stock" value="${pr.stock }" required>
+       
         </div>
          <div class="form-group">          
-            <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }">
+            <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }"required>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img" value="${pr.img}" required/>
+           <input type="file" name="img" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img1" value="${pr.img1}" required/>
+           <input type="file" name="img1" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img2" value="${pr.img2}" required/>
+           <input type="file" name="img2" required/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img3" value="${pr.img3}" required/>
+           <input type="file" name="img3" required/>
         </div>
-          <button type="submit" class="btn btn-success" >Update</button>
-   </form>
-                    
+          <button type="submit" class="btn btn-success" href="ad">Save</button>
+   </form> 
+                       
                       </div></div></div>
                       <jsp:include page="Footer.jsp"/>
 

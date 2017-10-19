@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                         <c:if test="${p.offer eq 1}">     
-                    <h3 style="margin-top:0px; color:black;">Price:$${p.offerprice}${p.offerper}% off <small><strike> $${p.price}</strike></small></h3> 
+                    <h3 style="margin-top:0px; color:black;">Price:$${p.offerprice}</h3> 
                     </c:if>
                         <c:if test="${p.offer eq 0}">     
                     <h3 style="margin-top:0px; color:black;">Price: $${p.price}</h3> 

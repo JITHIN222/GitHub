@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -133,12 +134,15 @@ public class ProductController {
 	}
 	
 	/*updating product to db*/
-	@RequestMapping("/admin/upP")
-	public ModelAndView update(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
+	@RequestMapping(value="/admin/upP",method=RequestMethod.POST)
+	public ModelAndView update(@RequestParam("id") int id,@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
 			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
 			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
-		Product i=new Product();
+		
+		System.out.println("In Product Update");
+		Product i=productDao.getprbyid(id);
+		i.setId(id);
 		i.setName(name);
 		i.setPrice(price);
 		i.setStock(stock);

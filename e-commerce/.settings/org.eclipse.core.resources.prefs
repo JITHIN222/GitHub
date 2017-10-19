@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/bill.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/order.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/payment.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/ship.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/thanku.jsp=UTF-8

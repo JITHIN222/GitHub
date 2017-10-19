@@ -32,7 +32,7 @@ public class Cart {
 	@ManyToOne
     @JoinColumn(name="PRODUCT_ID",updatable=true,insertable=true,nullable=false)
     Product pid;
-
+	
 	public Product getPid() {
 		return pid;
 	}

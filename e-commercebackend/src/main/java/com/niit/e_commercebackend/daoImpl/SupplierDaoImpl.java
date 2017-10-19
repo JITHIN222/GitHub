@@ -54,7 +54,6 @@ public class SupplierDaoImpl implements SupplierDao {
 		Transaction t=s.getTransaction();
 		t.begin();
 		Supplier su = (Supplier) s.get(Supplier.class, id);
-System.out.println(su.getName()+su.getId());
         t.commit();
         s.close();
 		return su;

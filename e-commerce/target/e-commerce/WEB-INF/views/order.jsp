@@ -169,12 +169,6 @@ li.active:after {
     background: transparent;
 }
 
-.tab-content{
-}
-.tab-pane{
-   position: relative;
-padding-top: 50px;
-}
 .tab-content .head{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 25px;
@@ -236,37 +230,34 @@ left: 35%;
 <section style="background:#efefe9;">
         <div class="container">
             <div class="row">
-                <div class="board">
-                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
-                    <div class="board-inner">
+                
                     <ul class="nav nav-tabs" id="myTab">
-                    <div class="liner"></div>
-                     <li class="active">
-                     <a href="#home" data-toggle="tab" title="welcome">
+                     <li>
+                     <a href="#home" title="Shipping Detail">
                       <span class="round-tabs one">
                               <i class="glyphicon glyphicon-home"></i>
                       </span> 
                   </a></li>
 
-                  <li><a href="#profile" data-toggle="tab" title="profile">
+                  <li><a href="#profile">
                      <span class="round-tabs two">
                          <i class="glyphicon glyphicon-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href="#messages" data-toggle="tab" title="bootsnipp goodies">
+                 <li class="active"><a href="#messages"  >
                      <span class="round-tabs three">
                           <i class="glyphicon glyphicon-gift"></i>
                      </span> </a>
                      </li>
 
-                     <li><a href="#settings" data-toggle="tab" title="blah blah">
+        <li><a href="#settings" >
                          <span class="round-tabs four">
                               <i class="glyphicon glyphicon-comment"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="#doner" data-toggle="tab" title="completed">
+                     <li><a href="#doner">
                          <span class="round-tabs five">
                               <i class="glyphicon glyphicon-ok"></i>
                          </span> </a>
@@ -275,9 +266,9 @@ left: 35%;
                      </ul></div>
 
                      <div class="tab-content">
-                      <div class="tab-pane fade in active" id="home">
+                      <div class="tab-pane fade in active" >
 
-                          <h3 class="head text-center">Shipping address</h3>
+                          <h3 class="head text-center">Billing address</h3>
                           <div class="row">
                           <div class="col-sm-6">
                           <div class="form-group">            
@@ -308,63 +299,21 @@ left: 35%;
                           <div class="col-sm-6">
              Mobile No:<input type="number" class="form-control" name="mob"  required>
                           </div>
-                          </div>
                           <div class="col-sm-6">
              Postal Code:<input type="number" class="form-control" name="pin"  required>
                           </div></div>
-                          <div class="row">
+                         <!--  <div class="row">
                           <div class="col-sm-6">
-                          </div></div>
+                          </div></div> -->
                           <p class="text-center">
-                    <a href="ship" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
+                    <a href="payment" class="btn btn-success btn-outline-rounded green"> Proceed to pay <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
                 </p>
                       </div>
-                      <div class="tab-pane fade" id="profile">
-                          <h3 class="head text-center">Create a Bootsnipp<sup>™</sup> Profile</h3>
-                          <p class="narrow text-center">
-                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                          </p>
-                          
-                          <p class="text-center">
-                    <a href="" class="btn btn-success btn-outline-rounded green"> create your profile <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
-                          
-                      </div>
-                      <div class="tab-pane fade" id="messages">
-                          <h3 class="head text-center">Bootsnipp goodies</h3>
-                          <p class="narrow text-center">
-                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                          </p>
-                          
-                          <p class="text-center">
-                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
-                      </div>
-                      <div class="tab-pane fade" id="settings">
-                          <h3 class="head text-center">Drop comments!</h3>
-                          <p class="narrow text-center">
-                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                          </p>
-                          
-                          <p class="text-center">
-                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
-                      </div>
-                      <div class="tab-pane fade" id="doner">
-  <div class="text-center">
-    <i class="img-intro icon-checkmark-circle"></i>
-</div>
-<h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
-<p class="narrow text-center">
-  Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-</p>
-</div>
-<div class="clearfix"></div>
-</div>
 
 </div>
 </div>
-</div>
+
+
 </section>
       <jsp:include page="Footer.jsp"/>             
 </body>

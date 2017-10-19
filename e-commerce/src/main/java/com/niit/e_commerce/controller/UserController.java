@@ -73,6 +73,18 @@ public class UserController {
 		return mv1;
 		
 	}
+	
+	@RequestMapping("/user/product")
+	public ModelAndView product(@RequestParam("id") int ca){
+		Product p=new Product();
+		p=productDao.getprbyid(ca);
+		ModelAndView mv = new ModelAndView("Product");
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		mv.addObject("pr",p);
+		return mv;
+		
+	}
 }
 
 

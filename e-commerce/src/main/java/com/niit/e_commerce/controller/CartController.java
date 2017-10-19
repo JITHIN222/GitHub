@@ -112,6 +112,12 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		return mv1;
 	}
 
+	@RequestMapping("/cart")
+	public ModelAndView c(){
+		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
+		return mv1;
+	}
+	
 /*cart page header*/
 @RequestMapping("/user/cart")
 public ModelAndView cart(){
@@ -207,12 +213,6 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 		mv1.addObject("t",total);
 		
 		return mv1;
-}
-
-@RequestMapping("/user/buy")
-public ModelAndView buy(){
-	ModelAndView mv1 = new ModelAndView("order");
-	return mv1;
 }
 
 }

@@ -69,7 +69,7 @@ padding: 10.5px;
 <div class="footer">
  <div class="row">
       <div class="col-sm-4">
-    <h3>Logo</h3>
+    <h3><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></h3>
 		    <p align="left">
 		        Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
  </div>

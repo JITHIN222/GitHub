@@ -60,7 +60,6 @@
 					<tbody>
 					<c:forEach var="c" items="${ca}">
 						<tr>
-								
 							<td data-th="Product">
 								<div class="row">
 									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
