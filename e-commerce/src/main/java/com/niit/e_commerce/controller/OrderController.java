@@ -46,6 +46,7 @@ public class OrderController {
 		String ship=first+" "+last+" "+address+" "+state+" "+city+" "+mob+" "+pin;
 		Order o = new Order();
 		o.setShip(ship);
+		o.setBill(ship);
 		orderDao.saveOrder(o);
 		ModelAndView mv1 = new ModelAndView("bill");
 		return mv1;

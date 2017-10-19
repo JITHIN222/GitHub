@@ -304,9 +304,6 @@ left: 35%;
                           <div class="col-sm-6">
              Postal Code:<input type="number" class="form-control" name="pin"  required>
                           </div></div>
-                         <!--  <div class="row">
-                          <div class="col-sm-6">
-                          </div></div> -->
                           <p class="text-center">
                     <a href="order" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
                 </p>

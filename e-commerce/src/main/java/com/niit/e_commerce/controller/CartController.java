@@ -112,6 +112,7 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		return mv1;
 	}
 
+	//redirecting from header to user intercept
 	@RequestMapping("/cart")
 	public ModelAndView c(){
 		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");

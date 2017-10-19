@@ -22,7 +22,7 @@ import com.niit.e_commercebackend.models.Supplier;
  
 @SuppressWarnings("unused")
 @Controller
-public class HelloworldController {
+public class HomeController {
 	
 	@Autowired
 	CategoryDAO categoryDao;
@@ -61,10 +61,10 @@ public class HelloworldController {
 	}
 	
 	/*error*/
-	@RequestMapping("/error")
+	@RequestMapping("/invalid")
 	public ModelAndView error()
 	{
-		ModelAndView mv = new ModelAndView("signin");
+		ModelAndView mv = new ModelAndView("authentication");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cc);
 		return mv;
@@ -80,62 +80,6 @@ public class HelloworldController {
 		mv.addObject("cate",cc);
 		return mv;
 		
-	}
-
-	
-	/*offer page*/
-	@RequestMapping("/admin/offer")
-	public ModelAndView offer()
-	{
-		ModelAndView mv1 = new ModelAndView("offer");
-		ArrayList<Product> p=new ArrayList<Product>();
-		 p=(ArrayList<Product>)productDao.getallProduct();
-		 mv1.addObject("pr",p);	
-		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
-		 mv1.addObject("offpr",pf);
-ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
-mv1.addObject("cate",c);
-		return mv1;
-		
-		
-	}
-	
-	/*offer setting*/
-	@RequestMapping("/admin/setoffer")
-	public ModelAndView offerprice(@RequestParam("prid") int pr,@RequestParam("offerprice") int offpr,@RequestParam("actp") int actp) 
-	{ 
-		ModelAndView mv1 = new ModelAndView("offer");
-		productDao.setoffers(pr,offpr,actp);
-		ArrayList<Product> p=new ArrayList<Product>();
-		 p=(ArrayList<Product>)productDao.getallProduct();
-		 mv1.addObject("prods",p);	
-		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
-		 mv1.addObject("offpr",pf);
-		ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",c);
-		
-		
-		return mv1;
-	
-	}
-	
-	/*delete offer*/
-	@RequestMapping("/admin/offerdelete")
-	public ModelAndView offerdelete(@RequestParam("pr") int id) 
-	{
-		ModelAndView mv1 = new ModelAndView("offer");
-		productDao.deleteoffer(id);
-		ArrayList<Product> p=new ArrayList<Product>();
-		 p=(ArrayList<Product>)productDao.getallProduct();
-		 mv1.addObject("prods",p);	
-		 ArrayList<Product> pf=(ArrayList<Product>)productDao.offerlist();
-		 mv1.addObject("offpr",pf);
-		ArrayList<Category> c =(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",c);
-		
-		
-		return mv1;
-	
 	}
 	
 	
