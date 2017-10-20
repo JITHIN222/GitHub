@@ -21,6 +21,17 @@ public class Order {
 	
 	@Column(name = "BILL_ADDRESS", nullable = false)
 	private String bill;
+	
+	@Column(name = "USERNAME", nullable = false)
+	private String username;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public void setBill(String bill) {
 		this.bill = bill;

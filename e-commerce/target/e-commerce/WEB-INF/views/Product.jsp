@@ -257,7 +257,7 @@
         </a>
     </div>
     <ol class='carousel-indicators'>
-        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='resources/Productimage/${pr.img}' alt='' /></li>    
+        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img}' alt='' /></li>    
         <li data-target='#carousel-custom' data-slide-to='1' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img1}' alt='' /></li>
         <li data-target='#carousel-custom' data-slide-to='2' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img2}' alt='' /></li>
         <li data-target='#carousel-custom' data-slide-to='3' ><img src='${pageContext.request.contextPath}/resources/Productimage/${pr.img3}' alt='' /></li>

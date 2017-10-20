@@ -142,17 +142,4 @@ private SessionFactory sessionF;
         s.close();
 	}
 
-	/*public ArrayList<Product> getprbyoffer(int id){
-		Session s=sessionF.openSession();
-		Transaction t=s.getTransaction();
-		t.begin();
-		Query q=s.createQuery("from Product where offer="+1+"where id="+id);
-		ArrayList<Product> cat=(ArrayList<Product>)q.list();
-        t.commit();
-        
-        s.close();
-		
-		return cat;
-	}*/
-
 }

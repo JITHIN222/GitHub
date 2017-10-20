@@ -235,31 +235,31 @@ left: 35%;
                      <li class="active">
                      <a href="#home" data-toggle="tab" title="Shipping Detail">
                       <span class="round-tabs one">
-                              <i class="glyphicon glyphicon-home"></i>
+                              <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
                   <li><a href="#profile" >
                      <span class="round-tabs two">
-                         <i class="glyphicon glyphicon-user"></i>
+                     <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
                  <li><a href="#messages"  >
                      <span class="round-tabs three">
-                          <i class="glyphicon glyphicon-gift"></i>
+                          <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
         <li><a href="#settings" >
                          <span class="round-tabs four">
-                              <i class="glyphicon glyphicon-comment"></i>
+                         <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
                      <li><a href="#doner">
                          <span class="round-tabs five">
-                              <i class="glyphicon glyphicon-ok"></i>
+                         <i class="fa fa-check"></i>
                          </span> </a>
                      </li>
                      
@@ -267,9 +267,14 @@ left: 35%;
 
                      <div class="tab-content">
                       <div class="tab-pane fade in active" id="home">
-
+<form action="bill?id=${pr.id}" method="get">
                           <h3 class="head text-center">Shipping address</h3>
                           <div class="row">
+                          <div class="col-sm-12">
+                          <div class="form-group">            
+            Email:<input type="text" class="form-control" name="email" required> 
+        </div>
+                          </div>
                           <div class="col-sm-6">
                           <div class="form-group">            
             First Name:<input type="text" class="form-control" name="first" required> 
@@ -302,14 +307,13 @@ left: 35%;
                           <div class="col-sm-6">
              Postal Code:<input type="number" class="form-control" name="pin"  required>
                           </div></div>
-                         <!--  <div class="row">
-                          <div class="col-sm-6">
-                          </div></div> -->
+                          <p class="text-center">
+                    <button type="submit" class="btn btn-success btn-outline-rounded green"> Deliver here <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+                </p>
+                          </form>
                       </div>
 <div class="clearfix"></div>
-</div> <p class="text-center">
-                    <a href="bill" class="btn btn-success btn-outline-rounded green"> Deliver here <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
+</div> 
 </div>
 
 </section>

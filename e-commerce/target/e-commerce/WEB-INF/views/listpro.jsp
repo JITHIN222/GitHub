@@ -14,6 +14,7 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+</br></br></br>
 <div class="container">
 
 	<table id="cart" class="table table-hover table-condensed">
@@ -30,7 +31,8 @@
 			
 						<tr>
 						<td ><img class="img-thumbnail" src="${pageContext.request.contextPath}/resources/Productimage/${p.img}" alt="" style="width:50%; height:50px;"></td>
-							<td><h4>${p.name}</h4></td>
+							<td><h4>${p.name}</h4>
+							       <h4>${p.shortDesc}</h4></td>
 							<td >$ ${p.price}</td>
 							<td >
 								<a href="updatep?prid=${ p.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
@@ -44,6 +46,7 @@
 				</table>
 				 
 </div>
+</br></br></br></br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

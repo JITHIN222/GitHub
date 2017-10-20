@@ -17,6 +17,7 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+</br></br></br></br>
 <div class="container">
     <div id="products" class="row list-group">
         <c:forEach items="${pro}" var="p"  varStatus="loop">
@@ -49,6 +50,7 @@
         </c:forEach>
                     </div>
                 </div>
+                </br></br></br></br>
  <jsp:include page="Footer.jsp"/>
 </body>
 </html>

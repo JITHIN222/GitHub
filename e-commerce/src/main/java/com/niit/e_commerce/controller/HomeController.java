@@ -60,11 +60,22 @@ public class HomeController {
 		
 	}
 	
-	/*error*/
+	/*error invalid username*/
 	@RequestMapping("/invalid")
 	public ModelAndView error()
 	{
 		ModelAndView mv = new ModelAndView("authentication");
+		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cc);
+		return mv;
+		
+	}
+	
+	/*error access denied*/
+	@RequestMapping("/authFa")
+	public ModelAndView err()
+	{
+		ModelAndView mv = new ModelAndView("invalid");
 		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cc);
 		return mv;

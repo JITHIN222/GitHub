@@ -156,7 +156,9 @@ public class ProductController {
 		su=supplierDao.getssbyid(ss);
 		i.setSid(su);
 	
-		String img=file.getOriginalFilename();
+		if(file.getOriginalFilename()!="" || file1.getOriginalFilename()!="" || file2.getOriginalFilename()!="" || file3.getOriginalFilename()!="")
+		{
+			String img=file.getOriginalFilename();
 	    i.setImg(img);
 	    
 		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
@@ -203,7 +205,7 @@ public class ProductController {
 							fos3.close();
 							} catch (IOException e) {
 							e.printStackTrace();}
-					 
+		}
 		productDao.updateproduct(i);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");

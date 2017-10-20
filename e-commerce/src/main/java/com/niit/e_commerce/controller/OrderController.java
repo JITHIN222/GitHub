@@ -1,6 +1,7 @@
 package com.niit.e_commerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,14 +42,19 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/user/bill")
-	public ModelAndView bill(@RequestParam("first") String first, @RequestParam("last") String last, @RequestParam("address") String address, @RequestParam("state") String state, @RequestParam("city") String city, @RequestParam("mob") int mob, @RequestParam("pin") int pin)
+	public ModelAndView bill(@RequestParam("first") String first, @RequestParam("last") String last, @RequestParam("address") String address, @RequestParam("state") String state, @RequestParam("city") String city, @RequestParam("mob") String mob, @RequestParam("pin") String pin)
 	{
-		String ship=first+" "+last+" "+address+" "+state+" "+city+" "+mob+" "+pin;
+		String name = SecurityContextHolder.getContext().getAuthentication().getName();
+		String ship=first+","+last+","+address+","+state+","+city+","+mob+","+pin;
 		Order o = new Order();
 		o.setShip(ship);
 		o.setBill(ship);
+		o.setUsername(name);
 		orderDao.saveOrder(o);
 		ModelAndView mv1 = new ModelAndView("bill");
+		Order p= new Order();
+		p=orderDao.getorbyusername(name);
+		mv1.addObject("ord",p.getBill());
 		return mv1;
 	}
 	

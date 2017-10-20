@@ -63,16 +63,16 @@
             <input type="text" class="form-control" style="height:100px;" name="short" placeholder="Enter Description" value="${pr.shortDesc }"required>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img" required/>
+           <input type="file" name="img" />
         </div>
 <div class="form-group">                   
-           <input type="file" name="img1" required/>
+           <input type="file" name="img1"/>
         </div>
 <div class="form-group">                   
-           <input type="file" name="img2" required/>
+           <input type="file" name="img2" />
         </div>
 <div class="form-group">                   
-           <input type="file" name="img3" required/>
+           <input type="file" name="img3" />
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> 

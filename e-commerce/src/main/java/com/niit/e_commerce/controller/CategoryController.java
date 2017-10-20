@@ -75,13 +75,23 @@ public class CategoryController {
 	/*deleting the category*/
 	@RequestMapping("/admin/deletec")
 	public ModelAndView delcat(@RequestParam("catid") int ca){
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+
 		ModelAndView mv= new ModelAndView("redirect:/admin/listcat");
+		try{
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		
 		mv.addObject("cate",cat);
 		categoryDao.deletecategory(ca);
+		mv.addObject("c","successfully deleted category");
+		
+	}
+		catch(Exception e){
+		mv.addObject("c","Cannot delete");	
+		}
 		return mv;
 	}
-	
+
+
 	@RequestMapping("/admin/listcat")
 	public ModelAndView listcat(){
 		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();

@@ -227,11 +227,14 @@ left: 35%;
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<%
+String add=(String)request.getAttribute("ord");
+
+String[] addr=add.split(",");
+%>
 <section style="background:#efefe9;">
         <div class="container">
             <div class="row">
-                
-                   
                     <ul class="nav nav-tabs" id="myTab">
                    
                      <li>
@@ -266,43 +269,43 @@ left: 35%;
                      </li>
                      
                      </ul></div>
-
+                     
                      <div class="tab-content">
                       <div class="tab-pane fade in active" >
-
+<form action="order?id=${p.id}" method="get">
                           <h3 class="head text-center">Billing address</h3>
                           <div class="row">
                           <div class="col-sm-6">
                           <div class="form-group">            
-            First Name:<input type="text" class="form-control" name="first" required> 
+            First Name:<input type="text" class="form-control" name="first"  value="<%=addr[0] %>" required> 
         </div>
                           </div>
                            <div class="col-sm-6">
                           <div class="form-group">            
-            Last Name:<input type="text" class="form-control" name="last"  required> 
+            Last Name:<input type="text" class="form-control" name="last" value="<%=addr[1] %>"  required> 
         </div>
                           </div>
                           </div>
                           <div class="row">
                           <div class="col-sm-12">
                            <div class="form-group">            
-            Address:<input type="text" class="form-control" name="address" style="height:100px;" required> 
+            Address:<input type="text" class="form-control" name="address" value="<%=addr[2] %>" style="height:100px;" required> 
         </div>
                           </div></div>
                           <div class="row">
                           <div class="col-sm-6">
-            State:<input type="text" class="form-control" name="state"  required> 
+            State:<input type="text" class="form-control" name="state" value="<%=addr[3] %>"  required> 
                           </div>
                           <div class="col-sm-6">
-             City:<input type="text" class="form-control" name="city"  required>
+             City:<input type="text" class="form-control" name="city"  value="<%=addr[4] %>" required>
                           </div>
                           </div>
                           <div class="row">
                           <div class="col-sm-6">
-             Mobile No:<input type="number" class="form-control" name="mob"  required>
+             Mobile No:<input type="number" class="form-control" name="mob" value="<%=addr[5] %>" required>
                           </div>
                           <div class="col-sm-6">
-             Postal Code:<input type="number" class="form-control" name="pin"  required>
+             Postal Code:<input type="number" class="form-control" name="pin" value="<%=addr[6] %>" required>
                           </div></div>
                           <p class="text-center">
                     <a href="order" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>

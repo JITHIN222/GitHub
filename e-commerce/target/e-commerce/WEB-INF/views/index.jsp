@@ -330,7 +330,8 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                                 </div>
                                 <div class="carousel-desc">
                                     <h2>MacBook</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
+                                    <p>The vision is brighter than ever</p>
+                                    <p>A touch of genius</p>
 
                                 </div>
                             </div>
@@ -345,7 +346,9 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                                 <div class="carousel-desc">
 
                                     <h2>OPPO f3</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
+                                    <p>OPPO F3 Plus offers fast and fluid multitasking</p>
+                                    <p>Beautiful Metal Design</p>
+                                    <p>Big Battery, Fast Charging</p>
 
                                 </div>
                             </div>
@@ -364,9 +367,10 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                                 <div class="col-md-6 text-left">
                                     <div class="carousel-desc">
 
-                                        <h2>Digital</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
-
+                                        <h2>Digital Camera</h2>
+                                        <p>Make the Most of Your Photos</p>
+                                        <p>Make Memories</p>
+                                        <p>Capture Life</p>
                                     </div>
                                 </div>
                             </div>

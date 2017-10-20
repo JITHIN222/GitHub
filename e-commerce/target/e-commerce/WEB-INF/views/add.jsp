@@ -14,6 +14,7 @@
 </head>
 <body style="background-color:black;">
 <jsp:include page="Header.jsp"/>
+</br></br></br></br></br>
 <div class="container">
             <div class="panel with-nav-tabs" >
                 <div class="panel-heading">
@@ -115,7 +116,7 @@
                        <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>  
                         </ul></div>
                       </div></div></div></div>
-                      
+                      </br></br></br></br></br>
                       <jsp:include page="Footer.jsp"/>
 
 </body>

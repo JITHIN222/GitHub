@@ -12,8 +12,9 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<p>${c}</p>
+</br></br></br></br>
 <div class="container">
-
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -39,6 +40,7 @@
 				</table>
 				
 </div>
+</br></br></br></br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>
