@@ -272,7 +272,7 @@ String[] addr=add.split(",");
                      
                      <div class="tab-content">
                       <div class="tab-pane fade in active" >
-<form action="order?id=${p.id}" method="get">
+<form action="order" method="get">
                           <h3 class="head text-center">Billing address</h3>
                           <div class="row">
                           <div class="col-sm-6">

@@ -29,10 +29,17 @@ public class SupplierController {
 	/*deleting the supplier*/
 	@RequestMapping("/admin/deletes")
 	public ModelAndView delsup(@RequestParam("supid") int ca){
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("redirect:/admin/listsup");
+		try{
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cat);
 		supplierDao.deletesupplier(ca);
+		mv.addObject("c","successfully deleted supplier");
+		
+		}
+		catch(Exception e){
+			mv.addObject("c","Cannot delete supplier because product is linked");	
+			}
 		return mv;
 	}
 	

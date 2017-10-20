@@ -33,6 +33,8 @@ public class CartController {
 	@Autowired
 	ProductDAO productDao;
 	
+	
+	
 	/*adding cart to db*/
 	@RequestMapping("/user/car")
 	public ModelAndView addcart(@RequestParam("id") int id)
@@ -89,8 +91,6 @@ cart.setQuantity(1);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(name);
-		
-		
 		mv1.addObject("ca",ll);
 		int total=0;
 		for(Cart ca1:ll)

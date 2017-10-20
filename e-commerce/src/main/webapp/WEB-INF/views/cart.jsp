@@ -48,7 +48,25 @@
 
 <jsp:include page="Header.jsp"/>
 <c:if test ="${fn:length(ca) eq 0}">
-<h2>Cart is Empty</h2>
+ <!-- Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>My Cart</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-unit">
+      <h2>Empty cart<i class="fa fa-shopping-cart"></i></h2>
+      <p>Dude, you've got nothing in your cart.</p>
+      <p>
+        <a href="./" class="btn btn-primary">
+          Buy something
+        </a>
+      </p>
+    </div>
+  </div>
 </c:if>
 </br></br>
 </br></br></br>
@@ -95,7 +113,7 @@
 							<td><a href="#" class="btn btn-warning"><i class=" glyphicon glyphicon-shopping-cart"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>Total:$${t}</strong></td>
-							<td><a href="buy" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
+							<td><a href="ship" class="btn btn-success btn-block"><i class=" glyphicon glyphicon-log-out"></i> Checkout</a></td>
 						</tr>
 					</tfoot>
 				</table>

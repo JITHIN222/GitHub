@@ -77,7 +77,8 @@ public class CategoryController {
 	public ModelAndView delcat(@RequestParam("catid") int ca){
 
 		ModelAndView mv= new ModelAndView("redirect:/admin/listcat");
-		try{
+		try
+		{
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		
 		mv.addObject("cate",cat);
@@ -86,7 +87,7 @@ public class CategoryController {
 		
 	}
 		catch(Exception e){
-		mv.addObject("c","Cannot delete");	
+		mv.addObject("c","Cannot delete Category because product is linked");	
 		}
 		return mv;
 	}

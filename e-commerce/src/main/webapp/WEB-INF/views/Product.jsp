@@ -239,16 +239,16 @@
  
         <div class="carousel-inner" id="s">
         <div class="item active">
-<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img}" style="width:90%; height:375px;"/>
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img}" style="width:85%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""   src="${pageContext.request.contextPath}/resources/Productimage/${pr.img1}"  style="width:90%; height:375px;"/>
+<img data-toggle="magnify" alt=""   src="${pageContext.request.contextPath}/resources/Productimage/${pr.img1}"  style="width:85%; height:375px;"/>
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img2}" style="width:90%; height:375px;" />
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img2}" style="width:85%; height:375px;" />
 </div>
 <div class="item">
-<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img3}" style="width:90%; height:375px;" />
+<img data-toggle="magnify" alt=""  src="${pageContext.request.contextPath}/resources/Productimage/${pr.img3}" style="width:85%; height:375px;" />
 </div>
             </div>
              <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
@@ -267,7 +267,7 @@
  <div class="col-sm-6" >
                     </br>
                     </br>
-                    <h3 style="color:black;">${pr.name}</h3> </br>
+                    <h4 style="color:black;">${pr.name}</h4> </br>
                      <c:if test="${pr.offer eq 1}">
                      <h2><small style="color:green;">Extra $${pr.price - pr.offerprice} discount</small></h2>     
                     <h2 style="margin-top:0px; color:black;" >Price:$${pr.offerprice} <small><strike> $${pr.price}</strike> <a style="color:green;">${pr.offerper}% off Hurry up!!!</a></small></h2> 
@@ -278,7 +278,7 @@
                     <div class="row">
    
   </div><!-- end row --></br>
-                    <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br>            
+                    <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br></br>            
                         <c:if test="${pageContext.request.userPrincipal.name  != null}">
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
@@ -289,7 +289,7 @@
 					</c:if>
 					<c:if test="${pageContext.request.userPrincipal.name  == null}">
 					<div class="btn-group cart">
-						<a class="btn icon-btn btn-warning" href="in"><span class="glyphicon btn-glyphicon glyphicon-log-in img-circle text-warning"></span>Please Sign in</a>
+						<a class="btn icon-btn btn-success" href="in"><span class="glyphicon btn-glyphicon glyphicon-log-in img-circle text-success"></span>Please Sign in</a>
 					</div></c:if>
 					
                                                           

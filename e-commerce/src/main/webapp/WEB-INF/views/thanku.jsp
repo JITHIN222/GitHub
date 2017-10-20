@@ -236,33 +236,32 @@ left: 35%;
                     <ul class="nav nav-tabs" id="myTab">
                    
                      <li>
-                     <a href="#home" title="Shipping Detail">
+                     <a href="" >
                       <span class="round-tabs one">
-                              <i class="glyphicon glyphicon-home"></i>
+                              <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li ><a href="#profile">
+                  <li ><a href="">
                      <span class="round-tabs two">
-                         <i class="glyphicon glyphicon-user"></i>
+                         <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href="#messages"  >
+                 <li><a href=""  >
                      <span class="round-tabs three">
-                          <i class="glyphicon glyphicon-gift"></i>
+                          <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li><a href="#settings" >
                          <span class="round-tabs four">
-                              <i class="glyphicon glyphicon-comment"></i>
+                              <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li class="active"><a href="#doner">
+                     <li class="active"><a href="" title="Success">
                          <span class="round-tabs five">
-                              <i class="glyphicon glyphicon-ok"></i>
+                              <i class="fa fa-check"></i>
                          </span> </a>
                      </li>
                      

@@ -125,11 +125,17 @@ public class ProductController {
 	/*deleting the product*/
 	@RequestMapping("/admin/deletep")
 	public ModelAndView delpro(@RequestParam("prid") int ca){
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("redirect:/admin/listpro");
+		try{
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cat);
 		
 		productDao.deleteproduct(ca);
+		mv.addObject("c","successfully deleted product");
+		}
+		catch(Exception e){
+			mv.addObject("c","Cannot delete product user might added to cart");	
+			}
 		return mv;
 	}
 	
@@ -229,7 +235,7 @@ public class ProductController {
 	}
 	
 	/*single product*/
-	@RequestMapping("/product")
+	@RequestMapping("/product" )
 	public ModelAndView product(@RequestParam("id") int ca){
 		Product p=new Product();
 		p=productDao.getprbyid(ca);

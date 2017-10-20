@@ -42,9 +42,20 @@ public class OrderDaoImpl implements OrderDao {
 		t.begin();
 		Query q=s.createQuery("from Order where USERNAME='"+username+"'");
 		Order or=(Order)q.list().get(0);
-
         t.commit();
         s.close();
 		return or;
+	}
+	
+	public ArrayList<Cart> getcartbyusernmae(String Username) {
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Query q=s.createQuery("from Cart where USERNAME='"+Username+"'");
+		ArrayList<Cart> cat=(ArrayList<Cart>)q.list();
+
+        t.commit();
+        s.close();
+		return cat;
 	}
 }

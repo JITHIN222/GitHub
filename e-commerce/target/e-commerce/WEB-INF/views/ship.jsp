@@ -267,14 +267,9 @@ left: 35%;
 
                      <div class="tab-content">
                       <div class="tab-pane fade in active" id="home">
-<form action="bill?id=${pr.id}" method="get">
+<form action="bill" method="get">
                           <h3 class="head text-center">Shipping address</h3>
                           <div class="row">
-                          <div class="col-sm-12">
-                          <div class="form-group">            
-            Email:<input type="text" class="form-control" name="email" required> 
-        </div>
-                          </div>
                           <div class="col-sm-6">
                           <div class="form-group">            
             First Name:<input type="text" class="form-control" name="first" required> 

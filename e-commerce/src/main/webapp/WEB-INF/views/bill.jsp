@@ -238,33 +238,33 @@ String[] addr=add.split(",");
                     <ul class="nav nav-tabs" id="myTab">
                    
                      <li>
-                     <a href="#home" title="Shipping Detail">
+                     <a href="" >
                       <span class="round-tabs one">
-                              <i class="glyphicon glyphicon-home"></i>
+                              <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li class="active"><a href="#profile">
+                  <li class="active"><a href="" title="Billing">
                      <span class="round-tabs two">
-                         <i class="glyphicon glyphicon-user"></i>
+                         <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href="#messages"  >
+                 <li><a href=""  >
                      <span class="round-tabs three">
-                          <i class="glyphicon glyphicon-gift"></i>
+                          <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li><a href="#settings" >
+        <li><a href="" >
                          <span class="round-tabs four">
-                              <i class="glyphicon glyphicon-comment"></i>
+                              <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="#doner">
+                     <li><a href="">
                          <span class="round-tabs five">
-                              <i class="glyphicon glyphicon-ok"></i>
+                              <i class="fa fa-check"></i>
                          </span> </a>
                      </li>
                      
@@ -272,7 +272,7 @@ String[] addr=add.split(",");
                      
                      <div class="tab-content">
                       <div class="tab-pane fade in active" >
-<form action="order?id=${p.id}" method="get">
+<form action="order" method="post">
                           <h3 class="head text-center">Billing address</h3>
                           <div class="row">
                           <div class="col-sm-6">

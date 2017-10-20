@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -227,6 +228,15 @@ left: 35%;
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<%
+String ship=(String)request.getAttribute("ship");
+
+String[] shipr=ship.split(",");
+
+String bill=(String)request.getAttribute("bill");
+
+String[] billr=bill.split(",");
+%>
 <section style="background:#efefe9;">
         <div class="container">
             <div class="row">
@@ -235,31 +245,31 @@ left: 35%;
                      <li>
                      <a href="#home" title="Shipping Detail">
                       <span class="round-tabs one">
-                              <i class="glyphicon glyphicon-home"></i>
+                              <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
                   <li><a href="#profile">
                      <span class="round-tabs two">
-                         <i class="glyphicon glyphicon-user"></i>
+                         <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
                  <li class="active"><a href="#messages"  >
                      <span class="round-tabs three">
-                          <i class="glyphicon glyphicon-gift"></i>
+                          <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
         <li><a href="#settings" >
                          <span class="round-tabs four">
-                              <i class="glyphicon glyphicon-comment"></i>
+                              <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
                      <li><a href="#doner">
                          <span class="round-tabs five">
-                              <i class="glyphicon glyphicon-ok"></i>
+                              <i class="fa fa-check"></i>
                          </span> </a>
                      </li>
                      
@@ -268,43 +278,54 @@ left: 35%;
                      <div class="tab-content">
                       <div class="tab-pane fade in active" >
 
-                          <h3 class="head text-center">Billing address</h3>
-                          <div class="row">
-                          <div class="col-sm-6">
-                          <div class="form-group">            
-            First Name:<input type="text" class="form-control" name="first" required> 
-        </div>
-                          </div>
-                           <div class="col-sm-6">
-                          <div class="form-group">            
-            Last Name:<input type="text" class="form-control" name="last"  required> 
-        </div>
-                          </div>
-                          </div>
-                          <div class="row">
-                          <div class="col-sm-12">
-                           <div class="form-group">            
-            Address:<input type="text" class="form-control" name="address" style="height:100px;" required> 
-        </div>
-                          </div></div>
-                          <div class="row">
-                          <div class="col-sm-6">
-            State:<input type="text" class="form-control" name="state"  required> 
-                          </div>
-                          <div class="col-sm-6">
-             City:<input type="text" class="form-control" name="city"  required>
-                          </div>
-                          </div>
-                          <div class="row">
-                          <div class="col-sm-6">
-             Mobile No:<input type="number" class="form-control" name="mob"  required>
-                          </div>
-                          <div class="col-sm-6">
-             Postal Code:<input type="number" class="form-control" name="pin"  required>
-                          </div></div>
-                         <!--  <div class="row">
-                          <div class="col-sm-6">
-                          </div></div> -->
+                          <h3 class="head text-center">Order Confirmation</h3>
+                          <table>
+                          <tr>
+                          <th style="width:5%">Billing Address</th>
+							<th style="width:5%">Shipping Address</th></tr>
+							<tr>
+							<td><p><%=billr[0]%> <%=billr[1]%><i class="fa fa-mobile"></i><%=billr[5]%></p>
+							<p><%=billr[2]%>, <%=billr[4]%>, <%=billr[3]%> pin:<%=billr[6]%></p>
+							
+							</td>
+							<td></td>
+							</tr>
+                          </table>
+             	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:30%">Product</th>
+							<th style="width:2%">Price</th>
+							<th style="width:0.5%;">Quantity</th>
+							<th style="width:2%">Subtotal</t>
+						</tr>
+					</thead>
+					<tbody>
+					
+					<c:forEach var="c" items="${ca}">
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">${c.pid.name}</h4>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">$${c.price}</td>
+							<td align="center">${c.quantity}</td>
+							<td>$${c.price * c.quantity }</td>
+							
+						</tr></c:forEach>
+					</tbody>
+						
+						<tr>
+							<td><a href="#"></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total:$${t}</strong></td>
+							<td><a href="buy"></td>
+						</tr>
+				</table>
                           <p class="text-center">
                     <a href="payment" class="btn btn-success btn-outline-rounded green"> Proceed to pay <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
                 </p>
