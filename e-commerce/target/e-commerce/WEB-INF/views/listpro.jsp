@@ -16,10 +16,10 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
-</br></br></br>
-
+</br></br></br></br>
+<h2>${c}</h2>
 <c:if test ="${fn:length(listp) eq 0}">
-<h2>Product not added</h2>
+<h2 align="center">Product not added</h2>
 </c:if>
 <c:if test ="${fn:length(listp) ge 1}">
 <div class="container">
@@ -28,7 +28,7 @@
     				<thead>
 						<tr>
 						    <th style="width:5%">Image</th>
-							<th style="width:20%">Product</th>
+							<th style="width:25%">Product</th>
 	             			<th style="width:10%">Price</th>
 							<th style="width:10%">Action</th>
 						</tr>
@@ -53,7 +53,7 @@
 				</table>
 				 
 </div></c:if>
-</br></br></br></br>
+</br></br></br></br></br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

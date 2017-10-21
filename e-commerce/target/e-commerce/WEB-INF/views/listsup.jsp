@@ -14,8 +14,9 @@
 <body>
 <jsp:include page="Header.jsp"/>
 </br></br></br></br>
+<h2>${c}</h2>
 <c:if test ="${fn:length(lists) eq 0}">
-<h2>Supplier not added</h2>
+<h2 align="center">Supplier not added</h2>
 </c:if>
 <c:if test ="${fn:length(lists) ge 1}">
 <div class="container">
@@ -44,7 +45,7 @@
 				</table>
 				 
 </div></c:if>
-</br></br></br></br>
+</br></br></br></br></br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

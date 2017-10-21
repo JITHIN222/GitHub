@@ -37,11 +37,13 @@ public class OrderController {
 	@Autowired
 	OrderDao orderDao;
 	
+	//ship
 	@RequestMapping("/user/ship")
 	public ModelAndView buy(){
 	
 		ModelAndView mv1 = new ModelAndView("ship");
-	
+		 ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+			mv1.addObject("cate",l);
 		return mv1;
 	}
 	
@@ -59,15 +61,19 @@ public class OrderController {
 		Order p= new Order();
 		p=orderDao.getorbyusername(name);
 		mv1.addObject("ord",p.getBill());
-ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+        ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",l);
 		return mv1;
 	}
 	
 	@RequestMapping("/user/order")
-	public ModelAndView order(){
+	public ModelAndView order(@RequestParam("first") String first, @RequestParam("last") String last, @RequestParam("address") String address, @RequestParam("state") String state, @RequestParam("city") String city, @RequestParam("mob") String mob, @RequestParam("pin") String pin){
 		ModelAndView mv1 = new ModelAndView("order");
 		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
+		String bill=first+","+last+","+address+","+state+","+city+","+mob+","+pin;
+		Order b=orderDao.getorbyusername(Username);
+		b.setBill(bill);
+		orderDao.updateOrder(b);
 		Order o=new Order();
 		o=orderDao.getorbyusername(Username);
 		mv1.addObject("bill",o.getBill());
@@ -93,8 +99,13 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	@RequestMapping("/user/payment")
 	public ModelAndView payment(){
 		ModelAndView mv1 = new ModelAndView("payment");
-
-ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
+		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
+        ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
+	    for(Cart c: ll)
+	    {
+	    	cartDao.deletecart(c.getId());
+	    }
+        ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",l);
 		return mv1;
 	}

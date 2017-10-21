@@ -10,4 +10,5 @@ public interface OrderDao {
 	public void saveOrder(Order o);
 	public Order getorbyusername(String username);
 	public ArrayList<Cart> getcartbyusernmae(String Username);
+	public void updateOrder(Order o);
 }

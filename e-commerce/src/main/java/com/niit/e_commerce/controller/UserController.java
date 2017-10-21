@@ -64,12 +64,9 @@ public class UserController {
 	
 	@RequestMapping("/user/{categoryid}")
 	public ModelAndView ca(@PathVariable("categoryid") int ca) {
-		ArrayList<Product> p=new ArrayList<Product>();
-		p=productDao.getprbycatid(ca);
-		ModelAndView mv1 = new ModelAndView("ProductList");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
-		mv1.addObject("pro",p);
+		
+		ModelAndView mv1 = new ModelAndView("redirect:/{categoryid}");
+	
 		return mv1;
 		
 	}

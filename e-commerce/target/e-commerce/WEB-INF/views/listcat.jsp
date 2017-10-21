@@ -16,7 +16,7 @@
 </br></br></br></br>
 <h2>${c}</h2>
 <c:if test ="${fn:length(listc) eq 0}">
-<h2>Cart is Empty</h2>
+<h2>Category not added</h2>
 </c:if>
 <c:if test ="${fn:length(listc) ge 1}">
 <div class="container">
@@ -45,7 +45,7 @@
 				</table>
 				
 </div></c:if>
-</br></br></br></br>
+</br></br></br></br></br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

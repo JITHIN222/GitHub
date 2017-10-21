@@ -235,7 +235,7 @@ public class ProductController {
 	}
 	
 	/*single product*/
-	@RequestMapping("/product" )
+	@RequestMapping("/product")
 	public ModelAndView product(@RequestParam("id") int ca){
 		Product p=new Product();
 		p=productDao.getprbyid(ca);

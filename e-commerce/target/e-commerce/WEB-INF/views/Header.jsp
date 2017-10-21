@@ -34,10 +34,10 @@
       <a class="navbar-brand" href="./"><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></a>
     </div>
     <ul class="nav navbar-nav">
-       <c:if test="${pageContext.request.userPrincipal.name  == 'admin123@gmail.com'}">
+       <c:if test="${pageContext.request.userPrincipal.name  == 'lovelyps@gmail.com'}">
       <li ><a href="ad">Admin</a></li>
       </c:if>
-       <c:if test="${pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
+       <c:if test="${pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach var="designatee" items="${cate}">
@@ -51,7 +51,7 @@
       <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
-      <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
+      <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
         <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name  != null}">

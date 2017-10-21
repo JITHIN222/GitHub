@@ -84,10 +84,6 @@ public class CartDaoImpl implements CartDao {
 		Transaction t=s.getTransaction();
 		t.begin();
 		 Query qry1 = s.createQuery("update Cart  set quantity="+i+"where id="+cartid);
-		  
-		 
-				       
-		
 				          qry1.executeUpdate();
 				         				
 		
@@ -115,5 +111,6 @@ public class CartDaoImpl implements CartDao {
         t.commit();
         s.close();
 	}
+	
 	
 }

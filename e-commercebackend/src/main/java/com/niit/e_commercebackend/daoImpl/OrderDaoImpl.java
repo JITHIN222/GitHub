@@ -58,4 +58,13 @@ public class OrderDaoImpl implements OrderDao {
         s.close();
 		return cat;
 	}
+	
+	public void updateOrder(Order o){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.update(o);
+        t.commit();
+        s.close();
+	}
 }
