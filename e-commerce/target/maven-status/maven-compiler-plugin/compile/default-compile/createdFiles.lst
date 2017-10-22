@@ -1,1 +1,9 @@
+com\niit\e_commerce\controller\CategoryController.class
+com\niit\e_commerce\controller\CartController.class
+com\niit\e_commerce\controller\OrderController.class
 com\niit\e_commerce\controller\SupplierController.class
+com\niit\e_commerce\controller\ProductController.class
+com\niit\e_commerce\controller\ReviewController.class
+com\niit\e_commerce\controller\UserController.class
+com\niit\e_commerce\controller\AdminController.class
+com\niit\e_commerce\controller\HomeController.class

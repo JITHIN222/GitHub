@@ -3,11 +3,14 @@ C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_comme
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\App.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\OrderDao.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\CategoryDaoImpl.java
+C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\ReviewDao.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\SupplierDao.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\Supplier.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\CategoryDAO.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\SupplierDaoImpl.java
+C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\Review.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\ProductDAOImpl.java
+C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\ReviewDaoImpl.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\daoImpl\CartDaoImpl.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\models\Product.java
 C:\Users\Jithin Shaji\workspace\e-commercebackend\src\main\java\com\niit\e_commercebackend\dao\CartDao.java

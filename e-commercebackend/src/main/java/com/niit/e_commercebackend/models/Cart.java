@@ -29,6 +29,17 @@ public class Cart {
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
 	
+	@Column(name = "PRODNAME", nullable = false)
+	private String pname;
+	
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
 	@ManyToOne
     @JoinColumn(name="PRODUCT_ID",updatable=true,insertable=true,nullable=false)
     Product pid;

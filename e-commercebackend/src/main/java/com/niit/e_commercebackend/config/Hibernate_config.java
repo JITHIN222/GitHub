@@ -18,6 +18,7 @@ import com.niit.e_commercebackend.models.Cart;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Order;
 import com.niit.e_commercebackend.models.Product;
+import com.niit.e_commercebackend.models.Review;
 import com.niit.e_commercebackend.models.Supplier;
 import com.niit.e_commercebackend.models.User;
 
@@ -44,6 +45,7 @@ public class Hibernate_config
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Category.class);
 	        sessionBuilder.addAnnotatedClass(Order.class);
+	        sessionBuilder.addAnnotatedClass(Review.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

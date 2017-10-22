@@ -82,6 +82,7 @@ cart.setQuantity(1);
 		}
 		
 		cart.setPid(p);
+		cart.setPname(p.getName());
 		cartDao.saveCart(cart);
 			
 		
@@ -109,6 +110,15 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",l);
 	
 	
+		return mv1;
+	}
+
+	/*redirecting to cart page*/
+	@RequestMapping("/car")
+	public ModelAndView addcar(@RequestParam("id") int id)
+	{ 
+		ModelAndView mv1 = new ModelAndView("redirect:/user/cart?id+"+id);
+       
 		return mv1;
 	}
 

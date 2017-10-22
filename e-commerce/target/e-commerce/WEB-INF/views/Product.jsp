@@ -295,6 +295,42 @@
                                                           
                 </div>                              
         </div></div>
+            <div class="row">
+    	<div class="col-sm-12">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Review</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Feedback</a></li>
+                          
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+                        <c:forEach var="rev" items="${review}">	
+                   <table>
+                    <tr>
+           <td>${rev.custname}</td>
+           <td>says</td>
+            <td>${rev.review}</td>
+            </tr>
+            </table>
+</c:forEach>  </div>
+                        <div class="tab-pane fade" id="tab2default">
+                        <form action="review?prid=${pr.id}" method="post">
+                <table >
+<tr><td>NAME</td><td><input type="text"  name="name"  style="width:100%" required></td></tr>
+<tr><td>Feedback</td><td><textarea rows="4" cols="50" name="rev" style="width:100%; height:100px;" required></textarea></td></tr>
+<tr><td></td><td><input id="submit" class="btn btn-success btn-md" name="submit" type="submit" value="SUBMIT" style="width:100%"></td></tr>
+</table>
+</form></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+            </div>
                 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

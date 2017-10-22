@@ -229,16 +229,15 @@ left: 35%;
 <jsp:include page="Header.jsp"/>
 <section style="background:#efefe9;">
         <div class="container">
-            <div class="row">
+    <div class="row">
                
                 
-                   
                     <ul class="nav nav-tabs" id="myTab">
-                   
+                    
                      <li>
                      <a href="" >
                       <span class="round-tabs one">
-                              <i class="fa fa-home"></i>
+                             <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
@@ -254,19 +253,19 @@ left: 35%;
                      </span> </a>
                      </li>
 
+        <li ><a href="" title="payment" >
                          <span class="round-tabs four">
                               <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li class="active"><a href="" title="Success">
+                     <li class="active"><a href="">
                          <span class="round-tabs five">
                               <i class="fa fa-check"></i>
                          </span> </a>
                      </li>
                      
                      </ul></div>
-
                      <div class="tab-content">
                       <div class="tab-pane fade in active" >
 

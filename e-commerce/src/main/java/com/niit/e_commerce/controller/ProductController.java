@@ -236,13 +236,14 @@ public class ProductController {
 	
 	/*single product*/
 	@RequestMapping("/product")
-	public ModelAndView product(@RequestParam("id") int ca){
+	public ModelAndView product(@RequestParam("id") int id){
 		Product p=new Product();
-		p=productDao.getprbyid(ca);
+		p=productDao.getprbyid(id);
 		ModelAndView mv = new ModelAndView("Product");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv.addObject("cate",cat);
 		mv.addObject("pr",p);
+		
 		return mv;
 		
 	}
