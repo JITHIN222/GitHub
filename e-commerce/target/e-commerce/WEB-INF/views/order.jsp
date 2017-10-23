@@ -281,14 +281,28 @@ String[] billr=bill.split(",");
                           <h3 class="head text-center">Order Confirmation</h3>
                           <table>
                           <tr>
+                          <th  style="width:5%"></th>
                           <th style="width:5%">Billing Address</th>
 							<th style="width:5%">Shipping Address</th></tr>
 							<tr>
-							<td><p><%=billr[0]%> <%=billr[1]%><i class="fa fa-mobile"></i><%=billr[5]%></p>
-							<p><%=billr[2]%>, <%=billr[4]%>, <%=billr[3]%> pin:<%=billr[6]%></p>
+							<td></td>
+							<td><address>
+               <%=billr[0]%> <%=billr[1]%><br> 
+                     <%=billr[2]%><br>
+               <%=billr[4]%>, <%=billr[3]%>, pin:<%=billr[6]%><br>
+               <%=billr[5]%><br>
+               INDIA
+</address>
 							
 							</td>
-							<td></td>
+							<td><address>
+               <%=shipr[0]%> <%=shipr[1]%><br> 
+                     <%=shipr[2]%><br>
+               <%=shipr[4]%>, <%=shipr[3]%>, pin:<%=shipr[6]%><br>
+                Phone No:<%=shipr[5]%><br>
+               INDIA
+</address></td>
+							
 							</tr>
                           </table>
              	<table id="cart" class="table table-hover table-condensed">

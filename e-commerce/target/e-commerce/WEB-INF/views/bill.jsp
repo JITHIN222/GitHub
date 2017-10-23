@@ -307,10 +307,9 @@ String[] addr=add.split(",");
                           <div class="col-sm-6">
              Postal Code:<input type="number" class="form-control" name="pin" value="<%=addr[6] %>" required>
                           </div></div>
-                          <input type="submit" value="continue"/>
-                         <!--  <p class="text-center">
-                    <a href="order" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
-                </p> -->
+                        <p class="text-center">
+                    <button type="submit" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></button>
+                </p>
                       </form></div>
 <div class="clearfix"></div>
 </div>

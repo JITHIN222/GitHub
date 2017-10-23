@@ -87,7 +87,6 @@ text-align: right;
     <label><input type="checkbox" required> Remember me</label>
   </div> -->
         <button type="submit" class="btn btn-primary btn-block" id="b1">Login</button>
-        <p align="center">Forgot password? <a>click here</a></p>
         <p align="center">new user? <a href="up">create new account</a></p>
       </div>
     </form>

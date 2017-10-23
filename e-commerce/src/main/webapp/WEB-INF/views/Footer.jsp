@@ -79,7 +79,7 @@ padding: 10.5px;
                   
                   <input class="form-control" placeholder="Enter your email .." type="text">
                    <span class="input-group-btn">
-                    <button class="btn btn-success"  type="button">Subscribe Us !</button>
+                    <button class="btn btn-success"  type="submit">Subscribe Us !</button>
                   </span>
                 </div>
               </div><p align="left">About us</p>

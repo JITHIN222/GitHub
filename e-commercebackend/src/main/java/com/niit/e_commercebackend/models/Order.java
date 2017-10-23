@@ -44,6 +44,36 @@ public class Order {
 	@Column(name = "SHIPPING_ADDRESS", nullable = false)
 	private String ship;
 
+	@Column(name = "DELIVER", nullable = false)
+     private int deliver;
+	
+	public int getDeliver() {
+		return deliver;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setDeliver(int deliver) {
+		this.deliver = deliver;
+	}
+
+	@Column(name = "ORDER_DETAILS", nullable = false)
+	private String order_detail;
+	
+	public String getOrder_detail() {
+		return order_detail;
+	}
+
+	public void setOrder_detail(String order_detail) {
+		this.order_detail = order_detail;
+	}
+
 	public String getShip() {
 		return ship;
 	}

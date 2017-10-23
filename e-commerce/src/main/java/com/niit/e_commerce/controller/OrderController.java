@@ -121,6 +121,8 @@ cart.setQuantity(1);
 		Order o = new Order();
 		o.setShip(ship);
 		o.setBill(ship);
+		o.setDeliver(0);
+		o.setOrder_detail("null");
 		o.setUsername(name);
 		orderDao.saveOrder(o);
 		ModelAndView mv1 = new ModelAndView("bill");
@@ -184,19 +186,22 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	    for(Cart c: ll)
 	    {
 	    	int tot=c.getPrice()*c.getQuantity();
-			/*name=name+"&nbsp&nbsp&nbsp"+c.getPname()+"&nbsp&nbsp&nbsp"+c.getPrice()+"rs"+"&nbsp&nbsp&nbsp"+c.getQuantity()+"no's"+"&nbsp&nbsp&nbsp"+"Total"+tot+"<br>";
-			*/order=order+"       "+c.getPname()+"         "+c.getPrice()+"rs"+"       "+c.getQuantity()+"no's"+"       "+"Total"+tot+"\n";
-			
-	    	cartDao.deletecart(c.getId());
+			order=order+"    "+c.getPname()+"         "+"Price:"+"$"+c.getPrice()+"       "+"Quantity:"+c.getQuantity()+"       "+"Total:"+tot+"\n";
+			cartDao.deletecart(c.getId());
 	    	total= total+tot;
 	    }
         
+	    Order s= (Order)orderDao.getorbyusername(Username);
+			s.setOrder_detail(order);
+			s.setDeliver(0);
+			orderDao.updateOrder(s);
+
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
 	    email.setTo(Username);
 	    email.setSubject("ORDER CONFIRMATION");
-	    email.setText("YOUR ORDER FOR\n"+order+"\n is placed and the total amount is"+ total);
+	    email.setText("Your Order\n"+order+"\n is placed successfully and the total payment of $"+ total+"has been Approved by Seller");
 	    // sends the e-mail
 	    sendmail.send(email);
 	    

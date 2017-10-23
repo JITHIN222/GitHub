@@ -54,34 +54,20 @@ public class UserController {
 	public ModelAndView index()
 	{
 	
-		ModelAndView mv1 = new ModelAndView("index");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
-		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
-		mv1.addObject("off",p);
+		ModelAndView mv1 = new ModelAndView("redirect:/");
 	    return mv1;
 	}
 	
 	@RequestMapping("/user/{categoryid}")
 	public ModelAndView ca(@PathVariable("categoryid") int ca) {
-		ArrayList<Product> p=new ArrayList<Product>();
-		p=productDao.getprbycatid(ca);
-		ModelAndView mv1 = new ModelAndView("ProductList");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
-		mv1.addObject("pro",p);
+		ModelAndView mv1 = new ModelAndView("redirect:/{categoryid}?id="+ca);
 		return mv1;
 		
 	}
 	
 	@RequestMapping("/user/product")
 	public ModelAndView product(@RequestParam("id") int id){
-		Product p=new Product();
-		p=productDao.getprbyid(id);
-		ModelAndView mv = new ModelAndView("Product");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
-		mv.addObject("pr",p);
+		ModelAndView mv = new ModelAndView("redirect:/product?id="+id);
 		return mv;
 		
 	}

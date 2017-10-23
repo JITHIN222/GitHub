@@ -42,6 +42,22 @@
 	
 }
   </style>
+  <script>
+function check()
+{
+	var quantity=document.getElementById("la").value;
+	var stock=document.getElementById("st").value;
+	var quantitypre=document.getElementById("qr").value;
+	if((quantity-quantitypre) <= stock){
+		return true;
+	}
+	else{
+		alert("stock not available");
+		return false;
+	}
+	}
+
+</script>
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
@@ -69,12 +85,15 @@
 							<td data-th="Price">$${ca.price}</td>
 							<form method="post" action="updatecart">
 							<td><input type="hidden" class="form-control text-center" value="${ca.id}" name="id"></td>
+							
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="${ca.quantity}" name="quantity">							    
+							<input type="hidden" class="form-control text-center" value="${ca.quantity}"  id="qr">							  
+						<input type="hidden" class="form-control text-center" value="${ca.pid.stock}"  id="st">							    
+								<input type="number" class="form-control text-center" value="${ca.quantity}" name="quantity" id="la">							    
 							</td>
 							<td>
 							
-								<input id="submit" class="btn btn-success btn-sm" name="submit" type="submit" value="Update"></td>
+								<input id="submit" class="btn btn-success btn-sm" name="submit" type="submit" onclick="check()" value="Update"></td>
 							</form>
 						</tr>
 					</tbody>

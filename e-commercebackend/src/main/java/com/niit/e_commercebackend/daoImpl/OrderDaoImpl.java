@@ -41,7 +41,8 @@ public class OrderDaoImpl implements OrderDao {
 		Transaction t=s.getTransaction();
 		t.begin();
 		Query q=s.createQuery("from Order where USERNAME='"+username+"'");
-		Order or=(Order)q.list().get(0);
+		int size= q.list().size();
+		Order or=(Order)q.list().get(size-1);	
         t.commit();
         s.close();
 		return or;
@@ -67,4 +68,38 @@ public class OrderDaoImpl implements OrderDao {
         t.commit();
         s.close();
 	}
+	
+	public ArrayList<Order> getallundeliveredprods(){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		org.hibernate.Query q= s.createQuery("from Order where DELIVER="+0);
+		ArrayList<Order> l=(ArrayList<Order>) q.list();
+		
+	    t.commit();
+	    s.close();
+		
+		
+		return l;
+	}
+	
+	public Order getorbyid(int id){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		Order l = (Order) s.get(Order.class, id);
+        t.commit();
+        s.close();
+		return l;
+	}
+
+	public void deleteorder(Order o){
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
+		t.begin();
+		s.delete(o);
+        t.commit();
+        s.close();
+	}
+
 }

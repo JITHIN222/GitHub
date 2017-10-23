@@ -278,15 +278,26 @@
                     <div class="row">
    
   </div><!-- end row --></br>
+  <div>left ${pr.stock}</div>
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br></br>            
                         <c:if test="${pageContext.request.userPrincipal.name  != null}">
+                        <c:if test="${pr.stock eq 0}">
+                         <div class="btn-group cart">
+						<a class="btn icon-btn btn-warning" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+					</div>
+					<div class="btn-group buy">
+						<a class="btn icon-btn btn-danger" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+					</div>
+                        </c:if></c:if>
+                        <c:if test="${pageContext.request.userPrincipal.name  != null}">
+                        <c:if test="${pr.stock ge 1}">
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>
 					<div class="btn-group buy">
 						<a class="btn icon-btn btn-danger" href="buy?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
 					</div>
-					</c:if>
+					</c:if></c:if>
 					<c:if test="${pageContext.request.userPrincipal.name  == null}">
 					<div class="btn-group cart">
 						<a class="btn icon-btn btn-success" href="in"><span class="glyphicon btn-glyphicon glyphicon-log-in img-circle text-success"></span>Please Sign in</a>

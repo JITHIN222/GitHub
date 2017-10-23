@@ -394,10 +394,10 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
     <tr><p align="center"><font color="black"><strong> $${p.offerprice}</strong></font> <strike><small>$${p.price}</small></strike> <font color="black">${p.offerper}% off</font></p></tr>
     <div class="row">
     <div class="col-sm-6">
-    <a class="btn btn-success btn-product" href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    <a class="btn btn-success btn-product" href="car?id=${pr.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
     </div>
     <div class="col-sm-6">
-    <a class="btn btn-danger btn-product" href="buy"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
+    <a class="btn btn-danger btn-product" href="buy?id=${p.id}"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
     </div></div>
     </table>
 </div>
@@ -405,63 +405,7 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
 </c:forEach></div>
 
 
-<%-- <div class="container">
-    <div class="row">
-        <div class="row">
-            <div class="col-md-9">
-                <h3>
-                    Carousel Product Cart Slider</h3>
-            </div>
-            <div class="col-md-3">
-                <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
-                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
-                            data-slide="next"></a>
-                </div>
-            </div>
-        </div>
-        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                    <c:forEach items="${off}" var="p"  varStatus="loop">
-<c:if test="${p.offer eq 1}">
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                    <img src="${pageContext.request.contextPath}/resources/Productimage/${p.img}"  alt="" style="width:100px; height:200px;"/>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                ${p.name}</h5>
-                                            <h5 class="price-text-color">
-                                                $${p.price}</h5>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </c:if></c:forEach>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
-</div> --%>
+
 
   <jsp:include page="Footer.jsp"/>
 </body>

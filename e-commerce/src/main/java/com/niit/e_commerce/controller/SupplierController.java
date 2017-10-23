@@ -28,30 +28,32 @@ public class SupplierController {
 
 	/*deleting the supplier*/
 	@RequestMapping("/admin/deletes")
-	public ModelAndView delsup(@RequestParam("supid") int ca){
-		ModelAndView mv= new ModelAndView("redirect:/admin/listsup");
+	public String delsup(@RequestParam("supid") int ca){
+		String c="";
 		try{
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
 		supplierDao.deletesupplier(ca);
-		mv.addObject("c","successfully deleted supplier");
+		c="Successfully deleted";
 		
 		}
 		catch(Exception e){
-			mv.addObject("c","Cannot delete supplier because product is linked");	
+			c="Cannot delete supplier";	
 			}
-		return mv;
+		return "redirect:/admin/listsup?f="+c;
 	}
 	
 	
 	/*listing all suppliers*/
 	@RequestMapping("/admin/listsup")
-	public ModelAndView listsup(){
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+	public ModelAndView listsup(@RequestParam("f") String ca){
 		ModelAndView mv = new ModelAndView("listsup");
 		ArrayList<Supplier> p=(ArrayList<Supplier>)supplierDao.getallSupplier();
-		mv.addObject("cate",cat);
 		mv.addObject("lists",p);
+		if(ca == " " ){
+			mv.addObject("c"," ");
+		}
+		else{
+			mv.addObject("c",ca);
+		}
 		return mv;
 		
 	}
@@ -80,8 +82,7 @@ public class SupplierController {
 		supplierDao.saveSupplier(i);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup");
-		ArrayList<Category> cc=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cc);
+	
 		return mv1;
 	}
 	
@@ -94,11 +95,8 @@ public class SupplierController {
 		i.setMob(mob);
 		supplierDao.updatesupplier(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup?f="+"");
 		
-		/*display category dropdown in navbar*/
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
 		return mv1;
 	}
 	

@@ -68,38 +68,39 @@ public class CategoryController {
 		i.setName(name);
 		categoryDao.updatecategory(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f="+"");
 		return mv1;
 	}
 	
 	/*deleting the category*/
 	@RequestMapping("/admin/deletec")
-	public ModelAndView delcat(@RequestParam("catid") int ca){
-
-		ModelAndView mv= new ModelAndView("redirect:/admin/listcat");
-		try
-		{
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+	public String delcat(@RequestParam("catid") int ca){
 		
-		mv.addObject("cate",cat);
+		String c="";
+		try{
 		categoryDao.deletecategory(ca);
-		mv.addObject("c","successfully deleted category");
+		c="success";
 		
 	}
 		catch(Exception e){
-		mv.addObject("c","Cannot delete Category because product is linked");	
+			c="cannot delete category";
 		}
-		return mv;
+		return "redirect:/admin/listcat?f="+c;
+		
 	}
 
 
 	@RequestMapping("/admin/listcat")
-	public ModelAndView listcat(){
+	public ModelAndView listcat(@RequestParam("f") String ca){
 		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv = new ModelAndView("listcat");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
 		mv.addObject("listc",p);
+		if(ca == " " ){
+			mv.addObject("c"," ");
+		}
+		else{
+			mv.addObject("c",ca);
+		}
 		return mv;
 		
 	}

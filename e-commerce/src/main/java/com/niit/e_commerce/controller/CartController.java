@@ -87,8 +87,9 @@ cart.setQuantity(1);
 			
 		
 	}
-		
-		
+		Product p=productDao.getprbyid(id);
+		p.setStock(p.getStock()-1);
+		productDao.updateproduct(p);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(name);
@@ -117,7 +118,7 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	@RequestMapping("/car")
 	public ModelAndView addcar(@RequestParam("id") int id)
 	{ 
-		ModelAndView mv1 = new ModelAndView("redirect:/user/cart?id+"+id);
+		ModelAndView mv1 = new ModelAndView("redirect:/user/car?id="+id);
        
 		return mv1;
 	}
@@ -178,7 +179,13 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 	ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 	ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	mv1.addObject("cate",l);
-    Cart c= new Cart();
+	
+	Cart cr=cartDao.getcartbyid(cartid);
+	Product p=productDao.getprbyid(cr.getPid().getId());
+	p.setStock(p.getStock()-(quantity-cr.getQuantity()));
+	productDao.updateproduct(p);
+	
+	Cart c= new Cart();
 	String Username=SecurityContextHolder.getContext().getAuthentication().getName();
 	c.setUsername(Username);
 	c.setQuantity(quantity);
@@ -212,6 +219,9 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 		
 		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
 		
+		Cart c=cartDao.getcartbyid(cartid);
+		Product p=productDao.getprbyid(c.getPid().getId());
+		p.setStock(c.getQuantity()+p.getStock());
 		mv1.addObject("ca",ll);
 		
 		int total=0;

@@ -278,15 +278,26 @@
                     <div class="row">
    
   </div><!-- end row --></br>
+  <div>left ${pr.stock}</div>
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br></br>            
                         <c:if test="${pageContext.request.userPrincipal.name  != null}">
+                        <c:if test="${pr.stock eq 0}">
+                         <div class="btn-group cart">
+						<a class="btn icon-btn btn-warning" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+					</div>
+					<div class="btn-group buy">
+						<a class="btn icon-btn btn-danger" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+					</div>
+                        </c:if></c:if>
+                        <c:if test="${pageContext.request.userPrincipal.name  != null}">
+                        <c:if test="${pr.stock ge 1}">
                         <div class="btn-group cart">
 						<a class="btn icon-btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
 					</div>
 					<div class="btn-group buy">
-						<a class="btn icon-btn btn-danger" href="buy"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+						<a class="btn icon-btn btn-danger" href="buy?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
 					</div>
-					</c:if>
+					</c:if></c:if>
 					<c:if test="${pageContext.request.userPrincipal.name  == null}">
 					<div class="btn-group cart">
 						<a class="btn icon-btn btn-success" href="in"><span class="glyphicon btn-glyphicon glyphicon-log-in img-circle text-success"></span>Please Sign in</a>
@@ -308,7 +319,7 @@
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
-                        <c:forEach var="rev" items="${review}">	
+                        <c:forEach items="${review}" var="rev"  varStatus="loop">	
                    <table>
                     <tr>
            <td>${rev.custname}</td>
@@ -318,7 +329,7 @@
             </table>
 </c:forEach>  </div>
                         <div class="tab-pane fade" id="tab2default">
-                        <form action="review?prid=${pr.id}" method="post">
+                        <form action="review?id=${pr.id}" method="post">
                 <table >
 <tr><td>NAME</td><td><input type="text"  name="name"  style="width:100%" required></td></tr>
 <tr><td>Feedback</td><td><textarea rows="4" cols="50" name="rev" style="width:100%; height:100px;" required></textarea></td></tr>

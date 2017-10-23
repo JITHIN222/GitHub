@@ -7,19 +7,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="indexfooter.css" type="text/css">
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script>
-  var check = function() {
-	  if (document.getElementById('f5').value ==
-	    document.getElementById('f6').value) {
-	    document.getElementById('message').style.color = 'green';
-	    document.getElementById('message').innerHTML = 'matching';
-	  } else {
-	    document.getElementById('message').style.color = 'red';
-	    document.getElementById('message').innerHTML = 'not matching';
-	  }
-	}
-  </script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+function check() {
+    var password = $("#f5").val();
+    var confirmPassword = $("#f6").val();
+
+    if (password != confirmPassword)
+        $("#divCheckPasswordMatch").html("Passwords do not match!");
+    else
+        $("#divCheckPasswordMatch").html("Passwords match.");
+}
+</script>
   <style >
    .container {
   margin-top: 30px
@@ -98,12 +97,13 @@ text-align: right;
         </div>
         <div class="form-group" id="f3">    
         <span style="font-weight:900">Password</span>      
-            <input type="password" class="form-control" id="f5" name="pwd" onkeyup="check();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <input type="password" class="form-control" id="f5" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         </div>
         <div class="form-group" id="f3">  
         <span style="font-weight:900">Confirm Password</span>        
             <input type="password" class="form-control" id="f6" onkeyup="check();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>     
-        </div>
+        </div><div class="registrationFormAlert" id="divCheckPasswordMatch">
+</div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
             <input type="long" class="form-control" id="f4" name="no" pattern=".{10}" required>     

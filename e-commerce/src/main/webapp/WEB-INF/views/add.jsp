@@ -23,7 +23,8 @@
                             <li><a href="#tab2" data-toggle="tab">Category</a></li>
                             <li><a href="#tab3" data-toggle="tab">Supplier</a></li>
                             <li><a href="#tab4" data-toggle="tab">Offer</a></li>
-                            <li><a href="#tab5" data-toggle="tab">Editor</a></li>                        
+                            <li><a href="#tab5" data-toggle="tab">Editor</a></li> 
+                            <li><a href="#tab6" data-toggle="tab">Latest Orders</a></li>                       
                         </ul>
                 </div>
                 <div class="panel-body">
@@ -111,10 +112,13 @@
                         </div>
                          <div class="tab-pane fade" id="tab5">
                          <ul>
-                       <li><div><a href="listpro"><h5 style="color:black;">List of Products</h5></a></div></li>  
-                       <li><div><a href="listcat"><h5 style="color:black;">List of Category</h5></a></div></li>
-                       <li><div><a href="listsup"><h5 style="color:black;">List of Supplier</h5></a></div></li>  
+                       <li><div><a href="listpro?f="><h5 style="color:black;">List of Products</h5></a></div></li>  
+                       <li><div><a href="listcat?f="><h5 style="color:black;">List of Category</h5></a></div></li>
+                       <li><div><a href="listsup?f="><h5 style="color:black;">List of Supplier</h5></a></div></li>  
                         </ul></div>
+                         <div class="tab-pane fade" id="tab6">
+                         <div><a href="order"><h5 style="color:black;">Pending Orders</h5></a></div>
+                         </div>
                       </div></div></div></div>
                       </br></br></br></br></br>
                       <jsp:include page="Footer.jsp"/>

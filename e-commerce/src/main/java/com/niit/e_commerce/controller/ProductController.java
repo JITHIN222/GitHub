@@ -101,9 +101,6 @@ public class ProductController {
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");
 		
-		/*display category dropdown in navbar*/
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
 		return mv1;
 	}
 	
@@ -112,7 +109,6 @@ public class ProductController {
 	public ModelAndView uppr(@RequestParam("prid") int ca){
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		ModelAndView mv= new ModelAndView("Productupdate");
-		mv.addObject("cate",cat);  /*dropdown category at header*/
 		ArrayList<Supplier> ss=(ArrayList<Supplier>)supplierDao.getallSupplier();
 		mv.addObject("sup",ss);     /*dropdown supplier inside product update*/
 		mv.addObject("categ",cat); /*dropdown category inside product update*/
@@ -124,23 +120,21 @@ public class ProductController {
 	
 	/*deleting the product*/
 	@RequestMapping("/admin/deletep")
-	public ModelAndView delpro(@RequestParam("prid") int ca){
-		ModelAndView mv= new ModelAndView("redirect:/admin/listpro");
-		try{
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
+	public String delpro(@RequestParam("prid") int ca){
 		
+		String c="";
+		try{
 		productDao.deleteproduct(ca);
-		mv.addObject("c","successfully deleted product");
+        c="success";
 		}
 		catch(Exception e){
-			mv.addObject("c","Cannot delete product user might added to cart");	
+			c="product might added by any user";
 			}
-		return mv;
+		return "redirect:/admin/listpro?f="+c;
 	}
 	
 	/*updating product to db*/
-	@RequestMapping(value="/admin/upP",method=RequestMethod.POST)
+	@RequestMapping("/admin/upP")
 	public ModelAndView update(@RequestParam("id") int id,@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
 			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
@@ -214,22 +208,22 @@ public class ProductController {
 		}
 		productDao.updateproduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");
-		
-		/*display category dropdown in navbar*/
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro?f="+"");
 		return mv1;
 	}
 	
 	/*listing product*/
 	@RequestMapping("/admin/listpro")
-	public ModelAndView listpro(){
+	public ModelAndView listpro(@RequestParam("f") String ca){
 		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
 		ModelAndView mv = new ModelAndView("listpro");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
 		mv.addObject("listp",p);
+		if(ca == " " ){
+			mv.addObject("c"," ");
+		}
+		else{
+			mv.addObject("c",ca);
+		}
 		return mv;
 		
 	}
@@ -240,8 +234,6 @@ public class ProductController {
 		Product p=new Product();
 		p=productDao.getprbyid(id);
 		ModelAndView mv = new ModelAndView("Product");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
 		mv.addObject("pr",p);
 		
 		return mv;
