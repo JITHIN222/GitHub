@@ -30,7 +30,7 @@
 <body>
   <nav class="navbar navbar-inverse" style="background-color:#424558; height:80px; margin:0px;">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-Left">
       <a class="navbar-brand" href="./"><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></a>
     </div>
     <ul class="nav navbar-nav">
@@ -48,7 +48,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <c:if test="${pageContext.request.userPrincipal.name == null }">
-      <li><a href="up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="up?f="><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
@@ -56,7 +56,7 @@
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name  != null}">
 					<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-					<li><a href='<c:url value="/j_spring_security_logout" />'><span class="glyphicon glyphicon-log-out">Logout</a></li>
+					<li><a href='<c:url value="/j_spring_security_logout" />'><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 				</c:if>
       </ul>
   </div></nav>

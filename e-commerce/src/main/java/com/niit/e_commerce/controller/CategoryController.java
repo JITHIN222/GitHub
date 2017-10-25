@@ -1,5 +1,6 @@
 package com.niit.e_commerce.controller;
 
+
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public class CategoryController {
 		Category i=new Category();
 		i.setName(name);
 		categoryDao.saveCategory(i);
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat");	
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f=");	
 		return mv1;
 	}
 	
@@ -68,7 +69,7 @@ public class CategoryController {
 		i.setName(name);
 		categoryDao.updatecategory(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f="+"");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f=");
 		return mv1;
 	}
 	
@@ -88,8 +89,8 @@ public class CategoryController {
 		return "redirect:/admin/listcat?f="+c;
 		
 	}
-
-
+	
+	
 	@RequestMapping("/admin/listcat")
 	public ModelAndView listcat(@RequestParam("f") String ca){
 		ArrayList<Category> p=(ArrayList<Category>)categoryDao.getallCategories();

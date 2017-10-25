@@ -47,29 +47,17 @@
 <body>
 
 <jsp:include page="Header.jsp"/>
+</br></br>
+</br></br>
 <c:if test ="${fn:length(ca) eq 0}">
- <!-- Header -->
-  <header class="page-header">
-    <div class="container">
-      <h1>My Cart</h1>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <div class="container">
-    <div class="hero-unit">
-      <h2>Empty cart<i class="fa fa-shopping-cart"></i></h2>
-      <p>Dude, you've got nothing in your cart.</p>
-      <p>
+  
+   <img src="${pageContext.request.contextPath}/resources/images/129.png" style="width:100%;" />
+      <p><br>
         <a href="./" class="btn btn-primary">
           Buy something
         </a>
       </p>
-    </div>
-  </div>
 </c:if>
-</br></br>
-</br></br></br>
 <c:if test="${fn:length(ca) ge 1}">
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed">
@@ -117,7 +105,7 @@
 						</tr>
 					</tfoot>
 				</table>
-</div></c:if></br></br></br></br></br>
+</div></c:if><br><br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

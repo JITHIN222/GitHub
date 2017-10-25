@@ -82,6 +82,7 @@ text-align: right;
 </head>
 <body background="${pageContext.request.contextPath}/resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
+<h2>${c}</h2><p style="color:red;">${c}</p>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>

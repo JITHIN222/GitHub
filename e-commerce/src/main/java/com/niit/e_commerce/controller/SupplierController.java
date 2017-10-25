@@ -81,7 +81,7 @@ public class SupplierController {
 		i.setMob(mob);
 		supplierDao.saveSupplier(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup?f=");
 	
 		return mv1;
 	}
@@ -95,7 +95,7 @@ public class SupplierController {
 		i.setMob(mob);
 		supplierDao.updatesupplier(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup?f="+"");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listsup?f=");
 		
 		return mv1;
 	}

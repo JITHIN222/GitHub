@@ -23,20 +23,24 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:10%">Id</th>
-							<th style="width:20%">Name</th>
+						    <th style="width:5%">Id</th>
+							<th style="width:10%">Name</th>
+							<th style="width:10%">Email</th>
+							<th style="width:10%">Mobile No</th>
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
-					<c:forEach var="designate" items="${lists}">
+					<c:forEach var="s" items="${lists}">
 					<tbody>
 			
 						<tr>
-						<td >${ designate.id}</td>
-							<td><h4>${designate.name}</h4></td>
+						<td >${ s.id}</td>
+							<td>${s.name}</td>
+							<td >${ s.email}</td>
+							<td >${ s.mob}</td>
 							<td >
-								<a href="updates?supid=${ designate.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-								<a href="deletes?supid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
+								<a href="updates?supid=${ s.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
+								<a href="deletes?supid=${ s.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					

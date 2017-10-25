@@ -35,7 +35,8 @@ public class UserController {
 	
 
 	@RequestMapping("/reg")
-	public ModelAndView register(@RequestParam("no") long mobno, @RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
+	public String register(@RequestParam("no") long mobno, @RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
+		try{
 		User i=new User();
 		i.setName(name);
 		i.setEmail(email);
@@ -43,17 +44,21 @@ public class UserController {
 		i.setRole("ROLE_USER");
 		i.setMobno(mobno);
 		UserDao.saveProduct(i);
-		ModelAndView mv = new ModelAndView("signin");
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv.addObject("cate",cat);
+		return "redirect:/in?f=";
+		}
+		catch(Exception e){
+			String c="";
+			c="already registered";
+			return "redirect:/up?f="+c;
+		}
+
 	
-		return mv;
+		
 	}
 	
 	@RequestMapping("/user")
 	public ModelAndView index()
 	{
-	
 		ModelAndView mv1 = new ModelAndView("redirect:/");
 	    return mv1;
 	}

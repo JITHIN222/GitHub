@@ -267,7 +267,7 @@
  <div class="col-sm-6" >
                     </br>
                     </br>
-                    <h4 style="color:black;">${pr.name}</h4> </br>
+                    <h4 style="color:black;">${pr.name}</h4> <br>
                      <c:if test="${pr.offer eq 1}">
                      <h2><small style="color:green;">Extra $${pr.price - pr.offerprice} discount</small></h2>     
                     <h2 style="margin-top:0px; color:black;" >Price:$${pr.offerprice} <small><strike> $${pr.price}</strike> <a style="color:green;">${pr.offerper}% off Hurry up!!!</a></small></h2> 
@@ -277,7 +277,7 @@
                     </c:if>
                     <div class="row">
    
-  </div><!-- end row --></br>
+  </div><!-- end row -->
   <div>left ${pr.stock}</div>
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br></br>            
                         <c:if test="${pageContext.request.userPrincipal.name  != null}">
@@ -331,7 +331,7 @@
                         <div class="tab-pane fade" id="tab2default">
                         <form action="review?id=${pr.id}" method="post">
                 <table >
-<tr><td>NAME</td><td><input type="text"  name="name"  style="width:100%" required></td></tr>
+<tr><td>Name</td><td><input type="text"  name="name"  style="width:100%" required></td></tr>
 <tr><td>Feedback</td><td><textarea rows="4" cols="50" name="rev" style="width:100%; height:100px;" required></textarea></td></tr>
 <tr><td></td><td><input id="submit" class="btn btn-success btn-md" name="submit" type="submit" value="SUBMIT" style="width:100%"></td></tr>
 </table>

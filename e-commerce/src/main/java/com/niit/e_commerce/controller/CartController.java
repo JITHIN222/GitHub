@@ -213,26 +213,6 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 		
 		cartDao.deletecart(cartid);
 		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
-		ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",l);
-		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
-		
-		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
-		
-		Cart c=cartDao.getcartbyid(cartid);
-		Product p=productDao.getprbyid(c.getPid().getId());
-		p.setStock(c.getQuantity()+p.getStock());
-		mv1.addObject("ca",ll);
-		
-		int total=0;
-		for(Cart cart:ll)
-		{
-		int sum=cart.getPrice()*cart.getQuantity();
-		total=total+sum;	
-		}
-		
-		mv1.addObject("t",total);
-		
 		return mv1;
 }
 

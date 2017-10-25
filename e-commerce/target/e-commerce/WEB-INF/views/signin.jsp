@@ -67,16 +67,15 @@ text-align: right;
 }
 </style>
 </head>
-<body background="${pageContext.request.contextPath}/resources/images/112.jpg">
+<body background="${pageContext.request.contextPath}/resources/images/bg1.jpg">
 <jsp:include page="Header.jsp"/>
-
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
     <form class="slideDown" id="f1" action="j_spring_security_check" method="post">
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3"> 
-        <span style="font-weight:900">Email/Username</span>            
+        <span style="font-weight:900">Email</span>            
             <input type="text" id="f4" class="form-control" name="j_username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required >
         </div>
         <div class="form-group" id="f3">           

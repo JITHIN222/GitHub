@@ -77,7 +77,7 @@ padding: 10.5px;
  	 <div class="form-group"></br>
                 <div class="input-group" id="s1">
                   
-                  <input class="form-control" placeholder="Enter your email .." type="text">
+                  <input class="form-control"   placeholder="Enter your email .." type="text">
                    <span class="input-group-btn">
                     <button class="btn btn-success"  type="submit">Subscribe Us !</button>
                   </span>
@@ -99,7 +99,7 @@ padding: 10.5px;
 <a href="#" class="fa fa-google"></a>
 <a href="#" class="fa fa-linkedin"></a>
 <a href="#" class="fa fa-youtube"></a></li>
-       <h5>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Shopping Website</a>, All rights reserved 2017-2018.</h5>
+       <h5>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> TechGuru Website</a>, All rights reserved 2017-2018.</h5>
     </div>
         
 </body>

@@ -27,21 +27,21 @@
                          <div class="form-group">
         <label for="inputName" > Category</label>
         <select name="cat">
-  <option value="volvo">${pr.cid.name}</option>
+  <option value="${pr.cid.id}">${pr.cid.name}</option>
   
-  <c:forEach var="designatee" items="${categ}">
+  <c:forEach var="c" items="${categ}">
   
-<option value="${designatee.id}">${designatee.name}</option>    
+<option value="${c.id}">${c.name}</option>    
                     </c:forEach> 
   
 </select>
         <label for="inputName" >Supplier</label>
         <select name="sid">
   
-   <option value="volvo">${pr.sid.name}</option>
+   <option value="${pr.sid.id}">${pr.sid.name}</option>
   <c:forEach var="designatee" items="${sup}">
   
-<option value="${designatee.id}">${designatee.name}</option>    
+<option value="${c.id}">${c.name}</option>    
                     </c:forEach> 
   
 </select>
@@ -74,7 +74,7 @@
 <div class="form-group">                   
            <input type="file" name="img3" />
         </div>
-          <button type="submit" class="btn btn-success" href="ad">Save</button>
+          <button type="submit" class="btn btn-success">Save</button>
    </form> 
                        
                       </div></div></div>

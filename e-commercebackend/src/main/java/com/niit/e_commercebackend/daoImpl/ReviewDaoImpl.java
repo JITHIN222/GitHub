@@ -25,12 +25,12 @@ public class ReviewDaoImpl implements ReviewDao {
 	}
 	
 	public void saveReview(Review r){
-		Session session=sessionF.openSession();
-		Transaction t=session.getTransaction();
+		Session s=sessionF.openSession();
+		Transaction t=s.getTransaction();
 		t.begin();
-		session.save(r);
+		s.save(r);
 		t.commit();
-		session.close();
+		s.close();
 	}
 	
 	public ArrayList<Review> getrevbyprid(int id){

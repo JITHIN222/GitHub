@@ -15,9 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
 import com.niit.e_commercebackend.dao.ProductDAO;
+import com.niit.e_commercebackend.dao.ReviewDao;
 import com.niit.e_commercebackend.dao.SupplierDao;
 import com.niit.e_commercebackend.models.Category;
 import com.niit.e_commercebackend.models.Product;
+import com.niit.e_commercebackend.models.Review;
 import com.niit.e_commercebackend.models.Supplier;
 
 @Controller
@@ -31,6 +33,9 @@ public class ProductController {
 	
 	@Autowired
 	ProductDAO productDao;
+	
+	@Autowired
+	ReviewDao reviewDao;
 	
 	/*adding product to db*/
 	@RequestMapping("/admin/addP")
@@ -99,7 +104,7 @@ public class ProductController {
 					 
 		productDao.saveProduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro?f=");
 		
 		return mv1;
 	}
@@ -140,7 +145,6 @@ public class ProductController {
 			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
 			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		
-		System.out.println("In Product Update");
 		Product i=productDao.getprbyid(id);
 		i.setId(id);
 		i.setName(name);
@@ -208,7 +212,7 @@ public class ProductController {
 		}
 		productDao.updateproduct(i);
 		
-		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro?f="+"");
+		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro?f=");
 		return mv1;
 	}
 	
@@ -235,7 +239,11 @@ public class ProductController {
 		p=productDao.getprbyid(id);
 		ModelAndView mv = new ModelAndView("Product");
 		mv.addObject("pr",p);
-		
+		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
+		mv.addObject("cate",cat);
+		ArrayList<Review> l= new ArrayList<Review>();
+		l=reviewDao.getrevbyprid(id);
+		mv.addObject("review",l);
 		return mv;
 		
 	}

@@ -224,6 +224,22 @@ left: 35%;
     padding:12px 20px;
     }
 }
+
+body {
+ font-size: 16px;
+ line-height: 25px;
+ padding-top: 50px;
+ font-family: 'Varela Round', sans-serif;
+ background-color: #e7e7e7;
+   padding-bottom:50px;
+}
+.color-invoice{
+ background-color: #ffffff;
+   border: 1px solid #d7d7d7;
+   padding-top:100px;
+   padding-bottom:100px;
+}
+
 </style>
 </head>
 <body>
@@ -279,67 +295,97 @@ String[] billr=bill.split(",");
                       <div class="tab-pane fade in active" >
 
                           <h3 class="head text-center">Order Confirmation</h3>
-                          <table>
-                          <tr>
-                          <th  style="width:5%"></th>
-                          <th style="width:5%">Billing Address</th>
-							<th style="width:5%">Shipping Address</th></tr>
-							<tr>
-							<td></td>
-							<td><address>
-               <%=billr[0]%> <%=billr[1]%><br> 
-                     <%=billr[2]%><br>
-               <%=billr[4]%>, <%=billr[3]%>, pin:<%=billr[6]%><br>
-               <%=billr[5]%><br>
-               INDIA
-</address>
-							
-							</td>
-							<td><address>
-               <%=shipr[0]%> <%=shipr[1]%><br> 
-                     <%=shipr[2]%><br>
-               <%=shipr[4]%>, <%=shipr[3]%>, pin:<%=shipr[6]%><br>
-                Phone No:<%=shipr[5]%><br>
-               INDIA
-</address></td>
-							
-							</tr>
-                          </table>
-             	<table id="cart" class="table table-hover table-condensed">
-    				<thead>
-						<tr>
-							<th style="width:30%">Product</th>
-							<th style="width:2%">Price</th>
-							<th style="width:0.5%;">Quantity</th>
-							<th style="width:2%">Subtotal</t>
-						</tr>
-					</thead>
-					<tbody>
-					
-					<c:forEach var="c" items="${ca}">
-						<tr>
-							<td data-th="Product">
-								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/Productimage/${c.pid.img}" alt="..." class="img-responsive"/></div>
-									<div class="col-sm-10">
-										<h4 class="nomargin">${c.pid.name}</h4>
-									</div>
-								</div>
-							</td>
-							<td data-th="Price">$${c.price}</td>
-							<td align="center">${c.quantity}</td>
-							<td>$${c.price * c.quantity }</td>
-							
-						</tr></c:forEach>
-					</tbody>
-						
-						<tr>
-							<td><a href="#"></td>
-							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total:$${t}</strong></td>
-							<td><a href="buy"></td>
-						</tr>
-				</table>
+                <div class="container">
+     <div class="col-md-12 text-center">
+
+   </div>
+   <div class="row color-invoice">
+     <div class="col-md-12">
+       <div class="row">
+         <div class="col-lg-7 col-md-7 col-sm-7">
+           <h1><img src="${pageContext.request.contextPath}/resources/images/101.png"/></h1>
+           <br />
+        
+           <strong> Email : </strong> TechGuru@gmail.com
+           <br />
+           <strong> Call : </strong> +91 9544150640
+         
+         </div>
+         <div class="col-lg-5 col-md-5 col-sm-5">
+
+           
+
+         </div>
+       </div>
+       <hr />
+       <div class="row">
+         <div class="col-lg-7 col-md-7 col-sm-7">
+         
+           <h3>BILLING ADDRESS : </h3>
+           <h5><%=billr[0]%> <%=billr[1]%></h5>
+           <h5><%=billr[2]%></h5>
+           <h5><%=billr[4]%>, <%=billr[3]%>, pin:<%=billr[6]%></h5>
+           <h5>Mobile No:<%=billr[5]%></h5>
+           <br /> 
+         </div>
+        
+         <div class="col-lg-5 col-md-5 col-sm-5">
+           <h3>SHIPPING ADDRESS:</h3> 
+           <h5><%=shipr[0]%> <%=shipr[1]%></h5>
+           <h5><%=shipr[2]%></h5>
+           <h5><%=shipr[4]%>, <%=shipr[3]%>, pin:<%=shipr[6]%></h5>
+           <h5>Mobile No:<%=shipr[5]%></h5>
+         </div>
+       </div>
+       <hr />
+       <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-6">
+ <strong>ITEM DESCRIPTION & DETAILS :</strong>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="c" items="${ca}">
+                  <tr>
+                    <td><img src="${pageContext.request.contextPath}/resources/Productimage/${c.pid.img}" alt="..." class="img-responsive" width="80px" height="50px"/></td>
+                    <td>${c.pid.name}</td>
+                    <td>$${c.price}</td>
+                    <td>${c.quantity}</td>
+                    <td>$${c.price * c.quantity}</td>
+                  </tr>
+                  </c:forEach>
+                  
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <div>
+              <h4>  Total :$${t} </h4>
+            </div>
+            <hr><br>
+            <div>
+              <h3>  Bill Amount :$${t}  </h3>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+</div>       
+             	
                           <p class="text-center">
                     <a href="payment" class="btn btn-success btn-outline-rounded green"> Proceed to pay <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></a>
                 </p>
@@ -349,7 +395,11 @@ String[] billr=bill.split(",");
 </div>
 
 
-</section>
-      <jsp:include page="Footer.jsp"/>             
+</section> 
+ <jsp:include page="Footer.jsp"/>     
+      
+      
+      
+           
 </body>
 </html>
