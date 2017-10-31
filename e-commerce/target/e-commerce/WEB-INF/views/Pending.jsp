@@ -15,7 +15,7 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
-<br><br><br><br>
+<br><br><br><br><br>
 <c:if test ="${fn:length(order) eq 0}">
 <h2 align="center">All orders Shipped</h2>
 </c:if>
@@ -32,8 +32,6 @@
   </div>
   
   <c:forEach var="o" items="${order}">	
-
-
 <div class="panel-body">
   	<div class="row">
 	  <div class="col-md-1"></div>
@@ -43,23 +41,18 @@
 			
 			<span><strong>Order ID</strong></span> <span class="label label-info">${o.id}</span><br>
 			<span>Orders</span><p style="font-size: 25px">${o.order_detail }</p>
-			<%-- <span>Total</span><p style="font-size: 25px">${o.total }</p> --%>
 			<a href="shipped?id=${o.id}"><button>SHIP THE ORDERS</button></a>
 		  </div>
 		 
 		</div>
 	  </div>
-	</div>
-
+	</div><br>
+order made by: ${o.username}
 </div>
-
-
- <div class="col-md-12">
-			order made by Email id: ${o.username}
-		  </div>
+</c:if>
 </c:forEach>
-</div></c:if>
-<br><br><br><br><br>
+</div>
+<br><br><br><br><br><br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

@@ -40,8 +40,8 @@
        <c:if test="${pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <c:forEach var="designatee" items="${cate}">
-                       <li><a href="${designatee.id}">${designatee.name}</a></li>    
+          <c:forEach var="c" items="${cate}">
+                       <li><a href="${c.id}">${c.name}</a></li>    
                     </c:forEach>  
         </ul>
       </li></c:if>

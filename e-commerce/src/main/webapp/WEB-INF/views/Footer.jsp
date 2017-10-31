@@ -71,7 +71,7 @@ padding: 10.5px;
       <div class="col-sm-4">
     <h3><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></h3>
 		    <p align="left">
-		        Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+		        <strong>TechGuru</strong> is One of the Top Online Shopping Site for Electronic Gadgets in India. The Company was started on November 2017 by Jithin.  </p>
  </div>
  	<div class="col-sm-4">
  	 <div class="form-group"></br>

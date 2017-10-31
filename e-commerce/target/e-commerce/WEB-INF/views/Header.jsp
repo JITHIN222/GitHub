@@ -30,7 +30,7 @@
 <body>
   <nav class="navbar navbar-inverse" style="background-color:#424558; height:80px; margin:0px;">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-Left">
       <a class="navbar-brand" href="./"><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></a>
     </div>
     <ul class="nav navbar-nav">

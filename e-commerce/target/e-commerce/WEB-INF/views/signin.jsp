@@ -67,7 +67,7 @@ text-align: right;
 }
 </style>
 </head>
-<body background="${pageContext.request.contextPath}/resources/images/bg1.jpg">
+<body background="${pageContext.request.contextPath}/resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
 <div class='container' id="nav">
   <div class='row'>
@@ -86,7 +86,8 @@ text-align: right;
     <label><input type="checkbox" required> Remember me</label>
   </div> -->
         <button type="submit" class="btn btn-primary btn-block" id="b1">Login</button>
-        <p align="center">new user? <a href="up">create new account</a></p>
+        <p align="center">Forget Password? <a href="fo?msg=0">click here</a></p>
+        <p align="center">New user? <a href="up">create new account</a></p>
       </div>
     </form>
     </div>

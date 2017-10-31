@@ -35,16 +35,16 @@
         <label for="inputName" > Category</label>
         <select name="cat">
   <option value="volvo">Select Category</option>
-  <c:forEach var="designatee" items="${categ}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="ca" items="${categ}">
+<option value="${ca.id}">${ca.name}</option>    
                     </c:forEach> 
   
 </select>
         <label for="inputName" >Supplier</label>
         <select name="sid">
   <option value="volvo">Select Supplier</option>
-  <c:forEach var="designatee" items="${catego}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="su" items="${catego}">
+<option value="${su.id}">${su.name}</option>    
                     </c:forEach> 
   
 </select>

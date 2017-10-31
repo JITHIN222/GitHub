@@ -202,6 +202,17 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
 
 
 
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left;width:100%;hieght:100% }
+        .MultiCarousel .MultiCarousel-inner .item { float: left; width:100%;hieght:100%}
+        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+    .MultiCarousel .leftLst { left:0; }
+    .MultiCarousel .rightLst { right:0; }
+    
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+
 </style>
 <body>
 <jsp:include page="Header.jsp"/>
@@ -262,7 +273,7 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                                 <div class="col-md-6 text-left">
                                     <div class="carousel-desc">
 
-                                        <h2>Digital Camera</h2>
+                                        <h2>Canon IXUS</h2>
                                         <p>Make the Most of Your Photos</p>
                                         <p>Make Memories</p>
                                         <p>Capture Life</p>
@@ -276,7 +287,7 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
             </div>
         </div>
     </section>
-    <%-- <h1><strong>Hot Deals</strong></h1>
+  <h1><strong>Hot Deals</strong></h1>
     <div class="row">
 <c:forEach items="${off}" var="p"  varStatus="loop">
 <c:if test="${p.offer eq 1}">
@@ -286,7 +297,7 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
     <tr><p align="center"><font color="black"><strong> $${p.offerprice}</strong></font> <strike><small>$${p.price}</small></strike> <font color="black">${p.offerper}% off</font></p></tr>
     <div class="row">
     <div class="col-sm-6">
-    <a class="btn btn-success btn-product" href="car?id=${pr.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    <a class="btn btn-success btn-product" href="car?id=${p.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
     </div>
     <div class="col-sm-6">
     <a class="btn btn-danger btn-product" href="buy?id=${p.id}"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
@@ -295,7 +306,52 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
 </div>
 </c:if>
 </c:forEach></div>
- --%>
+
+
+
+    <div class="row">
+<div class="col-sm-2">
+    <img src="${pageContext.request.contextPath}/resources/Productimage/${ofp1.img}" class="img-responsive">
+    <table><tr><p align="center">${ofp1.name}</p></tr>
+    <tr><p align="center"><font color="black"><strong> $${ofp1.offerprice}</strong></font> <strike><small>$${ofp1.price}</small></strike> <font color="black">${ofp1.offerper}% off</font></p></tr>
+    <div class="row">
+    <div class="col-sm-6">
+    <a class="btn btn-success btn-product" href="car?id=${ofp1.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    </div>
+    <div class="col-sm-6">
+    <a class="btn btn-danger btn-product" href="buy?id=${ofp1.id}"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
+    </div></div>
+    </table>
+</div>
+</div> 
+
+	<div class="row">
+	
+	
+		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner">
+            
+            
+            <c:forEach var="o" items="${of}">
+          <a href="product?id=${o.id}" > 
+        
+                <div class="item">
+                    <div class="pad15">
+                    <img src="${pageContext.request.contextPath}/resources/Productimage/${o.img}" class="img-responsive" style="width:100px; height:250px">
+                        <p class="lead">${o.name}</p>
+                        <p><strike>$${o.price}</strike> $${o.offerprice}</p>
+                        <p>${o.offerper }% OFF</p>
+                    </div>
+                </div>
+               
+                </a>
+</c:forEach>              
+              
+            </div>
+            <button class="btn btn-success leftLst"><</button>
+            <button class="btn btn-success rightLst">></button>
+        </div>
+	</div>
   <jsp:include page="Footer.jsp"/>
 </body>
 </html>

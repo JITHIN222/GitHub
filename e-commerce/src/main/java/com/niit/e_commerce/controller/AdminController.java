@@ -115,6 +115,7 @@ public class AdminController {
 	
 	}
 	
+	//list of placed order
 	@RequestMapping("/admin/order")
 	public ModelAndView order() 
 	{
@@ -124,6 +125,8 @@ public class AdminController {
 return mv1;	
 }
 	
+	
+	//deleteing order and redirecting to placed order list
 	@RequestMapping("/admin/shipped")
 
 	public ModelAndView shipped(@RequestParam("id") int id)
@@ -147,4 +150,14 @@ return mv1;
 		orderDao.deleteorder(or);
 		return mv1;
 }
+	
+	@RequestMapping("/admin/cancel")
+	public ModelAndView cancel(@RequestParam("id") int id)
+	{
+			ModelAndView mv1 = new ModelAndView("redirect:/admin/order");
+			Order or=orderDao.getorbyid(id);
+			orderDao.deleteorder(or);
+			return mv1;
+	}
+	
 }

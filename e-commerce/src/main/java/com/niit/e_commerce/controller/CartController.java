@@ -211,6 +211,10 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 @RequestMapping("/user/cartdel")
 	public ModelAndView cartdelete(@RequestParam("cartid") int cartid) {
 		
+	    Cart c= cartDao.getcartbyid(cartid);
+	    Product p=productDao.getprbyid(c.getPid().getId());
+	    p.setStock(p.getStock()+ (c.getQuantity()));
+		productDao.updateproduct(p);
 		cartDao.deletecart(cartid);
 		ModelAndView mv1 = new ModelAndView("redirect:/user/cart");
 		return mv1;

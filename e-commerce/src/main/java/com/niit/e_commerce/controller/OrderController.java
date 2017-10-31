@@ -125,6 +125,13 @@ cart.setQuantity(1);
 		o.setOrder_detail("null");
 		o.setUsername(name);
 		orderDao.saveOrder(o);
+		ModelAndView mv1 = new ModelAndView("redirect:/user/bil");
+		return mv1;
+	}
+	
+	@RequestMapping("/user/bil")
+	public ModelAndView bil(){
+		String name = SecurityContextHolder.getContext().getAuthentication().getName();
 		ModelAndView mv1 = new ModelAndView("bill");
 		Order p= new Order();
 		p=orderDao.getorbyusername(name);
@@ -133,6 +140,7 @@ cart.setQuantity(1);
 		mv1.addObject("cate",l);
 		return mv1;
 	}
+	
 	
 	//order confirmation
 	@RequestMapping("/user/order")

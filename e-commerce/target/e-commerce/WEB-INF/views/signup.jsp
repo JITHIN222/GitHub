@@ -82,7 +82,8 @@ text-align: right;
 </head>
 <body background="${pageContext.request.contextPath}/resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
-<h2>${c}</h2><p style="color:red;">${c}</p>
+<br>
+<h1 class="text-danger" align="center"><strong>${c}</strong></h1>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
@@ -107,7 +108,7 @@ text-align: right;
 </div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
-            <input type="long" class="form-control" id="f4" name="no" pattern=".{10}" required>     
+            <input type="long" class="form-control" id="f4" name="no" pattern=".{10}" title="Must contain 10 numbers" required>     
         </div>
      <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>

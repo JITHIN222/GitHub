@@ -42,7 +42,6 @@ public class SupplierDaoImpl implements SupplierDao {
 		t.begin();
 		Query q=s.createQuery("from Supplier");
 		ArrayList<Supplier> cat=(ArrayList<Supplier>)q.list();
-		System.out.println("retrieved");
 		t.commit();
 		s.close();
 		

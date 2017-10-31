@@ -27,26 +27,10 @@ public class ReviewController {
 	@Autowired
 	CategoryDAO categoryDao;
 	
-	@RequestMapping("/review")
-	public ModelAndView rev(@RequestParam("id") int id, @RequestParam("name") String name,@RequestParam("rev") String rev){
-		ModelAndView mv1 = new ModelAndView("redirect:/product?id="+id);
-		Review r= new Review();
-		r.setPrid(id);
-		r.setUsername(name);
-		r.setRev(rev);
-		reviewDao.saveReview(r);
-		
-		
-		ArrayList<Review> l= new ArrayList<Review>();
-		l=reviewDao.getrevbyprid(id);
-		mv1.addObject("review",l);
-		
-		return mv1;
-	}
 	
-	/*@RequestMapping("/user/review")
+	@RequestMapping("/review")
 	public ModelAndView urev(@RequestParam("id") int id, @RequestParam("name") String name,@RequestParam("rev") String rev){
-		ModelAndView mv1 = new ModelAndView("ProductList");
+		ModelAndView mv1 = new ModelAndView("redirect:/product?id="+id);
 		Review r= new Review();
 		r.setPrid(id);
 		r.setUsername(name);
@@ -63,6 +47,6 @@ public class ReviewController {
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cat);
 		return mv1;
-	}*/
-	
+	}
+
 }

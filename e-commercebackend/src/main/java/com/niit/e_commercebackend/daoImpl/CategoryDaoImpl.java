@@ -35,13 +35,11 @@ public class CategoryDaoImpl implements CategoryDAO{
 	}
 	
 	public ArrayList<Category> getallCategories(){
-		System.out.println("impl reaching");
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
 		Query q=s.createQuery("from Category");
 		ArrayList<Category> cat=(ArrayList<Category>)q.list();
-		System.out.println("retrieved");
 		for(Category c:cat)
 		{
 			System.out.println(c);

@@ -2,6 +2,8 @@ package com.niit.e_commerce.controller;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,10 +35,23 @@ public class UserController {
 	@Autowired
 	ProductDAO productDao;
 	
+	@Autowired
+	private MailSender sendmail;
+	
 
 	@RequestMapping("/reg")
 	public String register(@RequestParam("no") long mobno, @RequestParam("fname") String name, @RequestParam("email") String email, @RequestParam("pwd") String pwd) {
+		
 		try{
+			
+			SimpleMailMessage emaile = new SimpleMailMessage();
+	        emaile.setTo(email);
+	        emaile.setSubject("Welcome to TechGuru");
+	        emaile.setText("Registeration done successfully, Shop & enjoy exiting offers with TechGuru...");
+	         
+	        // sends the e-mail
+	        sendmail.send(emaile);
+			
 		User i=new User();
 		i.setName(name);
 		i.setEmail(email);
