@@ -61,6 +61,7 @@ function check()
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<br><br><br>
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
@@ -68,7 +69,7 @@ function check()
 							<th style="width:30%">Product</th>
 							<th style="width:2%">Price</th>
 							<th></th>
-							<th style="width:2%">Quantity</th>
+							<th style="width:5%">Quantity</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -93,12 +94,13 @@ function check()
 							</td>
 							<td>
 							
-								<input id="submit" class="btn btn-success btn-sm" name="submit" type="submit" onclick="check()" value="Update"></td>
+								<input id="submit" class="btn btn-success btn-sm" name="submit" type="submit" onclick="return check()" value="Update"></td>
 							</form>
 						</tr>
 					</tbody>
 				</table>
 </div>
+<br><br>
 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

@@ -23,20 +23,20 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:10%">Id</th>
+						    <th style="width:10%">Image</th>
 							<th style="width:20%">Name</th>
 							<th style="width:10%">Action</th>
 						</tr>
 					</thead>
-					<c:forEach var="designate" items="${listc}">
+					<c:forEach var="c" items="${listc}">
 					<tbody>
 			
 						<tr>
-						<td >${ designate.id}</td>
-							<td><h4>${designate.name}</h4></td>
+						<td><img class="img-thumbnail" src="${pageContext.request.contextPath}/resources/Productimage/${c.img}" alt="" style="width:50%; height:100px;"></td>
+							<td><h4>${c.name}</h4></td>
 							<td >
-								<a href="updatec?catid=${ designate.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-								<a href="deletec?catid=${ designate.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
+								<a href="updatec?catid=${ c.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
+								<a href="deletec?catid=${ c.id}"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					

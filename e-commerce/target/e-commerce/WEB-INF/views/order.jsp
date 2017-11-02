@@ -228,10 +228,9 @@ left: 35%;
 body {
  font-size: 16px;
  line-height: 25px;
- padding-top: 50px;
+ padding-top: 1px;
  font-family: 'Varela Round', sans-serif;
  background-color: #e7e7e7;
-   padding-bottom:50px;
 }
 .color-invoice{
  background-color: #ffffff;
@@ -259,31 +258,31 @@ String[] billr=bill.split(",");
                 
                     <ul class="nav nav-tabs" id="myTab">
                      <li>
-                     <a href="#home" title="Shipping Detail">
+                     <a href="#" title="Shipping Detail">
                       <span class="round-tabs one">
                               <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li><a href="#profile">
+                  <li><a href="#">
                      <span class="round-tabs two">
                          <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li class="active"><a href="#messages"  >
+                 <li class="active"><a href="#"  >
                      <span class="round-tabs three">
                           <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li><a href="#settings" >
+        <li><a href="#" >
                          <span class="round-tabs four">
                               <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="#doner">
+                     <li><a href="#">
                          <span class="round-tabs five">
                               <i class="fa fa-check"></i>
                          </span> </a>

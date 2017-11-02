@@ -93,7 +93,8 @@ private SessionFactory sessionF;
 		Session s=sessionF.openSession();
 		Transaction t=s.getTransaction();
 		t.begin();
-		Product ca = (Product) s.get(Product.class, id);
+		/*Product ca = (Product) s.get(Product.class, id);*/
+		Product ca = (Product) s.createQuery("from Product where id="+id).list().get(0);
         t.commit();
         
         s.close();

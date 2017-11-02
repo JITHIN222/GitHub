@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Order</title>
+<title>Billing Address</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -238,31 +238,31 @@ String[] addr=add.split(",");
                     <ul class="nav nav-tabs" id="myTab">
                    
                      <li>
-                     <a href="" >
+                     <a href="#" >
                       <span class="round-tabs one">
                               <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li class="active"><a href="" title="Billing">
+                  <li class="active"><a href="#" title="Billing">
                      <span class="round-tabs two">
                          <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href=""  >
+                 <li><a href="#"  >
                      <span class="round-tabs three">
                           <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li><a href="" >
+        <li><a href="#" >
                          <span class="round-tabs four">
                               <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="">
+                     <li><a href="#">
                          <span class="round-tabs five">
                               <i class="fa fa-check"></i>
                          </span> </a>
@@ -302,10 +302,10 @@ String[] addr=add.split(",");
                           </div>
                           <div class="row">
                           <div class="col-sm-6">
-             Mobile No:<input type="number" class="form-control" name="mob" value="<%=addr[5] %>" required>
+             Mobile No:<input type="number" class="form-control" name="mob" value="<%=addr[5] %>" pattern="[789].{9}" title="must start with 7/8/9 & must contain 10 numbers" required>
                           </div>
                           <div class="col-sm-6">
-             Postal Code:<input type="number" class="form-control" name="pin" value="<%=addr[6] %>" required>
+             Postal Code:<input type="number" class="form-control" name="pin" value="<%=addr[6] %>" pattern="[0-9].{5}" title="must contain 6" required>
                           </div></div>
                         <p class="text-center">
                     <button type="submit" class="btn btn-success btn-outline-rounded green"> save & continue <span style="margin-left:10px;" class="glyphicon glyphicon-ok"></span></button>

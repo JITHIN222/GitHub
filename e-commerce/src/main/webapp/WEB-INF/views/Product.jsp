@@ -225,6 +225,7 @@
        -moz-border-radius: 100%;
              border-radius: 100%
 }
+​
 
 .btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
 .icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
@@ -265,8 +266,8 @@
     </ol>
     </div></div>
  <div class="col-sm-6" >
-                    </br>
-                    </br>
+                    <br>
+                    <br>
                     <h4 style="color:black;">${pr.name}</h4> <br>
                      <c:if test="${pr.offer eq 1}">
                      <h2><small style="color:green;">Extra $${pr.price - pr.offerprice} discount</small></h2>     
@@ -282,24 +283,23 @@
                     <p style="margin-top:0px; color:black;"><h3>Description:</h3></a>${pr.shortDesc}</p>  </br></br>            
                         <c:if test="${pr.stock eq 0}">
                          <div class="btn-group cart">
-						<a class="btn icon-btn btn-warning" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+						<a class="btn btn-warning" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle"></span> Add to cart</a>
 					</div>
 					<div class="btn-group buy">
-						<a class="btn icon-btn btn-danger" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+						<a class="btn btn-danger" style="cursor: not-allowed"  href=""><span class="glyphicon btn-glyphicon glyphicon-flash img-circle"></span> Buy now</a>
 					</div>
                         </c:if>
                         <c:if test="${pr.stock ge 1}">
                         <div class="btn-group cart">
-						<a class="btn icon-btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle text-warning"></span>Add to cart</a>
+						<a class="btn btn-warning" href="car?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-shopping-cart img-circle"></span> Add to cart</a>
 					</div>
 					<div class="btn-group buy">
-						<a class="btn icon-btn btn-danger" href="user/buy?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle text-danger"></span>Buy now</a>
+						<a class="btn btn-danger" href="user/buy?id=${pr.id}"><span class="glyphicon btn-glyphicon glyphicon-flash img-circle"></span> Buy now</a>
 					</div>
 					</c:if>
                                                           
                 </div>                              
         </div></div>
-            <c:if test="${pageContext.request.userPrincipal.name  != null}"> 
            <div class="row">
     	<div class="col-sm-12">
             <div class="panel with-nav-tabs panel-default">
@@ -315,11 +315,10 @@
                         <div class="tab-pane fade in active" id="tab1default">
                         <c:forEach items="${review}" var="rev"  varStatus="loop">	
                    <table>
+                   <tbody>
                     <tr>
-           <td>${rev.custname}</td>
-           <td>says</td>
-            <td>${rev.review}</td>
-            </tr>
+           <td>${rev.username} tells ${rev.rev}</td>
+            </tr></tbody>
             </table>
 </c:forEach>  </div>
                         <div class="tab-pane fade" id="tab2default">
@@ -334,7 +333,7 @@
                 </div>
             </div>
         </div>
-            </div> </c:if>
+            </div>
                 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

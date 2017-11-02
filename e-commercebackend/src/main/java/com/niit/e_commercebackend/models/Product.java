@@ -51,7 +51,18 @@ public class Product implements Serializable {
     @Column(name = "IMG3", nullable = false)
     private String img3;
     
-    @Column(name = "OFFER", nullable =false)
+    @Column(name = "IMG4", nullable = false)
+    private String img4;
+    
+    public String getImg4() {
+		return img4;
+	}
+
+	public void setImg4(String img4) {
+		this.img4 = img4;
+	}
+
+	@Column(name = "OFFER", nullable =false)
     private int offer;
     
 	@Column(name = "OFFERAMOUNT", nullable =false)

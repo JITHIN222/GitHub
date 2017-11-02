@@ -112,7 +112,7 @@ cart.setQuantity(1);
 		return mv1;
 	}
 	
-	//billing address
+	//redirecting to bill page
 	@RequestMapping("/user/bill")
 	public ModelAndView bill(@RequestParam("first") String first, @RequestParam("last") String last, @RequestParam("address") String address, @RequestParam("state") String state, @RequestParam("city") String city, @RequestParam("mob") String mob, @RequestParam("pin") String pin)
 	{
@@ -129,6 +129,7 @@ cart.setQuantity(1);
 		return mv1;
 	}
 	
+	//billing page
 	@RequestMapping("/user/bil")
 	public ModelAndView bil(){
 		String name = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -145,17 +146,25 @@ cart.setQuantity(1);
 	//order confirmation
 	@RequestMapping("/user/order")
 	public ModelAndView order(@RequestParam("first") String first, @RequestParam("last") String last, @RequestParam("address") String address, @RequestParam("state") String state, @RequestParam("city") String city, @RequestParam("mob") String mob, @RequestParam("pin") String pin){
-		ModelAndView mv1 = new ModelAndView("order");
+		ModelAndView mv1 = new ModelAndView("redirect:/user/confirm");
 		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
 		String bill=first+","+last+","+address+","+state+","+city+","+mob+","+pin;
 		Order b=orderDao.getorbyusername(Username);
 		b.setBill(bill);
 		orderDao.updateOrder(b);
+		return mv1;
+	}
+	
+	
+	@RequestMapping("/user/confirm")
+	public ModelAndView confirm(){
+		ModelAndView mv1 = new ModelAndView("order");
+		String Username=SecurityContextHolder.getContext().getAuthentication().getName();
 		Order o=new Order();
 		o=orderDao.getorbyusername(Username);
 		mv1.addObject("bill",o.getBill());
 		mv1.addObject("ship",o.getShip());
-		
+	
 		ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
 		mv1.addObject("ca",ll);
 		
@@ -183,7 +192,7 @@ ArrayList<Category> l=(ArrayList<Category>)categoryDao.getallCategories();
 	}
 	
 	
-	//
+	//thank you
 	@RequestMapping("/user/thank")
 	public ModelAndView thank(){
 		ModelAndView mv1 = new ModelAndView("thanku");

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Order</title>
+<title>shipping address</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -233,31 +233,31 @@ left: 35%;
                     <ul class="nav nav-tabs" id="myTab">
                     
                      <li class="active">
-                     <a href="#home" data-toggle="tab" title="Shipping Detail">
+                     <a href="#" data-toggle="tab" title="Shipping Detail">
                       <span class="round-tabs one">
                               <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li><a href="#profile" >
+                  <li><a href="#" >
                      <span class="round-tabs two">
                      <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href="#messages"  >
+                 <li><a href="#"  >
                      <span class="round-tabs three">
                           <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li><a href="#settings" >
+        <li><a href="#" >
                          <span class="round-tabs four">
                          <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="#doner">
+                     <li><a href="#">
                          <span class="round-tabs five">
                          <i class="fa fa-check"></i>
                          </span> </a>
@@ -297,10 +297,10 @@ left: 35%;
                           </div>
                           <div class="row">
                           <div class="col-sm-6">
-             Mobile No:<input type="number" class="form-control" name="mob"  required>
+             Mobile No:<input type="number" class="form-control" name="mob" pattern="[789].{9}" title="must start with 7/8/9 & must contain 10 numbers" required>
                           </div>
                           <div class="col-sm-6">
-             Postal Code:<input type="number" class="form-control" name="pin"  required>
+             Postal Code:<input type="number" class="form-control" name="pin" pattern="[0-9].{5}" title="must contain 6" required>
                           </div></div>
                           <p class="text-center">
                     <button type="submit" class="btn btn-success btn-outline-rounded green"> Deliver here <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>

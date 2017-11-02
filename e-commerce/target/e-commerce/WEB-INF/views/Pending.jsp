@@ -41,7 +41,8 @@
 			
 			<span><strong>Order ID</strong></span> <span class="label label-info">${o.id}</span><br>
 			<span>Orders</span><p style="font-size: 25px">${o.order_detail }</p>
-			<a href="shipped?id=${o.id}"><button>SHIP THE ORDERS</button></a>
+			<a href="shipped?id=${o.id}"><button>Ship Order</button></a>
+			<a href="cancel?id=${o.id}"><button>Cancel Order</button></a>
 		  </div>
 		 
 		</div>
@@ -49,9 +50,9 @@
 	</div><br>
 order made by: ${o.username}
 </div>
-</c:if>
 </c:forEach>
 </div>
+</c:if>
 <br><br><br><br><br><br>
 <jsp:include page="Footer.jsp"/>
 </body>

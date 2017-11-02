@@ -190,18 +190,6 @@ public ModelAndView cart(@RequestParam("id") int cartid, @RequestParam("quantity
 	c.setUsername(Username);
 	c.setQuantity(quantity);
 	cartDao.updatequantity(cartid,quantity);
-	ArrayList<Cart> ll=(ArrayList<Cart>)cartDao.getcartbyusernmae(Username);
-	
-	
-	mv1.addObject("ca",ll);
-	int total=0;
-	for(Cart cart:ll)
-	{
-	int sum=cart.getPrice()*cart.getQuantity();
-	total=total+sum;	
-	}
-	
-	mv1.addObject("t",total);
 	return mv1;
 }
 

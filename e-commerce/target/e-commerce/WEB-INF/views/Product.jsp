@@ -225,6 +225,7 @@
        -moz-border-radius: 100%;
              border-radius: 100%
 }
+​
 
 .btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
 .icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
@@ -265,8 +266,8 @@
     </ol>
     </div></div>
  <div class="col-sm-6" >
-                    </br>
-                    </br>
+                    <br>
+                    <br>
                     <h4 style="color:black;">${pr.name}</h4> <br>
                      <c:if test="${pr.offer eq 1}">
                      <h2><small style="color:green;">Extra $${pr.price - pr.offerprice} discount</small></h2>     
@@ -299,7 +300,6 @@
                                                           
                 </div>                              
         </div></div>
-            <%--                <c:if test="${pageContext.request.userPrincipal.name  != null}"> 
            <div class="row">
     	<div class="col-sm-12">
             <div class="panel with-nav-tabs panel-default">
@@ -315,11 +315,10 @@
                         <div class="tab-pane fade in active" id="tab1default">
                         <c:forEach items="${review}" var="rev"  varStatus="loop">	
                    <table>
+                   <tbody>
                     <tr>
-           <td>${rev.custname}</td>
-           <td>says</td>
-            <td>${rev.review}</td>
-            </tr>
+           <td>${rev.username} tells ${rev.rev}</td>
+            </tr></tbody>
             </table>
 </c:forEach>  </div>
                         <div class="tab-pane fade" id="tab2default">
@@ -334,7 +333,7 @@
                 </div>
             </div>
         </div>
-            </div> </c:if> --%>
+            </div>
                 <jsp:include page="Footer.jsp"/>
 </body>
 </html>

@@ -47,7 +47,7 @@
   color: #D4AF37;
 }
 .footer{
-   background-color: #424558;
+   background-color: #515199;
    position: absolute;
    margin-bottom: 0px;
  margin-top:1%;

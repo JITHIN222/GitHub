@@ -29,8 +29,19 @@ public class Category implements Serializable {
     @Column(name = "NAME", nullable = false)
     private String name;
     
+    @Column(name = "IMAGE", nullable = false)
+    private String img;
+    
   
-    @OneToMany(targetEntity=Product.class, mappedBy="cid", fetch=FetchType.EAGER)
+    public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	@OneToMany(targetEntity=Product.class, mappedBy="cid", fetch=FetchType.EAGER)
     private Set<Product> prod;
    
 	public Set<Product> getProd() {

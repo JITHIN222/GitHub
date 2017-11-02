@@ -85,7 +85,7 @@
 							</td>
 							<td data-th="Price">$${c.price}</td>
 							<td align="center">${c.quantity}</td>
-							<td>$${c.price * c.quantity }</td>
+							<td>$${c.price * c.quantity}</td>
 							<td>
 							<a href="cartup?cartid=${c.id}"><i class="fa fa-refresh" style="color:sky blue"></i></a>
 							</td>

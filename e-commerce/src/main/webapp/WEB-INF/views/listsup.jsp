@@ -23,7 +23,7 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:5%">Id</th>
+						   
 							<th style="width:10%">Name</th>
 							<th style="width:10%">Email</th>
 							<th style="width:10%">Mobile No</th>
@@ -34,7 +34,7 @@
 					<tbody>
 			
 						<tr>
-						<td >${ s.id}</td>
+						
 							<td>${s.name}</td>
 							<td >${ s.email}</td>
 							<td >${ s.mob}</td>

@@ -61,9 +61,7 @@ public class AdminController {
 	public ModelAndView index()
 	{
 	
-		ModelAndView mv1 = new ModelAndView("index");
-		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
-		mv1.addObject("off",p);
+		ModelAndView mv1 = new ModelAndView("redirect:/");
 	    return mv1;
 	}
 	
@@ -140,7 +138,7 @@ return mv1;
 	
 		SimpleMailMessage email = new SimpleMailMessage();
 	    email.setTo(os.getUsername());
-	    email.setSubject("PRODUCT SHIPPED");
+	    email.setSubject("Product Shipped");
 	    
 	    email.setText("Product shipped and will reach you soon.\nThanks for shopping from TechGuru");
 	    // sends the e-mail

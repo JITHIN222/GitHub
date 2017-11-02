@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Header</title>
 <style>
 .dropdown-menu {
     display: none;
@@ -28,17 +28,17 @@
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse" style="background-color:#424558; height:80px; margin:0px;">
+  <nav class="navbar navbar-inverse" style="background-color:#515199; height:80px; margin:0px;">
   <div class="container-fluid">
     <div class="navbar-Left">
       <a class="navbar-brand" href="./"><img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/101.png" style="margin:0; width:120px; height:60px;"></a>
     </div>
     <ul class="nav navbar-nav">
        <c:if test="${pageContext.request.userPrincipal.name  == 'lovelyps@gmail.com'}">
-      <li ><a href="ad">Admin</a></li>
+      <li ><a href="ad" style="color:#e3e3e5;">Admin</a></li>
       </c:if>
        <c:if test="${pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="color:#e3e3e5;">Categories <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach var="c" items="${cate}">
                        <li><a href="${c.id}">${c.name}</a></li>    
@@ -48,15 +48,15 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <c:if test="${pageContext.request.userPrincipal.name == null }">
-      <li><a href="up?f="><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="up?f=" style="color:#e3e3e5;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="in" style="color:#e3e3e5;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'lovelyps@gmail.com'}">
-        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="cart" style="color:#e3e3e5;"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name  != null}">
-					<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-					<li><a href='<c:url value="/j_spring_security_logout" />'><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+					<li><a style="color:#e3e3e5;">Welcome: ${pageContext.request.userPrincipal.name}</a></li>
+					<li><a href='<c:url value="/j_spring_security_logout" />' style="color:#e3e3e5;"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 				</c:if>
       </ul>
   </div></nav>

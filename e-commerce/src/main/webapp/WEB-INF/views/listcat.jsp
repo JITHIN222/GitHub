@@ -23,7 +23,7 @@
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
-						    <th style="width:10%">Id</th>
+						    <th style="width:10%">Image</th>
 							<th style="width:20%">Name</th>
 							<th style="width:10%">Action</th>
 						</tr>
@@ -32,7 +32,7 @@
 					<tbody>
 			
 						<tr>
-						<td >${ c.id}</td>
+						<td><img class="img-thumbnail" src="${pageContext.request.contextPath}/resources/Productimage/${c.img}" alt="" style="width:50%; height:100px;"></td>
 							<td><h4>${c.name}</h4></td>
 							<td >
 								<a href="updatec?catid=${ c.id}"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>

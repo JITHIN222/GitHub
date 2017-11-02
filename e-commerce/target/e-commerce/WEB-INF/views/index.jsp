@@ -157,7 +157,7 @@ width:auto;
     width: 100%;
     text-align: center;
 	}
-.item img{margin:auto;visibility:hidden; opacity:0; transition:all 0.3s ease; -webkit-transition:all 0.3s ease; -moz-transition:all 0.3s ease; -ms-transition:all 0.3s ease; -o-transition:all 0.3s ease;}
+.item img{margin:auto; transition:all 0.3s ease; -webkit-transition:all 0.3s ease; -moz-transition:all 0.3s ease; -ms-transition:all 0.3s ease; -o-transition:all 0.3s ease;}
 .item1 .carousel-img img , .item1.active .carousel-img img{max-height:300px;}
 .item1.active .carousel-img img.animated{visibility:visible; opacity:1; transition:all 1s ease; -webkit-transition:all 1s ease; -moz-transition:all 1s ease; -ms-transition:all 1s ease; -o-transition:all 1s ease;
 animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s; -ms-animation-duration:2s; -o-animation-duration:2s; animation-delay:0.3s ; -webkit-animation-delay:0.3s;
@@ -202,20 +202,45 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
 
 
 
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left;width:100%;hieght:100% }
-        .MultiCarousel .MultiCarousel-inner .item { float: left; width:100%;hieght:100%}
-        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-    .MultiCarousel .leftLst { left:0; }
-    .MultiCarousel .rightLst { right:0; }
-    
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    margin-left: 466px;
+    margin-top: 410px;
+    width: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 54px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 100px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
 
 
 </style>
 <body>
-<jsp:include page="Header.jsp"/>
+<jsp:include page="homeheader.jsp"/>
   <section class="slide-wrapper">
         <div class="container">
             <div id="myCarousel" class="carousel slide">
@@ -231,14 +256,12 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                     <div class="item item1 active">
                         <div class="fill" style=" background-color:#F5DEB3;">
                             <div class="inner-content">
-                                <div class="carousel-img">
-                                    <img src="${pageContext.request.contextPath}/resources/images/125.png" alt="sofa" class="img img-responsive" />
-                                </div>
+                               <a href="product?id=${ofp1.id}"> <div class="carousel-img">
+                                    <img src="${pageContext.request.contextPath}/resources/Productimage/${ofp1.img4}" alt="sofa" class="img img-responsive" />
+                                </div></a>
                                 <div class="carousel-desc">
-                                    <h2>MacBook</h2>
-                                    <p>The vision is brighter than ever</p>
-                                    <p>A touch of genius</p>
-
+                                    <h2>${ofp1.name}</h2>
+                                    <p style="font-size:30px;">$${ofp1.price}</p>
                                 </div>
                             </div>
                         </div>
@@ -246,15 +269,13 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                     <div class="item item2">
                         <div class="fill" style="background-color:#b33f4a;">
                             <div class="inner-content">
-                                <div class="carousel-img">
-                                    <img src="${pageContext.request.contextPath}/resources/images/123.png" alt="white-sofa" class="img img-responsive" />
-                                </div>
+                                <a href="product?id=${ofp2.id}"><div class="carousel-img">
+                                    <img src="${pageContext.request.contextPath}/resources/Productimage/${ofp2.img4}" alt="white-sofa" class="img img-responsive" />
+                                </div></a>
                                 <div class="carousel-desc">
 
-                                    <h2>OPPO f3</h2>
-                                    <p>OPPO F3 Plus offers fast and fluid multitasking</p>
-                                    <p>Beautiful Metal Design</p>
-                                    <p>Big Battery, Fast Charging</p>
+                                    <h2>${ofp2.name}</h2>
+                                    <p style="font-size:30px;">$${ofp2.price}</p>
 
                                 </div>
                             </div>
@@ -263,20 +284,17 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
                     <div class="item item3">
                         <div class="fill" style="background-color:#7fc2f4;">
                             <div class="inner-content">
-                                <div class="col-md-6">
-
+                               <a href="product?id=${ofp3.id}"> <div class="col-md-6">
                                     <div class="carousel-img">
-                                        <img src="${pageContext.request.contextPath}/resources/images/124.png" alt="sofa" class="img img-responsive" />
-                                    </div>
+                                        <img src="${pageContext.request.contextPath}/resources/Productimage/${ofp3.img4}" alt="sofa" class="img img-responsive" />
+                                    </div></a>
                                 </div>
 
                                 <div class="col-md-6 text-left">
                                     <div class="carousel-desc">
 
-                                        <h2>Digital Camera</h2>
-                                        <p>Make the Most of Your Photos</p>
-                                        <p>Make Memories</p>
-                                        <p>Capture Life</p>
+                                        <h2>${ofp3.name}</h2>
+                                        <p style="font-size:30px;">$${ofp3.price}</p>
                                     </div>
                                 </div>
                             </div>
@@ -285,79 +303,46 @@ animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s
 
                 </div>
             </div>
-        </div>
     </section>
-<%--     <h1><strong>Hot Deals</strong></h1>
-    <div class="row">
-<c:forEach items="${off}" var="p"  varStatus="loop">
-<c:if test="${p.offer eq 1}">
-<div class="col-sm-2">
-    <img src="${pageContext.request.contextPath}/resources/Productimage/${p.img}" class="img-responsive">
-    <table><tr><p align="center">${p.name}</p></tr>
-    <tr><p align="center"><font color="black"><strong> $${p.offerprice}</strong></font> <strike><small>$${p.price}</small></strike> <font color="black">${p.offerper}% off</font></p></tr>
-    <div class="row">
-    <div class="col-sm-6">
-    <a class="btn btn-success btn-product" href="car?id=${p.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    
+      <div id="section1">
+  <h1><strong>Hot Deals</strong></h1>
+  <div class="carousel slide article-slide" id="article-photo-carousel">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner cont-slider">
+   
+    <div class="item active"><h4 align="center">price: <small><strike>$${ofp11.price}</strike></small> <strong>$${ofp11.offerprice}</strong></h4><a href="product?id=${ofp11.id}"> 
+      <img alt="" class="img-responsive" src="${pageContext.request.contextPath}/resources/Productimage/${ofp11.img}" style="width:200px; height:300px;">
+      </a>
     </div>
-    <div class="col-sm-6">
-    <a class="btn btn-danger btn-product" href="buy?id=${p.id}"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
-    </div></div>
-    </table>
-</div>
-</c:if>
-</c:forEach></div>
-
-
-
-    <div class="row">
-<div class="col-sm-2">
-    <img src="${pageContext.request.contextPath}/resources/Productimage/${ofp1.img}" class="img-responsive">
-    <table><tr><p align="center">${ofp1.name}</p></tr>
-    <tr><p align="center"><font color="black"><strong> $${ofp1.offerprice}</strong></font> <strike><small>$${ofp1.price}</small></strike> <font color="black">${ofp1.offerper}% off</font></p></tr>
-    <div class="row">
-    <div class="col-sm-6">
-    <a class="btn btn-success btn-product" href="car?id=${ofp1.id}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    <div class="item"><h4 align="center"><small><strike>$${ofp11.price}</strike></small> <strong>$${ofp11.offerprice}</strong></h4><a href="product?id=${ofp21.id}"> 
+      <img alt="" title="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp21.img}" style="width:200px; height:300px;"></a>
     </div>
-    <div class="col-sm-6">
-    <a class="btn btn-danger btn-product" href="buy?id=${ofp1.id}"><span class="glyphicon glyphicon-flash"></span> Buy Now</a>
-    </div></div>
-    </table>
-</div>
-</div> --%>
-<%-- 
-<div class="container" >
-	<div class="row">
-	
-	
-		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner">
-            
-            
-            <c:forEach var="o" items="${of}">
-          <a href="product?id=${o.id}" > 
-        
-                <div class="item">
-                    <div class="pad15">
-                    <img src="${pageContext.request.contextPath}/resources/Productimage/${o.img}" class="img-responsive" style="width:100px; height:250px">
-                        <p class="lead">${o.name}</p>
-                        <p> ${o.price}</p>
-                        <p>${o.offerprice}</p>
-                        <p>${o.offerper }%</p>
-                    </div>
-                </div>
-               
-                </a>
-</c:forEach>              
-              
-            </div>
-            <button class="btn btn-success leftLst"><</button>
-            <button class="btn btn-success rightLst">></button>
-        </div>
-	</div>
-
-</div> --%>
-
-
+    <div class="item"><h4 align="center"><small><strike>$${ofp11.price}</strike></small> <strong>$${ofp11.offerprice}</strong></h4><a href="product?id=${ofp31.id}"> 
+      <img alt="" title="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp31.img}" style="width:200px; height:300px;"></a>
+    </div>
+    <div class="item"><h4 align="center"><small><strike>$${ofp11.price}</strike></small> <strong>$${ofp11.offerprice}</strong></h4><a href="product?id=${ofp41.id}"> 
+      <img alt="" title="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp41.img}" style="width:200px; height:300px;"></a>
+    </div>
+  </div>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li  data-slide-to="0" data-target="#article-photo-carousel">
+      <img alt="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp11.img}"  style="width:99px;">
+    </li>
+    <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+      <img alt="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp21.img}" style="width:99px;">
+    </li>
+    <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+      <img alt="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp31.img}" style="width:99px;">
+    </li>
+    <li class="" data-slide-to="3" data-target="#article-photo-carousel">
+      <img alt="" src="${pageContext.request.contextPath}/resources/Productimage/${ofp41.img}" style="width:99px;">
+    </li>
+  </ol>
+</div></div>
+<br><br><br><br><br><br>
   <jsp:include page="Footer.jsp"/>
 </body>
 </html>

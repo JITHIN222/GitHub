@@ -77,15 +77,21 @@
 <div class="form-group">                   
            <input type="file" name="img3" required/>
         </div>
+        <div class="form-group">                   
+           <input type="file" name="img4" required/>
+        </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
-                             <form action="addC">
+                             <form action="addC" method="post" enctype="multipart/form-data">
      <div class="form-group">            
             <input type="hidden" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
+        </div>
+        <div class="form-group">                   
+           <input type="file" name="img" required/>
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>

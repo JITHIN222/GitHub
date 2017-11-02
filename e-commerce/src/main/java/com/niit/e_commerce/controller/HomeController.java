@@ -53,21 +53,19 @@ public class HomeController {
 	public ModelAndView index()
 	{
 		Random random= new Random();
+		Random random1= new Random();
 	
 		ModelAndView mv1 = new ModelAndView("index");
 		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
 		mv1.addObject("cate",cat);
-		ArrayList<Product> p=(ArrayList<Product>)productDao.getallProduct();
-		mv1.addObject("off",p);
         ArrayList<Product> r=new ArrayList<Product>();
-		 r=(ArrayList<Product>)productDao.offerlist();
-		 mv1.addObject("of",r);
-		//for displaying special offers randomly from the offer list
+		 r=(ArrayList<Product>)productDao.getallProduct();
+		//for displaying special offers randomly from the Product list
 		int index1 = random.nextInt(r.size());
 		 Product p1=r.get(index1);
 		 mv1.addObject("ofp1",p1);
 		 r.remove(p1);
-		/*int index2 = random.nextInt(r.size());
+		int index2 = random.nextInt(r.size());
 		 Product p2=r.get(index2);
 		 mv1.addObject("ofp2",p2);
 		 r.remove(p2);
@@ -75,18 +73,24 @@ public class HomeController {
 		 Product p3=r.get(index3);
 		 mv1.addObject("ofp3",p3);
 		 r.remove(p3);
-		 int index4 = random.nextInt(r.size());
-		 Product p4=r.get(index4);
-		 mv1.addObject("ofp4",p4);
-		 r.remove(p4);
-		 int index5 = random.nextInt(r.size());
-		 Product p5=r.get(index5);
-		 mv1.addObject("ofp5",p5);
-		 r.remove(p5); 
-		 int index6 = random.nextInt(r.size());
-		 Product p6=r.get(index6);
-		 mv1.addObject("ofp6",p6);
-		 r.remove(p6); */
+		 ArrayList<Product> o=new ArrayList<Product>();
+		 o=(ArrayList<Product>)productDao.offerlist();
+		int ind1 = random1.nextInt(o.size());
+		 Product p11=o.get(ind1);
+		 mv1.addObject("ofp11",p11);
+		 r.remove(p11);
+		int index21 = random1.nextInt(o.size());
+		 Product p21=o.get(index21);
+		 mv1.addObject("ofp21",p21);
+		 r.remove(p21);
+		int index31 = random.nextInt(o.size());
+		 Product p31=o.get(index31);
+		 mv1.addObject("ofp31",p31);
+		 r.remove(p31);
+		 int index41 = random.nextInt(o.size());
+		 Product p41=o.get(index41);
+		 mv1.addObject("ofp41",p41);
+		 r.remove(p41);
 	    return mv1;
 	}
 	

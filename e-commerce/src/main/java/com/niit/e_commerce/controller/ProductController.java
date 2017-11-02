@@ -41,7 +41,7 @@ public class ProductController {
 	@RequestMapping("/admin/addP")
 	public ModelAndView addP(@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
-			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
+			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, @RequestParam("img4") MultipartFile file4, 
 			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		Product i=new Product();
 		i.setName(name);
@@ -102,6 +102,17 @@ public class ProductController {
 							} catch (IOException e) {
 							e.printStackTrace();}
 					 
+					 String img4=file4.getOriginalFilename();
+					    i.setImg4(img4);
+						 String filepath4 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file4.getOriginalFilename();
+						 try {
+								byte imagebyte[] = file4.getBytes();
+								BufferedOutputStream fos4 = new BufferedOutputStream(new FileOutputStream(filepath4));
+								fos4.write(imagebyte);
+								fos4.close();
+								} catch (IOException e) {
+								e.printStackTrace();}
+					 
 		productDao.saveProduct(i);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listpro?f=");
@@ -142,7 +153,7 @@ public class ProductController {
 	@RequestMapping("/admin/upP")
 	public ModelAndView update(@RequestParam("id") int id,@RequestParam("name") String name, @RequestParam("price") int price, @RequestParam("stock") int stock,
 			@RequestParam("img") MultipartFile file, @RequestParam("img1") MultipartFile file1,
-			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, 
+			@RequestParam("img2") MultipartFile file2, @RequestParam("img3") MultipartFile file3, @RequestParam("img4") MultipartFile file4, 
 			@RequestParam("short") String shortDesc, @RequestParam("cat") int ca, @RequestParam("sid") int ss  ) {
 		
 		Product i=productDao.getprbyid(id);
@@ -160,7 +171,7 @@ public class ProductController {
 		su=supplierDao.getssbyid(ss);
 		i.setSid(su);
 	
-		if(file.getOriginalFilename()!="" || file1.getOriginalFilename()!="" || file2.getOriginalFilename()!="" || file3.getOriginalFilename()!="")
+		if(file.getOriginalFilename()!="" || file1.getOriginalFilename()!="" || file2.getOriginalFilename()!="" || file3.getOriginalFilename()!="" || file4.getOriginalFilename()!="")
 		{
 			String img=file.getOriginalFilename();
 	    i.setImg(img);
@@ -209,6 +220,18 @@ public class ProductController {
 							fos3.close();
 							} catch (IOException e) {
 							e.printStackTrace();}
+					 
+					 String img4=file4.getOriginalFilename();
+					    i.setImg4(img4);
+					    
+						 String filepath4 ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file4.getOriginalFilename();
+						 try {
+								byte imagebyte[] = file4.getBytes();
+								BufferedOutputStream fos4 = new BufferedOutputStream(new FileOutputStream(filepath4));
+								fos4.write(imagebyte);
+								fos4.close();
+								} catch (IOException e) {
+								e.printStackTrace();}
 		}
 		productDao.updateproduct(i);
 		

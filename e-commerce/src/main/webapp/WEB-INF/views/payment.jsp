@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Order</title>
+<title>Payment</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -235,31 +235,31 @@ left: 35%;
                     <ul class="nav nav-tabs" id="myTab">
                     
                      <li>
-                     <a href="" >
+                     <a href="#" >
                       <span class="round-tabs one">
                              <i class="fa fa-home"></i>
                       </span> 
                   </a></li>
 
-                  <li ><a href="">
+                  <li ><a href="#">
                      <span class="round-tabs two">
                          <i class="fa fa-user"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href=""  >
+                 <li><a href="#"  >
                      <span class="round-tabs three">
                           <i class="fa fa-truck"></i>
                      </span> </a>
                      </li>
 
-        <li class="active"><a href="" title="payment" >
+        <li class="active"><a href="#" title="payment" >
                          <span class="round-tabs four">
                               <i class="fa fa-credit-card"></i>
                          </span> 
                      </a></li>
 
-                     <li><a href="">
+                     <li><a href="#">
                          <span class="round-tabs five">
                               <i class="fa fa-check"></i>
                          </span> </a>

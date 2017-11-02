@@ -25,12 +25,15 @@
                     <div class="tab-content">
                     
                         <div class="tab-pane fade in active" id="tab1"> 
-                        <form action="upC" method="post">
+                        <form action="upC" method="post" enctype="multipart/form-data">
      <div class="form-group">            
             <input type="hidden" class="form-control" name="n" value="${cat.id}"> 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name"  placeholder="Enter Name" value="${cat.name}"> 
+        </div>
+        <div class="form-group">                   
+           <input type="file" name="img" />
         </div>
           <button type="submit" class="btn btn-success">Update</button>
    </form> </div>

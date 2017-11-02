@@ -35,16 +35,16 @@
         <label for="inputName" > Category</label>
         <select name="cat">
   <option value="volvo">Select Category</option>
-  <c:forEach var="designatee" items="${categ}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="ca" items="${categ}">
+<option value="${ca.id}">${ca.name}</option>    
                     </c:forEach> 
   
 </select>
         <label for="inputName" >Supplier</label>
         <select name="sid">
   <option value="volvo">Select Supplier</option>
-  <c:forEach var="designatee" items="${catego}">
-<option value="${designatee.id}">${designatee.name}</option>    
+  <c:forEach var="su" items="${catego}">
+<option value="${su.id}">${su.name}</option>    
                     </c:forEach> 
   
 </select>
@@ -77,15 +77,21 @@
 <div class="form-group">                   
            <input type="file" name="img3" required/>
         </div>
+        <div class="form-group">                   
+           <input type="file" name="img4" required/>
+        </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form> </div>
                         <div class="tab-pane fade" id="tab2">
-                             <form action="addC">
+                             <form action="addC" method="post" enctype="multipart/form-data">
      <div class="form-group">            
             <input type="hidden" class="form-control" name="n" placeholder="Enter Id" > 
         </div>
         <div class="form-group" >            
             <input type="text" class="form-control"  name="name" placeholder="Enter Name" > 
+        </div>
+        <div class="form-group">                   
+           <input type="file" name="img" required/>
         </div>
           <button type="submit" class="btn btn-success" href="ad">Save</button>
    </form>

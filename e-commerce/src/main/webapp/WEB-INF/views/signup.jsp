@@ -83,7 +83,7 @@ text-align: right;
 <body background="${pageContext.request.contextPath}/resources/images/112.jpg">
 <jsp:include page="Header.jsp"/>
 <br>
-<h1 class="text-danger" align="center"><strong>${c}</strong></h1>
+<h1 class="text-black" align="center"><strong>${c}</strong></h1>
 <div class='container' id="nav">
   <div class='row'>
     <div class='col-md-12'>
@@ -91,7 +91,7 @@ text-align: right;
       <div class="form-Wrapper" id="f2">
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Full Name</span> 
-            <input type="text" class="form-control" id="f4" name="fname" required > 
+            <input type="text" class="form-control" id="f4" name="fname"  pattern="[A-Za-z ]{1,25}" title="must be without special character" required > 
         </div>
         <div class="form-group" id="f3">            
           <span style="font-weight:900">Email</span>
@@ -108,7 +108,7 @@ text-align: right;
 </div>
          <div class="form-group" id="f3">  
         <span style="font-weight:900">Mobile No</span>       
-            <input type="long" class="form-control" id="f4" name="no" pattern=".{10}" title="Must contain 10 numbers" required>     
+            <input type="long" class="form-control" id="f4" name="no" pattern="[789].{9}" title="must start with 7/8/9 & must contain 10 numbers" required>     
         </div>
      <!--     <div class="checkbox">
     <label><input type="checkbox" required> Remember me</label>

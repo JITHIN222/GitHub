@@ -59,7 +59,7 @@ public class UserController {
 		i.setRole("ROLE_USER");
 		i.setMobno(mobno);
 		UserDao.saveProduct(i);
-		return "redirect:/in?f=";
+		return "redirect:/in";
 		}
 		catch(Exception e){
 			String c="";

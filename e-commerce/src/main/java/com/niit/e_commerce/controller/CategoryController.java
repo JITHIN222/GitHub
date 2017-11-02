@@ -1,6 +1,9 @@
 package com.niit.e_commerce.controller;
 
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.e_commercebackend.dao.CategoryDAO;
@@ -43,9 +47,19 @@ public class CategoryController {
 	
 	/*adding category to db*/
 	@RequestMapping("/admin/addC")
-	public ModelAndView addC(@RequestParam("name") String name) {
+	public ModelAndView addC(@RequestParam("name") String name, @RequestParam("img") MultipartFile file) {
 		Category i=new Category();
 		i.setName(name);
+		String img=file.getOriginalFilename();
+	    i.setImg(img);
+		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
+		 try {
+				byte imagebyte[] = file.getBytes();
+				BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filepath));
+				fos.write(imagebyte);
+				fos.close();
+				} catch (IOException e) {
+				e.printStackTrace();}
 		categoryDao.saveCategory(i);
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f=");	
 		return mv1;
@@ -63,10 +77,23 @@ public class CategoryController {
 	
 	/*updating category to db*/
 	@RequestMapping("/admin/upC")
-	public ModelAndView upC(@RequestParam("n") int id, @RequestParam("name") String name) {
-		Category i=new Category();
+	public ModelAndView upC(@RequestParam("n") int id, @RequestParam("name") String name, @RequestParam("img") MultipartFile file) {
+		Category i=categoryDao.getcabyid(id);
 		i.setId(id);
 		i.setName(name);
+		if(file.getOriginalFilename()!=""){
+		String img=file.getOriginalFilename();
+	    i.setImg(img);
+	    
+		 String filepath ="C:/Users/Jithin Shaji/workspace/e-commerce/src/main/webapp/resources/Productimage/" + file.getOriginalFilename();
+		 try {
+				byte imagebyte[] = file.getBytes();
+				BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filepath));
+				fos.write(imagebyte);
+				fos.close();
+				} catch (IOException e) {
+				e.printStackTrace();}
+		}
 		categoryDao.updatecategory(i);
 		
 		ModelAndView mv1 = new ModelAndView("redirect:/admin/listcat?f=");

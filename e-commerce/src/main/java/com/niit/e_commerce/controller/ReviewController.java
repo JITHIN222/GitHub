@@ -36,16 +36,7 @@ public class ReviewController {
 		r.setUsername(name);
 		r.setRev(rev);
 		reviewDao.saveReview(r);
-		Product p=new Product();
-		p=productDao.getprbyid(id);
-		mv1.addObject("pr",p);
 		
-		ArrayList<Review> l= new ArrayList<Review>();
-		l=reviewDao.getrevbyprid(id);
-		mv1.addObject("review",l);
-		
-		ArrayList<Category> cat=(ArrayList<Category>)categoryDao.getallCategories();
-		mv1.addObject("cate",cat);
 		return mv1;
 	}
 

@@ -74,6 +74,9 @@
 <div class="form-group">                   
            <input type="file" name="img3" />
         </div>
+        <div class="form-group">                   
+           <input type="file" name="img4" />
+        </div>
           <button type="submit" class="btn btn-success">Save</button>
    </form> 
                        

@@ -67,7 +67,9 @@
 <thead>
 						<tr>
 							<th style="width:30%">Productname</th>
+							<th style="width:2%"></th>
 							<th style="width:20%">actual price</th>
+							<th style="width:5%"></th>
 							<th style="width:20%">offerprice</th>
 							<th style="width:30%" class="text-center"></th>
 							
@@ -78,16 +80,17 @@
   
 <tr>
 <td>${f.name}</td>
-                                   
+      <td></td>                             
  
-<td>
+<td align="center">
 ${f.price}
 </td>
+<td></td>
                                   
                                        
                                        
                                        
-                                    <td>${f.offerprice}</td>
+                                    <td align="center">${f.offerprice}</td>
                                       <td> 
                                     
                                       <a href="offerdelete?pr=${f.id}"><input id="submit" class="btn btn-info btn-md" name="submit" type="submit" value="DELETE"></a>
@@ -99,7 +102,7 @@ ${f.price}
                                    
                                 </tr>
                                 
- </c:forEach>
+ </c:forEach><br>
                                 </tbody>
 								
 								
